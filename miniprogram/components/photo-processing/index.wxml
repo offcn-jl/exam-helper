@@ -1,11 +1,12 @@
 <!-- 2020 吉林省考照片处理 -->
 <view class="bgOuter" wx:if='{{!isLogin}}' style="background-image: url({{bgImage}})">
 	<button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="login">开始制作</button>
+	<text class="login-tips" >为保障服务质量，需要您使用手机号码进行登陆\n登陆后即可免费获得 {{MaxTimes}} 次照片处理服务\n中公教育还将为您持续提供免费的考试咨询服务</text>
 	<text class="loginSuffix">{{Suffix}}</text>
 </view>
 <view wx:if='{{isLogin && step === 1}}'>
-	<text class="times usedTimes">您已使用 {{count>maxTimes?maxTimes:count}} / {{maxTimes}} 次</text>
-	<text class="times" style="color: #999">(累计提供服务 {{total}} 人/次)</text>
+	<text class="times usedTimes">您已使用 {{count>MaxTimes?MaxTimes:count}} / {{MaxTimes}} 次</text>
+	<text class="times" style="color: #999">( 累计提供服务 {{total}} 人 / 次 )</text>
 	<text class="sampleTitle">自拍样图</text>
 	<view class="horizontally">
 		<image class="sampleImage" src="{{samplePhoto}}"></image>
@@ -13,6 +14,7 @@
 	<view class="tips">
 		<view>
 			<view>提示:</view>
+			<view><text style="color:red;">* 您拍摄的照片仅供照片处理使用, 除使用腾讯云提供的服务对照片进行人像分割及智能美颜 ( 可选 ) 外, 中公教育不会以任何形式进行存储、展示或用于其他用途。</text></view>
 			<view><text>1. 请您选择光线良好，不会出现逆光或反光现象的环境进行拍摄。</text></view>
 			<view><text>2. 注意仪容仪表，着装正式清爽、妆容自然清新。</text></view>
 			<view><text>3. 拍摄背景应与服装有明显反差 ( 如 : 选择白色墙体做背景时，穿深色上衣 )。</text></view>

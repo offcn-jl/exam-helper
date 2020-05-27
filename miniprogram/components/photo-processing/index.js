@@ -16,7 +16,8 @@ Component({
     Width: Number,
     Height: Number,
     Compress: Boolean,
-    BackgroundColor: String
+    BackgroundColor: String,
+    MaxTimes: Number
   },
   /**
    * 页面的初始数据
@@ -33,7 +34,7 @@ Component({
     // 是否开启美颜
     beautyCheck: false,
     // 最大使用次数
-    maxTimes: 10,
+    MaxTimes: 0,
     // 当前使用情况
     count: 0,
     total: 0,
@@ -61,6 +62,7 @@ Component({
   },
   lifetimes: {
     attached: function() {
+      this.data.MaxTimes = this.properties.MaxTimes
       // 加载 we-cropper
       this.data.cropperOpt.cut = {
         x: (width - this.properties.Width) / 2, // 裁剪框x轴起点
@@ -98,6 +100,14 @@ Component({
      * 登陆
      */
     login: function (e) {
+      if (e.detail.errMsg !== "getPhoneNumber:ok") {
+        app.methods.handleError({
+          err: e,
+          title: "登陆失败",
+          content: "为保障服务质量，需要您使用手机号码进行登陆"
+        })
+        return
+      }
       const _this = this
       wx.cloud.callFunction({
         name: 'photo-processing-login',
@@ -117,7 +127,7 @@ Component({
                 total: res.result.result.Total
               })
               // 超过限制则禁用拍摄按钮
-              if (res.result.result.Count > _this.data.maxTimes) {
+              if (res.result.result.Count > _this.data.MaxTimes) {
                 this.setData({
                   disabled: true
                 })

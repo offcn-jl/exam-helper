@@ -12,7 +12,8 @@ Page({
     Width:'264', // 裁剪框宽度
     Height:'340',  // 裁剪框高度
     Compress: true, // 开启压缩
-    BackgroundColor: "#166c9f" // 照片背景色
+    BackgroundColor: "#166c9f", // 照片背景色
+    MaxTimes: 10 // 最大使用次数
   },
 
   /**

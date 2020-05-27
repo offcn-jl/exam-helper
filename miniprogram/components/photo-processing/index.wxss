@@ -44,11 +44,23 @@
   color: #fff;
 }
 
+.login-tips {
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 28rpx;
+  padding: 10rpx 15rpx;
+  top: 75vh;
+}
+
 .loginSuffix{
   position: absolute;
   top: 94.5vh;
   color: #ccc;
 }
+
 /* step1 */
 .sampleTitle {
   display: block;
