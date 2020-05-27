@@ -13,8 +13,10 @@ Component({
     // 后缀
     Suffix: String,
     CRMSID: String,
-    width: Number,
-    height: Number
+    Width: Number,
+    Height: Number,
+    Compress: Boolean,
+    BackgroundColor: String
   },
   /**
    * 页面的初始数据
@@ -61,15 +63,14 @@ Component({
     attached: function() {
       // 加载 we-cropper
       this.data.cropperOpt.cut = {
-        x: (width - this.properties.width) / 2, // 裁剪框x轴起点
-        y: (width - this.properties.height) / 2, // 裁剪框y轴期起点
-        width: this.properties.width, // 裁剪框宽度
-        height: this.properties.height // 裁剪框高度
+        x: (width - this.properties.Width) / 2, // 裁剪框x轴起点
+        y: (width - this.properties.Height) / 2, // 裁剪框y轴期起点
+        width: this.properties.Width, // 裁剪框宽度
+        height: this.properties.Height // 裁剪框高度
       }
       const {
         cropperOpt
       } = this.data
-      console.log(cropperOpt)
       this.cropper = new WeCropper(cropperOpt,this)
         .on('ready', (ctx) => {
           console.log(`wecropper 加载成功 ( is ready for work ) !`)
@@ -325,7 +326,7 @@ Component({
           const ctx = wx.createCanvasContext('photoCanvas',_this)
 
           // 绘制背景色
-          ctx.setFillStyle("#166c9f")
+          ctx.setFillStyle(_this.properties.BackgroundColor)
           ctx.fillRect(0, 0, width, height)
 
           // 绘制人像 这个filePath就是canvas能绘制的路径
@@ -336,8 +337,8 @@ Component({
             // 从 Canvas 实例中获取临时图片链接
             wx.canvasToTempFilePath({
               canvasId: 'photoCanvas',
-              // destWidth: 132,
-              // destHeight: 170,
+              destWidth: _this.properties.Compress ? width : null,
+              destHeight: _this.properties.Compress ? height : null,
               fileType: "jpg",
               quality: 0.8,
               success(res) {

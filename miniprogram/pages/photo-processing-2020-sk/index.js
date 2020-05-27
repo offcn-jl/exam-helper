@@ -9,8 +9,10 @@ Page({
     bgImage:'http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2020-sk-bg.jpg', // 首页背景图
     Name: "2020 吉林省考",
     CRMSID:'6edbf791cfbaaa68442dd75bfd10ae5b', 
-    width:'264', // 裁剪框宽度
-    height:'340'  // 裁剪框高度
+    Width:'264', // 裁剪框宽度
+    Height:'340',  // 裁剪框高度
+    Compress: true, // 开启压缩
+    BackgroundColor: "#166c9f" // 照片背景色
   },
 
   /**
@@ -69,7 +71,5 @@ Page({
     return {
       title: "中公教育 " + this.data.Name + " 照片处理系统 [ " + this.data.Suffix + " ]"
     }
-  },
-
-
+  }
 })
