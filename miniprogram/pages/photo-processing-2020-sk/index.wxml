@@ -1,66 +1,7 @@
-<!-- 2020 吉林省考照片处理 -->
-<view class="bgOuter" wx:if='{{!isLogin}}' style="background-image: url({{bgImage}})">
-	<button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="login">开始制作</button>
-	<text>{{Suffix}}</text>
-</view>
-<view wx:if='{{isLogin && step === 1}}'>
-	<text>累计提供服务 {{total}} 人/次</text>
-	<text class="times">您已使用 {{count>maxTimes?maxTimes:count}} / {{maxTimes}} 次</text>
-	<text class="sampleTitle">自拍样图</text>
-	<view class="horizontally">
-		<image class="sampleImage" src="{{samplePhoto}}"></image>
-	</view>
-	<view class="tips">
-		<view>
-			<view>提示:</view>
-			<view><text>1. 请您选择光线良好，不会出现逆光或反光现象的环境进行拍摄。</text></view>
-			<view><text>2. 注意仪容仪表，着装正式清爽、妆容自然清新。</text></view>
-			<view><text>3. 拍摄背景应与服装有明显反差 ( 如 : 选择白色墙体做背景时，穿深色上衣 )。</text></view>
-		</view>
-	</view>
-	<view class="horizontally">
-		<button class="sampleBtn" bindtap="uploadTap" disabled="{{disabled}}">拍摄照片</button>
-	</view>
-</view>
-
-<view wx:if='{{isLogin && step === 2}}'>
-	<import src="../../template/we-cropper/we-cropper.wxml" />
-	<view class="cropper-wrapper">
-		<template is="we-cropper" data="{{...cropperOpt}}" />
-		<view class="cropper-buttons">
-			<view class="upload" bindtap="uploadTap">
-				重拍
-			</view>
-			<view class="getCropperImage" bindtap="getCropperImage">
-				使用图片
-			</view>
-		</view>
-	</view>
-	<view class="beautyCheckOuter">
-		<label class="checkbox" bindtap="checkboxChange">
-			<checkbox value="智能美颜" checked="{{beautyCheck}}"></checkbox>智能美颜
-		</label>
-	</view>
-	<view class="dropImgOuter">
-		<image class="dropImg" src="{{dropImg}}"></image>
-		<view>
-			<text>您可以两指缩放图片，进行裁剪</text>
-		</view>
-	</view>
-</view>
-
-<view wx:if='{{isLogin && step === 3}}'>
-	<radio-group class="radio-group" bindchange="bgColorRadioChange">
-		<radio class="radio" wx:for-items="{{bgColorItems}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
-			<text>{{item.value}}</text>
-		</radio>
-	</radio-group>
-	<view class="sampleOuter3">
-		<image class="userImage" id="userImage" src="{{userPhotoUrl}}" style="width: 264px;height: 340px;"></image>
-	</view>
-	<view class="horizontally">
-		<button class="saveBtn" bindtap="savePhoto">保存图片到相册</button>
-	</view>
-</view>
-<canvas style="width: {{cropperOpt.cut.width*cropperOpt.pixelRatio}}px;height: {{cropperOpt.cut.height*cropperOpt.pixelRatio}}px;position: fixed;top: -{{cropperOpt.cut.height*cropperOpt.pixelRatio+100}}px;" canvas-id="photoCanvas"></canvas>
-<canvas style="width: {{cropperOpt.width}}px;height: {{cropperOpt.height}}px;position: fixed;top: -{{cropperOpt.height+100}}px;" canvas-id="tempCanvas"></canvas>
+<photo-processing 
+  bgImage="{{bgImage}}"
+  Suffix='{{Suffix}}'
+  CRMSID='{{CRMSID}}'
+  width='{{width}}'
+  height='{{height}}'
+  ></photo-processing>

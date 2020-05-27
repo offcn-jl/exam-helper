@@ -33,7 +33,7 @@ exports.main = async (event, context) => {
     json: true,
     body: {
       "CRMSID": event.CRMSID,
-      "Suffix": event.suffix,
+      "Suffix": event.suffix+"",
       "Phone": event.cloudID.data.phoneNumber,
       "Remark": "照片处理系统"
     },

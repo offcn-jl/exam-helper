@@ -9,6 +9,5 @@
     "navigationBarTitleText": "中公教育考试助手",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }
