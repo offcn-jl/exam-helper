@@ -61,7 +61,7 @@ Component({
     },
   },
   lifetimes: {
-    attached: function() {
+    attached: function () {
       this.data.MaxTimes = this.properties.MaxTimes
       // 加载 we-cropper
       this.data.cropperOpt.cut = {
@@ -73,7 +73,7 @@ Component({
       const {
         cropperOpt
       } = this.data
-      this.cropper = new WeCropper(cropperOpt,this)
+      this.cropper = new WeCropper(cropperOpt, this)
         .on('ready', (ctx) => {
           console.log(`wecropper 加载成功 ( is ready for work ) !`)
         })
@@ -87,14 +87,8 @@ Component({
         .on('imageLoad', (ctx) => {
           wx.hideToast()
         })
-      },
+    },
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  
-
   methods: {
     /**
      * 登陆
@@ -219,7 +213,7 @@ Component({
       // y = y * device.pixelRatio
       // width = width * device.pixelRatio
       // height = height * device.pixelRatio
-      const targetCtx = wx.createCanvasContext('tempCanvas',this) // 这里是目标canvas画布的id值
+      const targetCtx = wx.createCanvasContext('tempCanvas', this) // 这里是目标canvas画布的id值
       targetCtx.drawImage(this.data.resPhoto, imgLeft, imgTop, scaleWidth, scaleHeight) // 按照放大后的比例裁剪图片，绘制到新 canvas
       targetCtx.draw(false, function () {
         wx.canvasToTempFilePath({
@@ -305,10 +299,10 @@ Component({
               }
             })
           },
-          fail(err){
+          fail(err) {
             console.log(err)
           }
-        },_this)
+        }, _this)
       })
     },
 
@@ -333,14 +327,14 @@ Component({
           const width = _this.data.cropperOpt.cut.width * device.pixelRatio
           const height = _this.data.cropperOpt.cut.height * device.pixelRatio
           // 获取 Canvas 上下文
-          const ctx = wx.createCanvasContext('photoCanvas',_this)
+          const ctx = wx.createCanvasContext('photoCanvas', _this)
 
           // 绘制背景色
           ctx.setFillStyle(_this.properties.BackgroundColor)
           ctx.fillRect(0, 0, width, height)
 
           // 绘制人像 这个filePath就是canvas能绘制的路径
-          ctx.drawImage(tempFilePath, 0, 0,width, height)
+          ctx.drawImage(tempFilePath, 0, 0, width, height)
 
           // 将上下文绘制到 Canvas 实例
           ctx.draw(false, function () {
@@ -370,7 +364,7 @@ Component({
                   }
                 })
               }
-            },_this)
+            }, _this)
           })
         },
         fail: err => {
@@ -402,4 +396,3 @@ Component({
     },
   },
 })
-
