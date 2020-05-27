@@ -1,0 +1,1 @@
+<photo-processing bgImage="{{bgImage}}" Suffix="{{Suffix}}" CRMSID="{{CRMSID}}" Width="{{Width}}" Height="{{Height}}" Compress="{{Compress}}" BackgroundColor="{{BackgroundColor}}" MaxTimes="{{MaxTimes}}"></photo-processing>
