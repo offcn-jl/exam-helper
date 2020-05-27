@@ -46,7 +46,7 @@
 
 .login-tips {
   position: absolute;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
   border-radius: 5px;
@@ -55,7 +55,7 @@
   top: 75vh;
 }
 
-.loginSuffix{
+.loginSuffix {
   position: absolute;
   top: 94.5vh;
   color: #ccc;
@@ -95,7 +95,7 @@
   padding: 0 20rpx;
 }
 
-.usedTimes{
+.usedTimes {
   color: #f4676f;
   font-weight: bold;
   margin-top: 10rpx;
