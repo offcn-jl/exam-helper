@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-05-27 16:18:26
- * @LastEditTime: 2020-05-27 16:24:06
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \exam-helper\miniprogram\pages\photo-processing-2020-sk\index.js
- */ 
 // pages/photo-processing/index.js
 
 Page({
@@ -14,7 +6,7 @@ Page({
    */
   data: {
     Suffix: '', //后缀
-    bgImage:'./images/bg.jpg', // 首页背景图
+    bgImage:'http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2020-sk-bg.jpg', // 首页背景图
     Name: "2020 吉林省考",
     CRMSID:'6edbf791cfbaaa68442dd75bfd10ae5b', 
     width:'264', // 裁剪框宽度
