@@ -1,0 +1,46 @@
+<view>
+  <view class="cardTopBg" style="background-image: url({{topBg}})"></view>
+  <view class="bgColor"></view>
+  <view class="cardOuter">
+    <view class="card">
+      <view class="cardLeft">
+        <image src="{{icon1}}"></image>
+      </view>
+      <view class="cardRight">
+        <view class="cardRightTitle">线上咨询</view>
+        <view class="cardRightText">更快更方便，省时省力</view>
+        <image class="cardRightImg" src="{{arrow}}"></image>
+      </view>
+    </view>
+    <view class="card">
+      <view class="cardLeft">
+        <image src="{{icon2}}"></image>
+      </view>
+      <view class="cardRight">
+        <view class="cardRightTitle">权威解答</view>
+        <view class="cardRightText">更多专家全程给您答疑解惑</view>
+        <image class="cardRightImg" src="{{arrow}}"></image>
+      </view>
+    </view>
+    <view class="card">
+      <view class="cardLeft">
+        <image src="{{icon3}}"></image>
+      </view>
+      <view class="cardRight">
+        <view class="cardRightTitle">专家在线</view>
+        <view class="cardRightText">付费咨询、更加专业</view>
+        <image class="cardRightImg" src="{{arrow}}"></image>
+      </view>
+    </view>
+    <view class="card">
+      <view class="cardLeft">
+        <image src="{{icon4}}"></image>
+      </view>
+      <view class="cardRight">
+        <view class="cardRightTitle">权威评测</view>
+        <view class="cardRightText">权威专家全程为您答疑解惑</view>
+        <image class="cardRightImg" src="{{arrow}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

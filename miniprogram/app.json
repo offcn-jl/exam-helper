@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/photo-processing-2020-sk/index"
   ],
   "window": {

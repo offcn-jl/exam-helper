@@ -24,8 +24,8 @@ Component({
    */
   data: {
     // 控制页面显示
-    isLogin: false,
-    step: 0,
+    isLogin: true,
+    step: 2,
     disabled: false,
     // 样图
     samplePhoto: "../../images/photo-example.jpg",
