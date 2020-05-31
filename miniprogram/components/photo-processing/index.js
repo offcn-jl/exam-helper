@@ -102,6 +102,11 @@ Component({
         })
         return
       }
+      // 弹出 Loading
+      wx.showLoading({
+        title: '登陆中...',
+        mask: true
+      })
       const _this = this
       wx.cloud.callFunction({
         name: 'photo-processing-login',
