@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    topBg: 'http://jl.offcn.com/zg/ty/images/exam-helper/index/topBg.png',
+    topBg: 'http://jl.offcn.com/zg/ty/images/exam-helper/index/topBg.jpg',
     icon1: 'http://jl.offcn.com/zg/ty/images/exam-helper/index/icon1.png',
     icon2: 'http://jl.offcn.com/zg/ty/images/exam-helper/index/icon2.png',
     icon3: 'http://jl.offcn.com/zg/ty/images/exam-helper/index/icon3.png',
