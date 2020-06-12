@@ -26,9 +26,10 @@ exports.main = async (event, context) => {
     url: apis.scf + "/sso/v2/crm/push",
     // 设置请求头
     // todo 接口只验证 origin , 没有验证 token 之类的鉴权逻辑, 后续进行优化
-    headers: {
-      "origin": "http://jl.offcn.com"
-    },
+    // 现阶段, origin 验证也可以取消, 后续根据需求确认是否采取 token 验证
+    // headers: {
+    //   "origin": "http://jl.offcn.com"
+    // },
     // 自动格式化 body 为 json
     json: true,
     body: {
@@ -46,9 +47,10 @@ exports.main = async (event, context) => {
         url: apis.tsf + "/2020/05/03/add",
         // 设置请求头
         // todo 接口只验证 origin , 没有验证 token 之类的鉴权逻辑, 后续进行优化
-        headers: {
-          "origin": "http://jl.offcn.com"
-        },
+        // 现阶段, origin 验证也可以取消, 后续根据需求确认是否采取 token 验证
+        // headers: {
+        //   "origin": "http://jl.offcn.com"
+        // },
         json: true,
         body: {
           "Event": event.CRMSID,
