@@ -15,7 +15,9 @@ Component({
     CRMSID: String,
     Width: Number,
     Height: Number,
-    Compress: Boolean,
+    SaveQuality: Number,
+    DisableZoom: Boolean,
+    Beauty: Boolean,
     BackgroundColor: String,
     MaxTimes: Number
   },
@@ -33,8 +35,6 @@ Component({
     dropImg: '../../images/drop.png',
     // 是否开启美颜
     beautyCheck: false,
-    // 最大使用次数
-    MaxTimes: 0,
     // 当前使用情况
     count: 0,
     total: 0,
@@ -52,24 +52,19 @@ Component({
       height, // 画布高度
       scale: 2.5, // 最大缩放倍数
       zoom: 8, // 缩放系数
-      cut: {
-        x: (width - 264) / 2, // 裁剪框x轴起点
-        y: (width - 340) / 2, // 裁剪框y轴期起点
-        width: 264, // 裁剪框宽度
-        height: 340 // 裁剪框高度
-      },
     },
   },
   lifetimes: {
     attached: function () {
-      this.data.MaxTimes = this.properties.MaxTimes
       // 加载 we-cropper
-      this.data.cropperOpt.cut = {
-        x: (width - this.properties.Width) / 2, // 裁剪框x轴起点
-        y: (width - this.properties.Height) / 2, // 裁剪框y轴期起点
-        width: this.properties.Width, // 裁剪框宽度
-        height: this.properties.Height // 裁剪框高度
-      }
+      this.setData({
+        "cropperOpt.cut": {
+          x: (width - this.properties.Width) / 2, // 裁剪框x轴起点
+          y: (width - this.properties.Height) / 2, // 裁剪框y轴期起点
+          width: this.properties.Width, // 裁剪框宽度
+          height: this.properties.Height // 裁剪框高度
+        }
+      })
       const {
         cropperOpt
       } = this.data
@@ -126,7 +121,7 @@ Component({
                 total: res.result.result.Total
               })
               // 超过限制则禁用拍摄按钮
-              if (res.result.result.Count > _this.data.MaxTimes) {
+              if (res.result.result.Count > _this.properties.MaxTimes) {
                 this.setData({
                   disabled: true
                 })
@@ -346,10 +341,10 @@ Component({
             // 从 Canvas 实例中获取临时图片链接
             wx.canvasToTempFilePath({
               canvasId: 'photoCanvas',
-              destWidth: _this.properties.Compress ? width : null,
-              destHeight: _this.properties.Compress ? height : null,
+              destWidth: _this.properties.DisableZoom ? _this.data.cropperOpt.cut.width : null,
+              destHeight: _this.properties.DisableZoom ? _this.data.cropperOpt.cut.height : null,
               fileType: "jpg",
-              quality: 0.8,
+              quality: _this.properties.SaveQuality,
               success(res) {
                 _this.setData({
                   userPhotoUrl: res.tempFilePath

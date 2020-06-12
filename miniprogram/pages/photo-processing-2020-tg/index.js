@@ -1,20 +1,18 @@
-// pages/photo-processing/index.js
-
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     Suffix: "", //后缀
-    bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2020-sk-bg.jpg", // 首页背景图
-    Name: "2020 吉林省考", // 公告 ( 考试 ) 名称
-    CRMSID: "bf80d81e57526e0ed173543c09157026", // HD202004082103 网站专题页-省考五大系统
-    Width: "264", // 裁剪框宽度 ( 未禁止缩放时, 实际保存宽度为 width * 像素比; 禁止缩放时, 实际保存宽度为 width )
-    Height: "340", // 裁剪框高度 ( 未禁止缩放时, 实际保存高度为 heigh * 像素比; 禁止缩放时, 实际保存高度为 heigh )
+    bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2020-tg-bg.jpg", // 首页背景图
+    Name: "2020 特岗教师", // 公告 ( 考试 ) 名称
+    CRMSID: "162f989f22d4f31a0f091da2a7943ecf", // HD202006070108 网站专题页-2020特岗教师考试五大系统
+    Width: "120", // 裁剪框宽度
+    Height: "150", // 裁剪框高度
     SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
-    DisableZoom: true, // 禁止缩放 ( 配置为 true 时禁止放大, 放大后可以提升图片清晰度 )
-    Beauty: true, // 开启美颜
-    BackgroundColor: "#166c9f", // 照片背景色
+    DisableZoom: true, // 禁止缩放 ( 放大, 放大后可以提升图片清晰度 )
+    Beauty: false, // 开启美颜
+    BackgroundColor: "#fff", // 照片背景色
     MaxTimes: 10 // 最大使用次数
   },
 

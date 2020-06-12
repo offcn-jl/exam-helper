@@ -32,7 +32,19 @@
 					<image src="{{icon3}}"></image>
 				</view>
 				<view class="cardRight">
-					<view class="cardRightTitle">照片处理</view>
+					<view class="cardRightTitle">吉林省考照片处理</view>
+					<view class="cardRightText">一键生成报名所需证件照</view>
+					<image class="cardRightImg" src="{{arrow}}"></image>
+				</view>
+			</view>
+		</navigator>
+		<navigator url="../photo-processing-2020-tg/index">
+			<view class="card">
+				<view class="cardLeft">
+					<image src="{{icon3}}"></image>
+				</view>
+				<view class="cardRight">
+					<view class="cardRightTitle">特岗教师照片处理</view>
 					<view class="cardRightText">一键生成报名所需证件照</view>
 					<image class="cardRightImg" src="{{arrow}}"></image>
 				</view>
