@@ -71,14 +71,14 @@ Page({
                         SearchDepartmentAttribute: departmentAttribute
                       })
                       // 切换导航栏
-                      wx.setNavigationBarColor({
-                        frontColor: '#000000',
-                        backgroundColor: '#ffffff',
-                        animation: {
-                          duration: 400,
-                          timingFunc: 'easeIn'
-                        }
-                      })
+                      // wx.setNavigationBarColor({
+                      //   frontColor: '#000000',
+                      //   backgroundColor: '#ffffff',
+                      //   animation: {
+                      //     duration: 400,
+                      //     timingFunc: 'easeIn'
+                      //   }
+                      // })
                     } else {
                       app.methods.handleError({
                         err: res,
