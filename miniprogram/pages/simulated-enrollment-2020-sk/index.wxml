@@ -1,0 +1,109 @@
+<!-- 欢迎页 -->
+<view class="index" wx:if="{{Step===0}}">
+  <text class="suffix">{{Suffix}}</text>
+	<button class="index-start" type="primary" bindtap="buttonStart">我了解，开始使用</button>
+</view>
+
+<!-- 职位检索页 -->
+<view class="search" wx:if="{{Step===1}}">
+	<text class="search-title">职位检索</text>
+<text class="tap-tips" style="margin-bottom: 2vh;">选择筛选条件后点击“检索”按钮查看职位信息</text>
+
+	<view class="form-item">
+		<text class="form-lable" decode="true">地&emsp;区：</text>
+		<picker class="form-picker" bindchange="bindSearchAreaPickerChange" value="{{index}}" range="{{SearchArea}}">
+			<text style="{{SearchAreaIndex === -1 ? 'color:gray;' : ''}}">{{SearchAreaIndex === -1 ? "点击选择 ( 非必选 )" : SearchArea[SearchAreaIndex]}}</text>
+			<text style="float:right;margin-right:10px;">▼</text>
+		</picker>
+	</view>
+  <view class="form-item">
+		<view class="form-lable">部门属性：</view>
+		<picker class="form-picker" bindchange="bindSearchDepartmentAttributePickerChange" value="{{index}}" range="{{SearchDepartmentAttribute}}">
+			<text style="{{SearchDepartmentAttributeIndex === -1 ? 'color:gray;' : ''}}">{{SearchDepartmentAttributeIndex === -1 ? "点击选择 ( 非必选 )" : SearchDepartmentAttribute[SearchDepartmentAttributeIndex]}}</text>
+			<text style="float:right;margin-right:10px;">▼</text>
+		</picker>
+	</view>
+	<view class="form-item">
+		<view class="form-lable">部门名称：</view>
+		<input class="form-input" bindinput="bindSearchDepartmentNameInput" placeholder="点击填写 ( 非必填 )" value="{{SearchDepartmentName}}"></input>
+	</view>
+	<view class="form-item">
+		<view class="form-lable">职位名称：</view>
+		<input class="form-input" bindinput="bindSearchPositionNameInput" placeholder="点击填写 ( 非必填 )" value="{{SearchPositionName}}"></input>
+	</view>
+
+	<button class="search-start" type="primary" open-type="getPhoneNumber" bindgetphonenumber="buttonSearchStartWhitoutSignUp" wx:if="{{Phone===-1}}">检 索</button>
+	<button class="search-start" type="primary" bindtap="buttonSearchStart" wx:else>检 索</button>
+</view>
+
+<!-- 提示 -->
+<text class="tap-tips" wx:if="{{PositionData.lists}}">点击卡片查看报名人数、竞争比及职位详情</text>
+
+<!-- 职位列表 -->
+<block wx:for="{{PositionData.lists}}" wx:key="index">
+	<view class="card" bindtap="bindShowDetailTap" data-index="{{index}}">
+		<view>
+			<text class="location">{{item.areaname}}</text> <!-- 地区 -->
+			<text class="department">{{item.danwei_name}}</text> <!-- 部门 -->
+		</view>
+		<view>
+			<text class="position">{{item.zhiwei_name}}</text> <!-- 职位 -->
+		</view>
+	</view>
+</block>
+
+<!-- 提示 -->
+<text class="tap-tips" wx:if="{{PositionData.total < PositionData.page * 15}}">没有更多数据了</text>
+
+<!-- 详情 -->
+<scroll-view scroll-y="true" wx:if="{{DetailData.Position}}" class="detail">
+	<view class="title">模拟报名情况</view>
+  <view class="info">招考人数 : <text>{{DetailData.Position.zkrs}}</text></view>
+	<view class="info">报名人数 : <text>{{DetailData.Enrollment.total}}</text></view>
+  <view class="info">竞争比 : <text>1 : {{DetailData.Enrollment.total/DetailData.Position.zkrs}}</text></view>
+  <text class="tips" style="color:red;">报名人数与竞争比仅代表通过本系统参与模拟报名的情况, 数据仅供参考！</text>
+  <text class="tips" wx:if="{{DetailData.Enrollment.myPosition}}">您已报名部门 {{DetailData.Enrollment.myPosition.Department}} ( 部门代码 )\n职位 {{DetailData.Enrollment.myPosition.Position}} ( 职位代码 )</text>
+  <button style="width: 98%;" bindtap="buttonPositionSignUp">报名本岗位</button>
+
+  <view class="title">官方数据</view>
+	<block wx:if="{{DetailData.Official}}">
+		<view class="info">招考人数 : <text>{{DetailData.Official.ExpectNum}}</text></view>
+		<view class="info">开考比例 : <text>{{DetailData.Official.ExpectRatio}}</text></view>
+		<view class="info">报考人数 : <text>{{DetailData.Official.ActualNum}}</text></view>
+		<view class="info">实际报名比例 : <text>{{DetailData.Official.ActualRatio}}</text></view>
+		<view class="info">数据更新时间 : <text>{{DetailData.Official.Time}}</text></view>
+  	<view class="info">数据来源: <text>未达开考比例公示</text></view>
+	</block>
+	<block wx:else>
+  	<view class="tips">官方发布的“未达开考比例岗位信息公示”中不包含本岗位</view>
+	</block>
+
+  <view class="title">职位详情</view>
+  <view class="info">所属地区 : <text>{{DetailData.Position.areaname}}</text></view>
+	<view class="info">所属考区 : <text>{{DetailData.Position.sskq}}</text></view>
+	<view class="info">部门名称 : <text>{{DetailData.Position.danwei_name}}</text></view>
+	<view class="info">部门代码 : <text>{{DetailData.Position.danwei_code}}</text></view>
+	<view class="info">职位名称 : <text>{{DetailData.Position.zhiwei_name}}</text></view>
+	<view class="info">职位代码 : <text>{{DetailData.Position.zhiwei_code}}</text></view>
+	<view class="info">科目类别 : <text>{{DetailData.Position.kskm}}</text></view>
+	<view class="info">招考对象 : <text>{{DetailData.Position.isyj}}</text></view>
+	<view class="info">学历要求 : <text>{{DetailData.Position.xueli}}</text></view>
+	<view class="info">专业及其它条件要求 : <text>{{DetailData.Position.zhuanye}}</text></view>
+	<view class="info">性别要求 : <text>{{DetailData.Position.sex}}</text></view>
+	<view class="info">政治面貌要求 : <text>{{DetailData.Position.zzmm}}</text></view>
+	<view class="info">最低服务年限要求 : <text>{{DetailData.Position.gznx}}</text></view>
+	<view class="info">基层工作经历要求 : <text>{{DetailData.Position.gzjl}}</text></view>
+	<view class="info">体能测试或专业考试要求 : <text>{{DetailData.Position.isks}}</text></view>
+	<view class="info">职位类别 : <text>{{DetailData.Position.zhiwei_cate}}</text></view>
+	<view class="info">机构性质 : <text>{{DetailData.Position.jgxz}}</text></view>
+	<view class="info">部门属性 : <text>{{DetailData.Position.xitong}}</text></view>
+	<view class="info">部门层级 : <text>{{DetailData.Position.jgcj}}</text></view>
+	<view class="info">部门性质 : <text>{{DetailData.Position.bmsx}}</text></view>
+	<view class="info">招考部门类别 : <text>{{DetailData.Position.bmlb}}</text></view>
+	<view class="info">咨询电话 : <text>{{DetailData.Position.phone}}</text></view>
+	<view class="info">备注 : <text>{{DetailData.Position.note}}</text></view>
+  <text class="close" bindtap="bindHideDetailCloseTap">✘</text>
+</scroll-view>
+
+<!-- 返回顶部 -->
+<image wx:if="{{backTopValue}}" class="back-top" bindtap="backTop" src="http://jl.offcn.com/zg/ty/images/exam-helper/public/top.png"></image>
