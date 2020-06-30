@@ -8,7 +8,7 @@ Page({
   data: {
     Suffix: "", // 后缀
     Step: 0, // 当前步骤 0, 欢迎页
-    NowYear: 2019, // 接口参数 当前年份 ## fixme 改为 2020
+    NowYear: 2020, // 接口参数 当前年份
     SearchArea: [], // 检索选项 地区
     SearchAreaIndex: -1, // 检索选项 地区 被选中的选项下标
     SearchDepartmentAttribute: [], // 检索选项 部门属性
