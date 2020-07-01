@@ -11,8 +11,8 @@
 
 .index .suffix {
   position: absolute;
-  right: 10vw;
-  top: 6vh;
+  left: 43vw;
+  font-size: 14px;
 }
 
 .index-start {
