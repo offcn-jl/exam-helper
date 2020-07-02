@@ -35,7 +35,7 @@ exports.main = async (event, context) => {
         // 不存在记录，继续执行后续操作
         // 根据函数参数中传来的环境字段, 选择对应环境的接口
         let apis = testApis
-        if (event.environment === "release") {
+        if (event.Environment === "release") {
           apis = releaseApis
         }
         // 推送 CRM 记录

@@ -171,6 +171,7 @@ Page({
     wx.cloud.callFunction({
       name: 'simulated-enrollment-2020-sk-sign-up',
       data: {
+        Environment: app.globalData.configs.environment,
         Suffix: this.data.Suffix,
         cloudID: wx.cloud.CloudID(e.detail.cloudID)
       },

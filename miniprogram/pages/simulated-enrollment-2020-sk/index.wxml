@@ -59,10 +59,17 @@
 <scroll-view scroll-y="true" wx:if="{{DetailData.Position}}" class="detail">
 	<view class="title">模拟报名情况</view>
   <view class="info">招考人数 : <text>{{DetailData.Position.zkrs}}</text></view>
-	<view class="info">报名人数 : <text>{{DetailData.Enrollment.total}}</text></view>
-  <view class="info">竞争比 : <text>1 : {{DetailData.Enrollment.total/DetailData.Position.zkrs}}</text></view>
-  <text class="tips" style="color:red;">报名人数与竞争比仅代表通过本系统参与模拟报名的情况, 数据仅供参考！</text>
-  <text class="tips" wx:if="{{DetailData.Enrollment.myPosition}}">您已报名部门 {{DetailData.Enrollment.myPosition.Department}} ( 部门代码 )\n职位 {{DetailData.Enrollment.myPosition.Position}} ( 职位代码 )</text>
+	<block wx:if="{{!DetailData.Enrollment.myPosition}}">
+		<view class="info">报名人数 : <text style="color:red;">?</text></view>
+  	<view class="info">竞争比 : <text>1 : </text><text style="color:red;">?</text></view>
+  	<text class="tips" style="color:red;">选择您心仪的岗位，完成模拟报名后，即可查看报名人数与竞争比 ~!</text>
+	</block>
+	<block wx:else>
+		<view class="info">报名人数 : <text>{{DetailData.Enrollment.total}}</text></view>
+  	<view class="info">竞争比 : <text>1 : {{DetailData.Enrollment.total/DetailData.Position.zkrs}}</text></view>
+  	<text class="tips" style="color:red;">报名人数与竞争比仅代表通过本系统参与模拟报名的情况, 数据仅供参考！</text>
+  	<text class="tips">您已报名部门 {{DetailData.Enrollment.myPosition.Department}} ( 部门代码 )\n职位 {{DetailData.Enrollment.myPosition.Position}} ( 职位代码 )</text>
+	</block>
   <button style="width: 98%;" bindtap="buttonPositionSignUp">报名本岗位</button>
 
   <view class="title">官方数据</view>
