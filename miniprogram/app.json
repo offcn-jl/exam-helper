@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
 
+    "pages/photo-processing-2020-sydw-sy/index",
+    "pages/photo-processing-2020-szyf/index",
     "pages/photo-processing-2020-sydw-sp/index",
     "pages/photo-processing-2020-sydw-cc/index",
     "pages/simulated-enrollment-2020-sk/index",
