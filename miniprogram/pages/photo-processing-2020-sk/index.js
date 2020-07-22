@@ -13,7 +13,7 @@ Page({
     Height: "340", // 裁剪框高度 ( 未禁止缩放时, 实际保存高度为 heigh * 像素比; 禁止缩放时, 实际保存高度为 heigh )
     SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
     DisableZoom: true, // 禁止缩放 ( 配置为 true 时禁止放大, 放大后可以提升图片清晰度 )
-    Beauty: true, // 开启美颜
+    Beauty: false, // 开启美颜
     BackgroundColor: "#166c9f", // 照片背景色
     MaxTimes: 10 // 最大使用次数
   },
