@@ -15,6 +15,15 @@
   font-size: 14px;
 }
 
+.index .single-page {
+  position: absolute;
+  top: 85vh;
+  width: 100vw;
+  font-size: 20px;
+  background: #fad76f;
+  text-align: center;
+}
+
 .index-start {
   top: 90vh;
   width: 80vw;

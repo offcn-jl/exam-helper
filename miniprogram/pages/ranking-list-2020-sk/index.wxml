@@ -1,7 +1,8 @@
 <!-- 欢迎页 -->
 <view class="index" wx:if="{{Step===0}}">
 	<text class="suffix">{{Suffix}}</text>
-	<button class="index-start" type="primary" bindtap="buttonStart">开始使用</button>
+	<text wx:if="{{SinglePageMode}}" class="single-page">请点击下方“前往小程序”按钮开始使用</text>
+	<button wx:else class="index-start" type="primary" bindtap="buttonStart">开始使用</button>
 </view>
 
 <!-- 职位检索页 -->

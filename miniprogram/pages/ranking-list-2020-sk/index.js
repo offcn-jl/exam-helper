@@ -23,6 +23,7 @@ Page({
     SLScore: 0, // 用户输入的晒分成绩
     GAScore: 0, // 用户输入的晒分成绩
     Score: 0, // 用户输入的晒分成绩
+    SinglePageMode: false, // 单页模式打开
   },
 
   /**
@@ -647,6 +648,11 @@ Page({
     if (typeof options.scene !== "undefined") {
       this.setData({
         Suffix: options.scene
+      })
+    }
+    if ( wx.getLaunchOptionsSync().scene === 1154 ) {
+      this.setData({
+        SinglePageMode: true
       })
     }
   },
