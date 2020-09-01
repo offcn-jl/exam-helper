@@ -24,6 +24,12 @@ Page({
     GAScore: 0, // 用户输入的晒分成绩
     Score: 0, // 用户输入的晒分成绩
     SinglePageMode: false, // 单页模式打开
+    ADClass: "", // 19课堂课程ID 
+    ADPictureURL: "", // 广告图 
+    OpenCalculator: false, // 计算器 是否打开
+    CalculatorMyScore: -1, // 计算器 我的分数
+    CalculatorOtherScore: -1, // 计算器 对方分数
+    CalculatorScore: -1, // 计算器 需追分差
   },
 
   /**
@@ -90,6 +96,22 @@ Page({
                         title: "出错啦",
                         content: "获取检索条件失败, 请您稍后再试"
                       })
+                    }
+                  }
+                })
+                // 获取广告设置
+                wx.request({
+                  url: 'https://tsf.tencent.jilinoffcn.com/release/app/version-control/get/20200831',
+                  success: (res) => {
+                    if (res.statusCode === 200) {
+                      // 保存广告设置
+                      that.setData({
+                        ADClass: res.data.Description,
+                        ADPictureURL: res.data.Download,
+                      })
+                    } else {
+                      // 请求失败
+                      // 由于获取广告配置不是关键操作，为保障用户体验，不阻止后续跳转操作，不弹出错误提示
                     }
                   }
                 })
@@ -637,6 +659,95 @@ Page({
         })
         wx.hideLoading() // 隐藏 loading
       })
+  },
+
+  /**
+   * 监听 按钮 打开计算器
+   */
+  buttonOpenCalculator: function () {
+    this.setData({
+      OpenCalculator: true
+    })
+  },
+
+  /**
+   * 监听 按钮 关闭计算器
+   */
+  buttonCloseCalculator: function () {
+    this.setData({
+      OpenCalculator: false
+    })
+  },
+
+  /**
+   * 监听 输入成绩 逆袭计算器 本人成绩
+   */
+  bindCalculatorMyScoreInput: function (e) {
+    if (isNaN(Number(e.detail.value))) {
+      this.setData({
+        CalculatorMyScore: 999
+      })
+    } else {
+      this.setData({
+        CalculatorMyScore: Number(e.detail.value),
+      })
+    }
+  },
+
+  /**
+   * 监听 输入成绩 逆袭计算器 对手成绩
+   */
+  bindCalculatorOtherScoreInput: function (e) {
+    if (isNaN(Number(e.detail.value))) {
+      this.setData({
+        CalculatorOtherScore: 999
+      })
+    } else {
+      this.setData({
+        CalculatorOtherScore: Number(e.detail.value),
+      })
+    }
+  },
+
+  /**
+   * 监听 按钮 计算面试需追分差
+   */
+  buttonDoCalculator: function () {
+    if (this.data.CalculatorMyScore == -1 ){
+      app.methods.handleError({
+        err: null,
+        title: "出错啦",
+        content: "请填写您的成绩！"
+      })
+      return
+    }
+    if (this.data.CalculatorMyScore > 300 ){
+      app.methods.handleError({
+        err: null,
+        title: "出错啦",
+        content: "您的成绩应当小于300分！"
+      })
+      return
+    }
+    if (this.data.CalculatorOtherScore == -1 ){
+      app.methods.handleError({
+        err: null,
+        title: "出错啦",
+        content: "请填写对手成绩！"
+      })
+      return
+    }
+    if (this.data.CalculatorOtherScore > 300 ){
+      app.methods.handleError({
+        err: null,
+        title: "出错啦",
+        content: "对手成绩应当小于300分！"
+      })
+      return
+    }
+    this.setData({
+      CalculatorScore: ( this.data.CalculatorOtherScore - this.data.CalculatorMyScore ) * 0.75
+    })
   },
 
   /**

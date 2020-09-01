@@ -56,7 +56,7 @@
 <text class="tap-tips" wx:if="{{PositionData.total < PositionData.page * 15}}">没有更多数据了</text>
 
 <!-- 详情遮罩 -->
-<view class="detail-cover" wx:if="{{DetailData.Position}}"></view>
+<view class="cover" wx:if="{{DetailData.Position}}"></view>
 <!-- 详情 -->
 <scroll-view scroll-y="true" wx:if="{{DetailData.Position}}" class="detail">
 	<view class="title">晒分知分差</view>
@@ -104,11 +104,13 @@
 	</block>
 	<block wx:else>
 		<view class="tips">您可以上下滑动下方区域查看更多</view>
+		<view class="tips" style="color:black;">用户名 / 笔试成绩 / 面试需追分差</view>
 		<scroll-view scroll-y="true" class="ranks">
 			<block wx:for="{{DetailData.Score.List}}" wx:key="index">
-				<text style="{{item.Self ? 'color:red;' : ''}}">{{item.Phone}}-{{item.Score}}分</text>
+				<text style="{{item.Self ? 'color:red;' : ''}}">{{item.Phone}} / {{item.Score}}分 / {{DetailData.Position.danwei_code===DetailData.Score.My.Department&&DetailData.Position.zhiwei_code===DetailData.Score.My.Position ? ((item.Score-DetailData.Score.My.Score)*0.75)+'分' : '您未晒分本岗'}}</text>
 			</block>
 		</scroll-view>
+		<button style="width: 98%;margin-top:10px;" bindtap="buttonOpenCalculator" type="">逆袭计算器</button>
 	</block>
 
 	<view class="title">职位详情</view>
@@ -135,3 +137,22 @@
 
 <!-- 返回顶部 -->
 <image wx:if="{{backTopValue}}" class="back-top" bindtap="backTop" src="http://jl.offcn.com/zg/ty/images/exam-helper/public/top.png"></image>
+
+<!-- 广告 -->
+<navigator wx:if="{{ADClass!=='' && ADPictureURL!==''}}" class="ad" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id={{ADClass}}&scode={{Suffix}}">
+	<image src="{{ADPictureURL}}"></image>
+</navigator>
+
+<!-- 逆袭计算器遮罩 -->
+<view class="cover calculator-cover" wx:if="{{OpenCalculator}}"></view>
+<!-- 逆袭计算器 -->
+<view wx:if="{{OpenCalculator}}" class="detail calculator">
+	<view class="title">逆袭计算器</view>
+	<view class="score-label">您的成绩 : </view>
+	<input class="score-input" type="digit" confirm-type="done" placeholder="请填写您的笔试总分" bindinput="bindCalculatorMyScoreInput" style="width:53vw;border-bottom: 1px solid #0066CC;{{CalculatorMyScore <= 300 ? '' : 'color:red;'}}"></input>
+	<view class="score-label">对手成绩 : </view>
+	<input class="score-input" type="digit" confirm-type="done" placeholder="请填写对手笔试总分" bindinput="bindCalculatorOtherScoreInput" style="width:53vw;border-bottom: 1px solid #0066CC;{{CalculatorOtherScore <= 300 ? '' : 'color:red;'}}"></input>
+	<text class="tips" style="color:black;">{{CalculatorScore === -1 ? '输入双方成绩即可计算面试需追分差' : '面试需追 '+CalculatorScore+' 分'}}</text>
+	<button style="width: 98%;" bindtap="buttonDoCalculator" type="primary">计算面试需追分差</button>
+	<text class="close" bindtap="buttonCloseCalculator">✘</text>
+</view>
