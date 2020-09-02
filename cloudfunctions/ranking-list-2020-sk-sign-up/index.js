@@ -44,7 +44,7 @@ exports.main = async (event, context) => {
           // 自动格式化 body 为 json
           json: true,
           body: {
-            "CRMSID": "35d64f08966a480d0363a28489955c6c", // HD202007290573 网站专题页-2020吉林省公务员考试同岗位晒分知分差
+            "CRMSID": "0c697ea1ec8d3ad33edf6a31e9223e34", // HD202009020889 小程序-2020吉林省公务员考试同岗位晒分知分差
             "Suffix": event.Suffix,
             "Phone": event.cloudID.data.phoneNumber,
             "Remark": "同岗位晒分知分差"
