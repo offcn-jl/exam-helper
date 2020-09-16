@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
 
+    "pages/event-20200915/index",
     "pages/photo-processing-2020-sydw-sy-szrc/index",
     "pages/photo-processing-2020-jszg/index",
     "pages/event-20200902/index",
