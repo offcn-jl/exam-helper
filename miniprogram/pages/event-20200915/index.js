@@ -288,7 +288,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '吉林省考历年面试分数查询',
+      title: '省面历年分数',
       imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/0915-share.jpg'
     }
   },

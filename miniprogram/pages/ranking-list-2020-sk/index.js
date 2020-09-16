@@ -850,7 +850,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '2020 吉林省考晒分知分差',
+      title: '省考晒分知分差',
       imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper/ranking-list/2020-sk-share.jpg'
     }
   },
