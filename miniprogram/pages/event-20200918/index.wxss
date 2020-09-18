@@ -1,0 +1,69 @@
+/* pages/event-20200902/index.wxss */
+.index {
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/0918-index.jpg) no-repeat;
+  background-size: 100% 100%;
+  height: 100.1vh;
+}
+
+.suffix {
+  opacity: 0.9;
+  position: absolute;
+  left: 43vw;
+  font-size: 14px;
+  color: white;
+}
+
+.index .single-page {
+  position: absolute;
+  top: 85vh;
+  width: 100vw;
+  line-height: 40px;
+  font-size: 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.index-start {
+  top: 85vh;
+  width: 80vw;
+}
+
+.ad {
+  height: 18vh;
+  padding: 1vw;
+}
+
+.ad image {
+  width: 98vw;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  font-size: 34rpx;
+  margin: 2vh auto;
+}
+
+.book {
+  display: inline-block;
+  margin: 0 0 2vh 3vw;
+  width: 30vw;
+  overflow: hidden;
+}
+
+.book image {
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  border-radius: 15px;
+  border: 1px solid #d6d5d3;
+}
+
+.book view {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
