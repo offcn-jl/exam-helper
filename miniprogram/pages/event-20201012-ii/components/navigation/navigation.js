@@ -83,24 +83,24 @@ Component({
           delta: 1,
           fail(e) {
             wx.reLaunch({
-              url: '/pages/index/index'
+              url: '/pages/event-20201013/index'
             })
           }
         })
       }else{
         wx.reLaunch({
-          url: '/pages/index/index'
+          url: '/ppages/event-20201013/index'
         })
       }
     },
     headerHome() {
       wx.reLaunch({
-        url: '/pages/index/index'
+        url: '/pages/event-20201013/index'
       })
     },
     headerSearch() {
       wx.reLaunch({
-        url: '/pages/index/index'
+        url: '/pages/event-20201013/index'
       })
     }
   }
