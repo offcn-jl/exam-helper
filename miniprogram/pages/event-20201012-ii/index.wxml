@@ -1,0 +1,58 @@
+<navigation id='Navigation' title="专业大类查询"  bgcolor="{{bgcolor}}" showIcon='{{showIcon}}' wordcolor="#fff"  show-title="{{true}}" navbg="{{navbg}}" class="fix-top" animation="{{fadeAni}}"></navigation>
+<text class="suffix">{{Suffix}}</text>
+<image src="https://sahd.offcn.com/gkxcx/zysearch_bk.jpg" class="banner_bk"></image>
+<view class="container">
+    <view class="nav_title">
+      <image src="https://sahd.offcn.com/gkxcx/zytitle.png"></image>
+    </view>
+    <view class="select_wrap">
+        <view wx:if="{{SinglePageMode}}" class="single-page">
+          请点击下方“前往小程序”按钮开始使用
+        </view>
+        <view wx:else>
+          <view class='offer_item'>
+            <select prop-array='{{xueliList}}' icnoname="icon-xueli1" selectText="学历" stype="3"  bind:m_select_touch="m_select_touch"></select>
+          </view>
+          <view class="offer_item offer_itemx {{inputactive?'active':''}}">
+            <text class="iconfont icon-icon1"></text>
+            <input class="zysearch" placeholder="请输入专业" bindinput="zysearchInput" placeholder-class="phcolor"></input>
+          </view>
+          <view class='offer_item' >
+            <button wx:if="{{isLogin}}" class="search_btn" bindtap="seach_result">点击查询</button>
+            <button wx:else class="search_btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">点击查询</button>
+          </view>
+        </view>
+        <view class="tip_show">
+          <view class="tip_title">
+             <text class="iconfont icon-jurassic_message"></text>特别说明
+          </view>
+          <view class="tip_detail">
+            <view>①本系统根据官方发布 <text>《2016年国家公务员考试专业分类指导目录》</text>为参考为您提供查询信息。若不确定自身专业归于哪类或查询不到所学专业，建议咨询招考单位!</view>
+            <view> ②对于部分接受大专学历报考的职位，大专学历考生请根据所学专业，参照研究生及本科学历报考表确定属于哪个专业类别。确定依据主要有以下两项：一是大专专业名称及所学课程与上表中某个专业比较接近；二是根据教育部相关规定，所学大专专业对应的“接续本科专业举例”范围内包含上表中某个专业。</view>
+            <view>③以上专业分类均根据官方发布的专业分类参照表，主如有疑问可电话咨询招考单位！</view>
+          </view>
+        </view>
+    </view>
+    <view class="result_titles" hidden="{{result.length<=0}}">
+      <text class="iconfont icon-icon-tongji"></text>共{{result.length}}条结果
+    </view>
+    <view class="result_list" hidden="{{result.length<=0}}">
+      <block wx:for="{{result}}" wx:key="index">
+        <view class="result_item">
+          <text class="result_code">学历：{{item.item02}}</text>
+          <text class="result_code">专业：{{item.item01}}</text>
+          <text class="result_detail">所属专业大类:{{item.item03}}</text>
+          <button class="add_btn" data-text="{{item.item03}}" bindtap="copyText">
+           点击复制
+          </button>
+        </view>
+      </block>
+    </view>
+    <view class="result_error" hidden="{{noresult}}">
+       无匹配内容，请输入专业关键词重试！
+    </view>
+    <!-- 跳转到职位匹配小程序 -->
+		<navigator class="zw_wrap" hidden="{{result.length<=0}}" target="miniProgram" open-type="navigate" app-id="wx63ad0fa9a5b1e3fb" path='pages/province_search/province_search?data={"zwcode":"gj","zwyear":"2021","area":"jl","scode":"{{Suffix}}"}'>
+          <image src="https://tk.zgjsks.com/sa/skxcx/web/zy_gg_pic.png" class="zy_pic"></image>
+		</navigator>
+</view>
