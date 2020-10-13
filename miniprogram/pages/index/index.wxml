@@ -1,0 +1,64 @@
+<view>
+	<view class="cardTopBg" style="background-image: url({{topBg}})"></view>
+	<view class="bgColor"></view>
+	<view class="cardOuter">
+		<navigator class="miniprogram-btn" target="miniProgram" open-type="navigate" app-id="wx63ad0fa9a5b1e3fb" path="pages/index/index">
+			<view class="card">
+				<view class="cardLeft">
+					<image src="{{icon1}}"></image>
+				</view>
+				<view class="cardRight">
+					<view class="cardRightTitle">职位查询</view>
+					<view class="cardRightText">更快更方便，省时省力</view>
+					<image class="cardRightImg" src="{{arrow}}"></image>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="miniprogram-btn" target="miniProgram" open-type="navigate" app-id="wxf3103d96fec4f9b5" path="pages/exam-reserve/index?scene=0">
+			<view class="card">
+				<view class="cardLeft">
+					<image src="{{icon2}}"></image>
+				</view>
+				<view class="cardRight">
+					<view class="cardRightTitle">公告预约</view>
+					<view class="cardRightText">预约咨询师给您答疑解惑</view>
+					<image class="cardRightImg" src="{{arrow}}"></image>
+				</view>
+			</view>
+		</navigator>
+		<navigator url="../photo-processing-2020-sk/index">
+			<view class="card">
+				<view class="cardLeft">
+					<image src="{{icon3}}"></image>
+				</view>
+				<view class="cardRight">
+					<view class="cardRightTitle">吉林省考照片处理</view>
+					<view class="cardRightText">生成报名所需证件照</view>
+					<image class="cardRightImg" src="{{arrow}}"></image>
+				</view>
+			</view>
+		</navigator>
+		<navigator url="../photo-processing-2020-tg/index">
+			<view class="card">
+				<view class="cardLeft">
+					<image src="{{icon3}}"></image>
+				</view>
+				<view class="cardRight">
+					<view class="cardRightTitle">特岗教师照片处理</view>
+					<view class="cardRightText">生成报名所需证件照</view>
+					<image class="cardRightImg" src="{{arrow}}"></image>
+				</view>
+			</view>
+		</navigator>
+		<!-- <view class="card">
+      <view class="cardLeft">
+        <image src="{{icon4}}"></image>
+      </view>
+      <view class="cardRight">
+        <view class="cardRightTitle">权威评测</view>
+        <view class="cardRightText">权威专家全程为您答疑解惑</view>
+        <image class="cardRightImg" src="{{arrow}}"></image>
+      </view>
+    </view> -->
+	</view>
+</view>

@@ -1,5 +1,30 @@
 {
   "pages": [
+    "pages/index/index",
+
+    "pages/event-20201013/index",
+    "pages/event-20201012-ii/index",
+    "pages/event-20201012/index",
+    "pages/photo-processing-2020-gk/index",
+    "pages/event-20200918/index",
+    "pages/event-20200915/index",
+    "pages/photo-processing-2020-sydw-sy-szrc/index",
+    "pages/photo-processing-2020-jszg/index",
+    "pages/event-20200902/index",
+    "pages/photo-processing-2020-sydw-yj/index",
+    "pages/photo-processing-2020-sydw-ly-dl/index",
+    "pages/photo-processing-2020-sydw-th/index",
+    "pages/photo-processing-2020-sydw-gzl/index",
+    "pages/ranking-list-2020-sk/index",
+    "pages/photo-processing-2020-sydw-sy-qg/index",
+    "pages/photo-processing-2020-sydw-sz/index",
+    "pages/photo-processing-2020-sydw-ly/index",
+    "pages/photo-processing-2020-sydw-sy/index",
+    "pages/photo-processing-2020-szyf/index",
+    "pages/photo-processing-2020-sydw-sp/index",
+    "pages/photo-processing-2020-sydw-cc/index",
+    "pages/simulated-enrollment-2020-sk/index",
+    "pages/photo-processing-2020-tg/index",
     "pages/photo-processing-2020-sk/index"
   ],
   "window": {

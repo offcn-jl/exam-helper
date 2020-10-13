@@ -1,0 +1,28 @@
+<!--pages/event-20200902/index.wxml-->
+
+<!-- 欢迎页 -->
+<view class="index" wx:if="{{Step===0}}">
+	<text class="suffix">{{Suffix}}</text>
+	<text wx:if="{{SinglePageMode}}" class="single-page">请点击下方“前往小程序”按钮开始使用</text>
+	<button wx:else class="index-start" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">点 击 领 取</button>
+</view>
+
+<!-- 内容页 -->
+<view class="content" wx:else>
+	<!-- 广告 -->
+	<view wx:if="{{ADClass!=='' && ADPictureURL!==''}}">
+		<!-- 广告跳转 -->
+		<navigator class="ad" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id={{ADClass}}&scode={{Suffix}}">
+			<image src="{{ADPictureURL}}"></image>
+		</navigator>
+	</view>
+
+	<text class="title">2021国考 备考资料</text>
+
+	<view class="books">
+		<view class="book" wx:for="{{books}}" wx:key="index" bindtap="bindShowTap" data-index="{{index}}">
+			<image src="{{item.poster}}" mode="widthFix"></image>
+			<view>{{item.name}}</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,50 @@
+/* pages/index/index.wxss */
+.cardTopBg{
+  width: 100wh;
+  height: 332rpx;
+  background-size: cover;
+}
+.bgColor{
+  z-index: -1;
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  background-color: #f8f8f8;
+}
+.card{
+  position: relative;
+  padding: 53rpx 0 55rpx 60rpx;
+  margin: 0 30rpx 30rpx 30rpx;
+  background-color: #fff;
+}
+.cardOuter{
+  margin-top: -80rpx;
+}
+.cardLeft{
+  float: left;
+  margin-right: 50rpx;
+}
+.cardRight{
+  margin-left: 123rpx;
+}
+.cardLeft image{
+  width: 82rpx;
+  height: 95rpx;
+}
+.cardRightTitle{
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 15rpx;
+}
+.cardRightText{
+  font-size: 14px;
+  color: #999999;
+}
+.cardRightImg{
+  display: block;
+  position: absolute;
+  left: 620rpx;
+  top: 86rpx;
+  width: 22rpx;
+  height: 36rpx;
+}

@@ -1,0 +1,43 @@
+<!-- 标题 -->
+<image class="banner" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/banner.jpg"></image>
+
+<!-- 单页模式提示 -->
+<text wx:if="{{SinglePageMode}}" class="single-page">请点击下方“前往小程序”按钮使用完整功能</text>
+
+<!-- 工具栏 -->
+<view class="tools">
+	<!-- 职位检索 -->
+	<navigator class="tool" target="miniProgram" open-type="navigate" app-id="wx63ad0fa9a5b1e3fb" path='pages/province_search/province_search?data={"zwcode":"gj","zwyear":"2021","area":"jl","scode":"{{Suffix}}"}'>
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool1.jpg"></image>
+	</navigator>
+	<!-- 专业分类 -->
+	<navigator class="tool" url="../event-20201012-ii/index?scene={{Suffix}}">
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool2.jpg"></image>
+	</navigator>
+	<!-- 照片处理 -->
+	<navigator class="tool" url="../photo-processing-2020-gk/index?scene={{Suffix}}">
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool3.jpg"></image>
+	</navigator>
+	<!-- 资料领取 -->
+	<navigator class="tool" url="../event-20201012/index?scene={{Suffix}}">
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool4.jpg"></image>
+	</navigator>
+</view>
+
+<!-- 直播列表 -->
+<view class="occ-list">
+	<view class="occ-list-title">
+		<image src="https://sahd.offcn.com/gkxcx/zbktitle.png"></image>
+	</view>
+	<view class="occ-list-content">
+		<navigator class="occ-list-item" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id={{item.CID}}&scode={{Suffix}}" wx:for="{{OCCList}}" wx:key="index">
+			<image src="icon_play.png" class="occ-list-item-play"></image>
+			<text class="occ-list-item-title">{{item.Title}}</text>
+			<text class="occ-list-item-time">{{item.TimeString}}</text>
+			<image src="icon_btns.png" class="occ-list-item-btn"></image>
+		</navigator>
+	</view>
+</view>
+
+<!-- 后缀 -->
+<text class="suffix">{{Suffix}}</text>

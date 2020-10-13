@@ -38,7 +38,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="beautyCheckOuter">
+	<view class="beautyCheckOuter" wx:if="{{Beauty}}">
 		<label class="checkbox" bindtap="checkboxChange">
 			<checkbox value="智能美颜" checked="{{beautyCheck}}"></checkbox>智能美颜
 		</label>
