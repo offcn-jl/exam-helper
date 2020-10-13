@@ -11,15 +11,15 @@
 		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool1.jpg"></image>
 	</navigator>
 	<!-- 专业分类 -->
-	<navigator class="tool" url="../event-20201012-ii/index">
+	<navigator class="tool" url="../event-20201012-ii/index?scene={{Suffix}}">
 		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool2.jpg"></image>
 	</navigator>
 	<!-- 照片处理 -->
-	<navigator class="tool" url="../photo-processing-2020-gk/index">
+	<navigator class="tool" url="../photo-processing-2020-gk/index?scene={{Suffix}}">
 		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool3.jpg"></image>
 	</navigator>
 	<!-- 资料领取 -->
-	<navigator class="tool" url="../event-20201012/index">
+	<navigator class="tool" url="../event-20201012/index?scene={{Suffix}}">
 		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool4.jpg"></image>
 	</navigator>
 </view>
