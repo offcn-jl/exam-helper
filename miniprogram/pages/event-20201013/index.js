@@ -93,7 +93,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '2021国考备考指南',
-      imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/share.jpg'
+      imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/share.jpg'
     }
   },
 

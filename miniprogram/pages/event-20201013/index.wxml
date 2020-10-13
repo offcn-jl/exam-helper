@@ -8,19 +8,19 @@
 <view class="tools">
 	<!-- 职位检索 -->
 	<navigator class="tool" target="miniProgram" open-type="navigate" app-id="wx63ad0fa9a5b1e3fb" path='pages/province_search/province_search?data={"zwcode":"gj","zwyear":"2021","area":"jl","scode":"{{Suffix}}"}'>
-		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/tool1.jpg"></image>
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool1.jpg"></image>
 	</navigator>
 	<!-- 专业分类 -->
 	<navigator class="tool" url="../event-20201012-ii/index">
-		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/tool2.jpg"></image>
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool2.jpg"></image>
 	</navigator>
 	<!-- 照片处理 -->
 	<navigator class="tool" url="../photo-processing-2020-gk/index">
-		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/tool3.jpg"></image>
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool3.jpg"></image>
 	</navigator>
 	<!-- 资料领取 -->
 	<navigator class="tool" url="../event-20201012/index">
-		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/tool4.jpg"></image>
+		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool4.jpg"></image>
 	</navigator>
 </view>
 
