@@ -113,3 +113,9 @@
   height: 29rpx;
   padding: 2rpx 0 1rpx;
 }
+
+.suffix {
+  opacity: 0.9;
+  margin-left: 43vw;
+  font-size: 14px;
+}

@@ -38,3 +38,6 @@
 		</navigator>
 	</view>
 </view>
+
+<!-- 后缀 -->
+<text class="suffix">{{Suffix}}</text>
