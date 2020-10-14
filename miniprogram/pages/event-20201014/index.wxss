@@ -1,0 +1,6 @@
+/* pages/event-20200902/index.wxss */
+
+.content image {
+  width: 100vw;
+  display: block;
+}

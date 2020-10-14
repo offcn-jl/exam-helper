@@ -39,5 +39,11 @@
 	</view>
 </view>
 
+<!-- 广告 1 -->
+
+<navigator class="tool" url="../event-20201014/index?scene={{Suffix}}">
+	<image class="banner" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/ad.jpg"></image>
+</navigator>
+
 <!-- 后缀 -->
 <text class="suffix">{{Suffix}}</text>
