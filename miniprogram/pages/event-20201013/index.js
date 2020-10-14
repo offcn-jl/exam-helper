@@ -30,7 +30,7 @@ Page({
     wx.cloud.database().collection('OCCList2020GK').where({Disabled:false}).get({
       success: res => {
         res.data.forEach((value, index)=>{
-          res.data[index].TimeString = value.Time.getDate() + '日' + value.Time.getHours() + ":" + value.Time.getMinutes()
+          res.data[index].TimeString = value.Time.getDate() + '日' + value.Time.getHours() + ":" + (value.Time.getMinutes()+"").padStart(2,"0")
         })
         this.setData({
           OCCList: res.data
