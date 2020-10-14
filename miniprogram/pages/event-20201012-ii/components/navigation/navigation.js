@@ -89,7 +89,7 @@ Component({
         })
       }else{
         wx.reLaunch({
-          url: '/ppages/event-20201013/index'
+          url: '/pages/event-20201013/index'
         })
       }
     },
