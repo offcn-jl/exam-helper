@@ -2,10 +2,10 @@ const app = getApp()
 
 Page({
   data: {
-    showIcon: true,
     bgcolor: '',
     result: [],
-    showId: -1
+    showId: -1,
+    Suffix: "", // 后缀
   },
 
   onLoad: function (options) {
@@ -13,6 +13,12 @@ Page({
     this.setData({
       result: wx.getStorageSync('PositionList2020GK')
     })
+    // 获取后缀
+    if (typeof options.scene !== "undefined") {
+      this.setData({
+        Suffix: options.scene
+      })
+    }
   },
 
   /**
@@ -58,5 +64,16 @@ Page({
     this.setData({
       showId: event.currentTarget.dataset.index
     })
-  }
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '2021国考职位检索',
+      path: "/pages/event-20201014-ii/index?scene="+this.data.Suffix,
+      imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014-ii/share.jpg'
+    }
+  },
 })

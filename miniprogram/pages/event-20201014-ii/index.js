@@ -318,8 +318,8 @@ Page({
     } else {
       wx.hideLoading()
       wx.setStorageSync('PositionList2020GK', clound_result.result);
-      wx.navigateTo({
-        url: '/pages/event-20201014-ii/result/index'
+      wx.reLaunch({
+        url: '/pages/event-20201014-ii/result/index?scene='+this.data.Suffix
       })
     }
   },
@@ -338,6 +338,12 @@ Page({
     if (wx.getLaunchOptionsSync().scene === 1154) {
       this.setData({
         SinglePageMode: true
+      })
+    }
+    // 判断是否从详情页返回
+    if (typeof options.login !== "undefined") {
+      this.setData({
+        isLogin: true
       })
     }
   },
@@ -383,7 +389,7 @@ Page({
   onReachBottom: function () {
 
   },
-  
+
   onPageScroll: function (t) {
     if (t.scrollTop >= 180) {
       wx.setNavigationBarColor({
