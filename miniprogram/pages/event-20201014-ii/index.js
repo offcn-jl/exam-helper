@@ -4,8 +4,16 @@ const db = wx.cloud.database()
 Page({
   data: {
     showIcon: true,
-    isShowAuth: false,
-    is2020: false,
+    yearList: [{
+      "id": "1_1",
+      "text": "2021"
+    },{
+      "id": "1_2",
+      "text": "2020"
+    }, {
+      "id": "1_3",
+        "text": "2019"
+    }],
     addressList: [
       {
         "id": "2_1",
@@ -159,6 +167,7 @@ Page({
         "id": "4_9",
         "text": "群众"
       }],
+    yearvalue: '',
     addressvalue: '',
     xuelivalue: '',
     zzmmvalue: '',
@@ -171,19 +180,25 @@ Page({
     SinglePageMode: false, // 单页模式打开
   },
 
-  // ？？？
+  // 监听筛选条件切换
   changez(e) {
     this.setData({
       changeindex: !e.detail.isIndexs
     })
   },
 
-  // ???
+  // 监听筛选条件切换
   m_select_touch(e) {
     let that = this;
     let selectIndex = e.detail.selIndex;
     let stype = e.detail.stype;
-    if (stype == "2") {
+    if (stype == "1") {
+      let value1 = that.data.yearList[selectIndex];
+      that.setData({
+        yearvalue: value1.text
+      })
+    }
+    else if (stype == "2") {
       let value2 = that.data.addressList[selectIndex];
       that.setData({
         addressvalue: value2.text
@@ -268,6 +283,13 @@ Page({
 
   // 搜索
   async seach_result() {
+    if (this.data.yearvalue == "") {
+      wx.showToast({
+        title: '先选择年份',
+        icon: 'none'
+      })
+      return;
+    }
     if (this.data.addressvalue == "") {
       wx.showToast({
         title: '先选择省份',
@@ -300,6 +322,7 @@ Page({
     const clound_result = await wx.cloud.callFunction({
       name: 'event-20201014-ii-search',
       data: {
+        data_year: this.data.yearvalue,
         data_address: this.data.addressvalue,
         data_xueli: this.data.xuelivalue,
         data_zzmm: this.data.zzmmvalue,
@@ -319,7 +342,7 @@ Page({
       wx.hideLoading()
       wx.setStorageSync('PositionList2020GK', clound_result.result);
       wx.reLaunch({
-        url: '/pages/event-20201014-ii/result/index?scene='+this.data.Suffix
+        url: '/pages/event-20201014-ii/result/index?scene=' + this.data.Suffix
       })
     }
   },
