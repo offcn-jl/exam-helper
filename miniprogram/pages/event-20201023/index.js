@@ -202,7 +202,7 @@ Page({
       }
     } else if (id === 2) {
       detail = {
-        Title: "“事”业有成资料包",
+        Title: "事业单位资料包",
         Code: "sydw",
         List: Array.from({length:66}, (v,k) => k)
       }
