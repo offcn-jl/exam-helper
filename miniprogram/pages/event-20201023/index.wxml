@@ -9,13 +9,13 @@
 	<!-- 未登陆 -->
 	<block wx:if="{{!isLogin}}">
 		<button class="tool" wx:for="{{[0,1,2,3,4,5]}}" wx:key="index" open-type="getPhoneNumber" bindgetphonenumber="register" data-index="{{item}}">
-			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1023/icon/{{item}}.jpg"></image>
+			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1023/icon-1026/{{item}}.jpg"></image>
 		</button>
 	</block>
 	<!-- 已登陆 -->
 	<block wx:else>
 		<view class="tool" wx:for="{{[0,1,2,3,4,5]}}" wx:key="index" bindtap="login" data-index="{{item}}">
-			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1023/icon/{{item}}.jpg"></image>
+			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1023/icon-1026/{{item}}.jpg"></image>
 		</view>
 	</block>
 </view>
