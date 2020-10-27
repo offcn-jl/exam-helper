@@ -258,6 +258,8 @@ Page({
       this.setData({
         SinglePageMode: true
       })
+      // 单页模式中，组织后续操作
+      return
     }
 
     // 查询注册状态
