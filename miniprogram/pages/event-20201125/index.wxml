@@ -1,0 +1,33 @@
+<!--pages/event-20201023/index.wxml-->
+<image class="banner" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1023/banner.jpg">
+</image>
+
+<!-- 单页模式提示 -->
+<text wx:if="{{SinglePageMode}}" class="single-page">请点击下方“前往小程序”按钮使用完整功能</text>
+
+<view wx:else>
+	<!-- 工具栏 背景图 -->
+	<image class="tools-background" mode="widthFix"
+		src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1125/bg.jpg"></image>
+	<!-- 工具栏 -->
+	<view class="tools">
+		<!-- 未登陆 -->
+		<block wx:if="{{!isLogin}}">
+			<button class="tool" wx:for="{{[0,1,2,3,4,5]}}" wx:key="index" open-type="getPhoneNumber"
+				bindgetphonenumber="register" data-index="{{item}}">
+				<image mode="widthFix"
+					src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1125/icon-1125/{{item}}.png"></image>
+			</button>
+		</block>
+		<!-- 已登陆 -->
+		<block wx:else>
+			<view class="tool" wx:for="{{[0,1,2,3,4,5]}}" wx:key="index" bindtap="login" data-index="{{item}}">
+				<image mode="widthFix"
+					src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1125/icon-1125/{{item}}.png"></image>
+			</view>
+		</block>
+	</view>
+</view>
+
+<!-- 后缀 -->
+<text class="suffix">{{Suffix}}</text>
