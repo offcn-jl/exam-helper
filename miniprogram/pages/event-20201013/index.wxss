@@ -43,7 +43,7 @@
   -moz-box-shadow: 0px 0px 12rpx rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 12rpx rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 12rpx rgba(0, 0, 0, 0.1);
-  margin: 25rpx auto;
+  margin: 25rpx auto 50rpx;
 }
 
 .occ-list-title {

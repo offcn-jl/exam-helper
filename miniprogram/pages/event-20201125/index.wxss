@@ -1,0 +1,55 @@
+/* pages/event-20201023/index.wxss */
+.banner {
+  width: 100vw;
+}
+
+.single-page {
+  color: red;
+  text-align: center;
+  display: block;
+  margin: 2vh auto;
+  font-weight: 900;
+  font-size: large;
+}
+
+.tools {
+  margin: 0 auto;
+  margin-top: -950rpx;
+}
+
+.tools-background {
+  width: 100vw;
+}
+
+.tools .tool {
+  display: inline-block;
+  margin-top: 0.2vh;
+  /* 移除按钮默认样式 */
+  padding: 0;
+  line-height: 0;
+  background: none;
+  padding-left: 10rpx;
+}
+
+.tools .tool:nth-child(n+4){
+  margin-top: 100rpx;
+}
+
+.tools .tool::after {
+  /* 移除按钮默认样式 */
+  border: none;
+}
+
+.tools .tool:active {
+  opacity: 0.4;
+}
+
+.tools .tool image {
+  width: 30vw;
+}
+
+.suffix {
+  opacity: 0.9;
+  margin-left: 43vw;
+  font-size: 14px;
+}

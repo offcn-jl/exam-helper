@@ -1,0 +1,2 @@
+<!--pages/event-20201023/view/index.wxml-->
+<image lazy-load="true" mode="widthFix" wx:for="{{detail.List}}" wx:key="index" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1023/{{detail.Code}}/{{detail.Code}}_{{index}}.jpg"></image>

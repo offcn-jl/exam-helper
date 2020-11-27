@@ -7,7 +7,7 @@
 <!-- 工具栏 -->
 <view class="tools">
 	<!-- 职位检索 -->
-	<navigator class="tool" target="miniProgram" open-type="navigate" app-id="wx63ad0fa9a5b1e3fb" path='pages/province_search/province_search?data={"zwcode":"gj","zwyear":"2021","area":"jl","scode":"{{Suffix}}"}'>
+	<navigator class="tool" url="../event-20201014-ii/index?scene={{Suffix}}">
 		<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1013/tool1.jpg"></image>
 	</navigator>
 	<!-- 专业分类 -->
@@ -38,6 +38,12 @@
 		</navigator>
 	</view>
 </view>
+
+<!-- 广告 1 -->
+
+<navigator class="tool" url="../event-20201014/index?scene={{Suffix}}">
+	<image class="banner" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/ad.jpg"></image>
+</navigator>
 
 <!-- 后缀 -->
 <text class="suffix">{{Suffix}}</text>

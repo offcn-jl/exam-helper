@@ -1,0 +1,5 @@
+/* pages/event-20201023/view/index.wxss */
+image {
+  display: block;
+  width: 100vw;
+}

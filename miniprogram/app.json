@@ -2,6 +2,13 @@
   "pages": [
     "pages/index/index",
 
+    "pages/photo-processing-2020-sydw-mhk/index",
+    "pages/event-20201125/index",
+    "pages/event-20201023/index",		
+    "pages/event-20201023/view/index",		
+    "pages/event-20201014-ii/index",		
+    "pages/event-20201014-ii/result/index",		
+    "pages/event-20201014/index",
     "pages/event-20201013/index",
     "pages/event-20201012-ii/index",
     "pages/event-20201012/index",

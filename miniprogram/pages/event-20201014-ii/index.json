@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "select": "../event-20201012-ii/components/select/select",
+    "select-earch": "components/selectSearch/selectSearch",
+    "navigation": "../event-20201012-ii/components/navigation/navigation"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white"
+}

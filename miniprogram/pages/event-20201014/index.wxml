@@ -1,0 +1,13 @@
+<!--pages/event-20200902/index.wxml-->
+
+<!-- 内容页 -->
+<view class="content">
+	<!-- 第一页 -->
+	<image lazy-load="true" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/1_01.jpg"></image>
+	<!-- 第二页 -->
+	<image lazy-load="true" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/1_02.jpg"></image>
+	<!-- 第三页 -->
+	<image lazy-load="true" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/1_03.jpg"></image>
+	<!-- 第四页 -->
+	<image lazy-load="true" mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/event/2020/1014/1_04.jpg"></image>
+</view>
