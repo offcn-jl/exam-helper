@@ -7,7 +7,7 @@ Page({
     bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2020-sydw-spyr-index.jpg", // 首页背景图
     shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2020-sydw-spyr-share.jpg", // 分享好友的小程序卡片图片
     Name: "四平事业单位引进人才公告", // 公告 ( 考试 ) 名称
-    CRMSID: "f328237608cd1a2da8113d17966488af", // HD202012071408 网站专题页-2020下教师资格面试报名照片处理器
+    CRMSID: "863033fccb7cede0b4aa0903f69a02c3", // HD202012072142 网站专题页-四平事业单位引进人才公告专业分类系统
     Width: "250", // 裁剪框宽度
     Height: "350", // 裁剪框高度
     SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
