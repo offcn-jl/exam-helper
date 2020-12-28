@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
 
+    "pages/photo-processing-2020-zh-spjcjg/index",
     "pages/photo-processing-2020-sljs/index",
     "pages/photo-processing-2020-sydw-spyr/index",
     "pages/photo-processing-2020-jzms/index",
