@@ -6,7 +6,7 @@ Page({
     Suffix: "", //后缀
     bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-jl-index.jpg", // 首页背景图
     shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-jl-share.jpg", // 分享好友的小程序卡片图片
-    Name: "2021吉林市磐石市招聘城市社区工作者", // 公告 ( 考试 ) 名称
+    Name: "2021吉林市事业单位招聘", // 公告 ( 考试 ) 名称
     CRMSID: "b5fe801154e61a94775a4cfdead941e8", // HD202103090903 网站专题页-2021吉林市事业单位招聘五大系统 
     Width: "130", // 裁剪框宽度
     Height: "170", // 裁剪框高度
