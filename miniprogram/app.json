@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/photo-processing-2021-sydw-sz/index",
     "pages/index/index",
-
+    "pages/photo-processing-2021-sydw-sz/index",
     "pages/photo-processing-2021-sydw-ly/index",
     "pages/photo-processing-2021-sydw-jl/index",
     "pages/photo-processing-2021-sydw-sp-ls/index",
