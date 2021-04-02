@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+
+    "pages/ranking-list-2021-sk/index",
     "pages/photo-processing-2021-sydw-sz/index",
     "pages/photo-processing-2021-sydw-ly/index",
     "pages/photo-processing-2021-sydw-jl/index",
