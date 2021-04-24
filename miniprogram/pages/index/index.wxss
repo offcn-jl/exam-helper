@@ -1,16 +1,14 @@
 /* pages/index/index.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
 .cardTopBg{
   width: 100wh;
   height: 332rpx;
   background-size: cover;
 }
-.bgColor{
-  z-index: -1;
-  height: 100vh;
-  position: absolute;
-  width: 100vw;
-  background-color: #f8f8f8;
-}
+
 .card{
   position: relative;
   padding: 53rpx 0 55rpx 60rpx;
