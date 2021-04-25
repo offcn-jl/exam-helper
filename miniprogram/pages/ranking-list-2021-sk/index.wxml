@@ -138,9 +138,14 @@
 <!-- 返回顶部 -->
 <image wx:if="{{backTopValue}}" class="back-top" bindtap="backTop" src="http://jl.offcn.com/zg/ty/images/exam-helper/public/top.png"></image>
 
-<!-- 广告 -->
-<navigator wx:if="{{ADClass!=='' && ADPictureURL!==''}}" class="ad" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id={{ADClass}}&scode={{Suffix}}">
+<!-- 广告 19课堂 -->
+<!-- <navigator wx:if="{{ADClass!=='' && ADPictureURL!==''}}" class="ad" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id={{ADClass}}&scode={{Suffix}}">
 	<image mode="widthFix" src="{{ADPictureURL}}"></image>
+</navigator> -->
+
+<!-- 广告 小能 -->
+<navigator wx:if="{{Step===1}}" class="ad" target="miniProgram" open-type="navigate" app-id="wx5e256375813b119f" path="pages/ntalk/index{{Suffix?'?scene='+Suffix:''}}">
+	<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/public/ad-2021-sk-ntalk.jpg"></image>
 </navigator>
 
 <!-- 逆袭计算器遮罩 -->
