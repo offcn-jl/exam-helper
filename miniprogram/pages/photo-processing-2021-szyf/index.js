@@ -6,7 +6,7 @@ Page({
     Suffix: "", //后缀
     bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-szyf-index.jpg", // 首页背景图
     shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-szyf-share.jpg", // 分享好友的小程序卡片图片
-    Name: "2021三支一扶", // 公告 ( 考试 ) 名称
+    Name: "2021年吉林三支一扶", // 公告 ( 考试 ) 名称
     CRMSID: "78f154caf5bb4055755fa0982bccfff5", // HD202105120300    网站专题页-五大系统查询
     Width: "295", // 裁剪框宽度
     Height: "413", // 裁剪框高度
