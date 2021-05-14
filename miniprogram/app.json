@@ -2,7 +2,8 @@
   "pages": [
 
     "pages/index/index",
-
+    
+    "pages/photo-processing-2021-sydw-bc/index",
     "pages/photo-processing-2021-sydw-thja/index",
     "pages/photo-processing-2021-szyf/index",
     "pages/photo-processing-2021-sydw-bc-ty/index",
