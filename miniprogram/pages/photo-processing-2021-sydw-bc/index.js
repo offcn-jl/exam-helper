@@ -8,13 +8,13 @@ Page({
     shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-bc-share.jpg", // 分享好友的小程序卡片图片
     Name: "2021年白山事业单位招聘1号公告", // 公告 ( 考试 ) 名称
     CRMSID: "3fcfb4e57872d7b08165df81428886bb", // HD202105141159    网站专题页-2021年白山事业单位招聘1号公告五大系统
-    Width: "413", // 裁剪框宽度  413*531
-    Height: "531", // 裁剪框高度
+    Width: "206", // 裁剪框宽度  413*531(小二寸及以上时使用，大小为原来的1/2)
+    Height: "266", // 裁剪框高度
     SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
     DisableZoom: true, // 禁止缩放 ( 放大, 放大后可以提升图片清晰度 )
     Beauty: false, // 开启美颜
     BackgroundColor: "#fff", // 照片背景色
-    MaxTimes: 10 // 最大使用次数
+    MaxTimes: 1000 // 最大使用次数
   },
 
   /**
