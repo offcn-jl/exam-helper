@@ -3,6 +3,6 @@
   "navigationBarTitleText": "中公教育照片处理系统",
   "disableScroll": false,
   "usingComponents": {
-    "photo-processing": "../../components/photo-processing"
+    "photo-processing2": "../../components/photo-processing2"
   }
 }
