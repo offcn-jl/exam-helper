@@ -6,7 +6,7 @@ Page({
     Suffix: "", //后缀
     bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-yb-index.jpg", // 首页背景图
     shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-yb-share.jpg", // 分享好友的小程序卡片图片
-    Name: "2021白城通榆县事业单位招聘", // 公告 ( 考试 ) 名称
+    Name: "2021延边事业单位招聘", // 公告 ( 考试 ) 名称
     CRMSID: "c359ec0ffa2b875dd09729784f64a7a2", // HD202102060291 网站专题页-2021延边州事业单位报名指导工具
     Width: "295", // 裁剪框宽度
     Height: "413", // 裁剪框高度
