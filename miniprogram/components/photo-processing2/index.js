@@ -341,9 +341,8 @@ Component({
             // 从 Canvas 实例中获取临时图片链接
             wx.canvasToTempFilePath({
               canvasId: 'photoCanvas',
-              // 特殊样式，导出图片为原要求的2倍
-              destWidth: _this.properties.Width*2,
-              destHeight: _this.properties.Height*2,
+              destWidth: _this.properties.Width*2, 
+              destHeight: _this.properties.Height*2, 
               fileType: "jpg",
               quality: _this.properties.SaveQuality,
               success(res) {
