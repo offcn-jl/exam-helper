@@ -8,9 +8,9 @@ Page({
     shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-yb-share.jpg", // 分享好友的小程序卡片图片
     Name: "2021延边事业单位招聘", // 公告 ( 考试 ) 名称
     CRMSID: "c359ec0ffa2b875dd09729784f64a7a2", // HD202102060291 网站专题页-2021延边州事业单位报名指导工具
-    Width: "295", // 裁剪框宽度
-    Height: "413", // 裁剪框高度
-    SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
+    Width: "257", // 裁剪框宽度
+    Height: "360", // 裁剪框高度
+    SaveQuality: 0.9, // 保存品质 ( 0 ~ 1 )
     DisableZoom: true, // 禁止缩放 ( 放大, 放大后可以提升图片清晰度 )
     Beauty: false, // 开启美颜
     BackgroundColor: "#fff", // 照片背景色
