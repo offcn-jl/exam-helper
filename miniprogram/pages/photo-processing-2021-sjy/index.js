@@ -13,7 +13,7 @@ Page({
     SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
     DisableZoom: true, // 禁止缩放 ( 放大, 放大后可以提升图片清晰度 )
     Beauty: false, // 开启美颜
-    BackgroundColor: "#fff", // 照片背景色
+    BackgroundColor: "#00bff3", // 照片背景色
     MaxTimes: 10 // 最大使用次数
   },
 
