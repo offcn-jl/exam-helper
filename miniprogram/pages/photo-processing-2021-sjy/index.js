@@ -4,10 +4,10 @@ Page({
    */
   data: {
     Suffix: "", //后缀
-    bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-yb-index.jpg", // 首页背景图
-    shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sydw-yb-share.jpg", // 分享好友的小程序卡片图片
-    Name: "2021书记员招聘", // 公告 ( 考试 ) 名称
-    CRMSID: "c359ec0ffa2b875dd09729784f64a7a2", // HD202102060291 网站专题页-2021延边州事业单位报名指导工具
+    bgImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sjy-index.jpg", // 首页背景图
+    shareImage: "http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-sjy-share.jpg", // 分享好友的小程序卡片图片
+    Name: "2021吉林地区两级法院招聘文职人员94人", // 公告 ( 考试 ) 名称
+    CRMSID: "62099d89f39ffcf56a6c63c134d85dd3", // HD202106090586 小程序-吉林市书记员照片处理系统
     Width: "140", // 裁剪框宽度
     Height: "170", // 裁剪框高度
     SaveQuality: 1, // 保存品质 ( 0 ~ 1 )
