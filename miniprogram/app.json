@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    
+
+    "pages/query-2021-rmcx-bs/index",
+    "pages/query-2021-rmcx-bs/result/index",
     "pages/enroll-2021-szyf/index",
     "pages/enroll-2021-szyf/result/index",
     "pages/matching-2021-lnbmrs-jl/index",

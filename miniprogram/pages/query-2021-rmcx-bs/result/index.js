@@ -2,15 +2,16 @@ const app = getApp()
 
 Page({
   data: {
-    title:"历年报名人数-吉林市事业单位历年报名人数查询",// 标题
-    imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnbmrs-jl-share.jpg",// 分享时显示的图片
-    superiorLink:"/pages/matching-2021-lnbmrs-jl/index", //上级链接
-    actid:"39925", //zg99id
+    title:"入面查询-2021吉林白山市事业单位招聘入面查询系统",// 标题  
+    imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021rmcx-bs-share.jpg",// 分享时显示的图片
+    superiorLink:"/pages/query-2021-rmcx-bs/index", //上级链接
+    actid:"39967", //zg99id
 
     suffix: "", // 后缀
     showId: 0, // 当前显示的元素的 ID
     query: { // 查询条件
       limits: 10,
+      // order: asc, //正序（不好使）
       sstime: new Date().valueOf(),
     }, 
     zcounts: 0,//最大数据量
@@ -23,11 +24,11 @@ Page({
   },
 
   //可收放数据样式
-  // more: function (event) {
-  //   this.setData({
-  //     showId: event.currentTarget.dataset.index
-  //   })
-  // },
+  more: function (event) {
+    this.setData({
+      showId: event.currentTarget.dataset.index
+    })
+  },
 
   // 上拉刷新
   onReachBottom() {
@@ -79,9 +80,8 @@ Page({
     // 获取后缀
     if (typeof options.scene !== "undefined") this.setData({ suffix: options.scene })
     // 配置查询条件
-    if (typeof options.city !== "undefined" && options.city !== "不限") this.setData({ "query.city": options.city })
-    if (typeof options.department !== "undefined" && options.department !== "不限") this.setData({ "query.department": options.department })
-    if (typeof options.job !== "undefined" && options.job !== "不限") this.setData({ "query.job": options.job })
+    if (typeof options.zpdw !== "undefined" && options.zpdw !== "不限") this.setData({ "query.zpdw": options.zpdw })
+    if (typeof options.gwmc !== "undefined" && options.gwmc !== "不限") this.setData({ "query.gwmc": options.gwmc })
     this.search();
   },
   /**
