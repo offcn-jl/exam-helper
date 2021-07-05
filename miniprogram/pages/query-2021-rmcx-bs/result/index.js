@@ -11,7 +11,7 @@ Page({
     showId: 0, // 当前显示的元素的 ID
     query: { // 查询条件
       limits: 10,
-      // order: asc, //正序（不好使）
+      order:0, //正序排列
       sstime: new Date().valueOf(),
     }, 
     zcounts: 0,//最大数据量
