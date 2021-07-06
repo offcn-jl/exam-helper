@@ -86,13 +86,15 @@ page {
   display: inline-block;
 }
 
+.result_num navigator{
+  margin-right:100rpx;
+}
 .change_btn {
   font-size: 34rpx;
   color: #fff;
   background: none;
   display: inline-block;
-  padding: 0;
-  padding-right: 100rpx;
+  padding: 0 20rpx;
   line-height: 34rpx;
   height: 34rpx;
   margin-top: 21rpx;

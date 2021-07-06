@@ -20,7 +20,7 @@
 </view>
 
 <view class="resultWrap">
-	<block wx:for="{{result}}" wx:key="index">
+	<!-- <block wx:for="{{result}}" wx:key="index"> -->
 		<view class="result_item" bindtap="more" data-index="{{index}}">
 			<text class="result_code">{{query.city}}</text>
 			<view class="item_group">
@@ -31,5 +31,5 @@
 			<text class="result_detail">报考人数：{{result?result:'0'}}</text>
 			<!-- <button class="add_btn">年份：2020年</button> -->
 		</view>
-	</block>
+	<!-- </block> -->
 </view>
