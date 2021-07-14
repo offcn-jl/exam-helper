@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    
+
+    "pages/score-2021-tgjs/index",
+    "pages/score-2021-tgjs/result/index",
     "pages/photo-processing-2021-sycl/index",
     "pages/query-2021-rmcx-bs/index",
     "pages/query-2021-rmcx-bs/result/index",
