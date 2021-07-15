@@ -15,7 +15,7 @@
 			<select options='{{postList}}' icon="icon-icon1" text="岗位" type="post" bind:m_select_touch="m_select_touch"></select>
 		</view>
 		<view class="offer_item last {{active ? 'on' : ''}}">
-			<input options='{{gradeList}}' placeholder="笔试成绩" type="grade" bindinput='getInputValue'/>
+			<input options='{{gradeList}}' placeholder="笔试成绩" type="digit" bindinput='getInputValue'/>
 			<text class="iconfont icon-rili icon_title"></text>
 		</view>
 		<view class='offer_item btn'>

@@ -58,17 +58,6 @@ Page({
       })
       wx.hideLoading()
     })
-
-    // // 查找所有数据总个数
-    // db.collection("score-2021-tgjs").where(_this.data.query).get({
-    //   success: res =>{
-    //     console.log("本地调取",res)
-    //     _this.setData({
-    //       result:res.data
-    //     })
-    //     wx.hideLoading()
-    //   }
-    // })
   },
 
   onLoad: function (options) {

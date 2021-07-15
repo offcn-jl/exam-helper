@@ -12,7 +12,6 @@ Page({
     countyList: [ ],//县区
     subjectList: [],//学段
     postList: [],//岗位
-    gradeList: 0,//成绩
 
     cityValue: '', //地市
     countyValue: '', //县区
@@ -27,7 +26,7 @@ Page({
     active:false, //判断是否录入笔试成绩，如果录入了，变为true，文字颜色变红
   },
   
-  // 监听筛选条件切换(地市做出选择以后，报考职位发生变化)
+  // 监听筛选条件切换(地市做出选择以后，岗位发生变化)
   m_select_touch(e) {
     var _this=this
     switch (e.detail.type) {
@@ -39,10 +38,11 @@ Page({
           data: {level: '2', grfiled:'city',grtext:_this.data.cityValue,sstime: new Date().valueOf()},  //二级联动，上级联动字段名，上级联动参数值
           success(res) {
             let county_list = JSON.parse(res.data.substring(1, res.data.length - 1));  //去头尾（）,转为json对象
-            // 现将之前地市选项中报考职位内容清空
+            // 现将之前地市选项中岗位内容清空
             _this.setData({
               countyList:  [],
-              subjectList:  []
+              subjectList:  [],
+              postList: []
             });
             // 将数据添加到已清空的报考职位中
             for( var i=0; i<county_list.lists.length; i++ ){
@@ -65,11 +65,10 @@ Page({
           data: {level: '3', grfiled:'county',grtext:_this.data.countyValue,sstime: new Date().valueOf()},  //二级联动，上级联动字段名，上级联动参数值
           success(res) {
             let subject_list = JSON.parse(res.data.substring(1, res.data.length - 1));  //去头尾（）,转为json对象
-            // 现将之前地市选项中报考职位内容清空
             _this.setData({
-              subjectList:  []
+              subjectList:  [],
+              postList: []
             });
-            // 将数据添加到已清空的报考职位中
             for( var i=0; i<subject_list.lists.length; i++ ){
               _this.setData({
                 subjectList:  _this.data.subjectList.concat(subject_list.lists[i].subject)
@@ -90,11 +89,10 @@ Page({
           data: {level: '4', grfiled:'subject',grtext:_this.data.subjectValue,sstime: new Date().valueOf()},  //二级联动，上级联动字段名，上级联动参数值
           success(res) {
             let post_list = JSON.parse(res.data.substring(1, res.data.length - 1));  //去头尾（）,转为json对象
-            // 现将之前地市选项中报考职位内容清空
+            // 现将之前地市选项中岗位内容清空
             _this.setData({
               postList:  []
             });
-            // 将数据添加到已清空的报考职位中
             for( var i=0; i<post_list.lists.length; i++ ){
               _this.setData({
                 postList:  _this.data.postList.concat(post_list.lists[i].post)
@@ -155,7 +153,7 @@ Page({
     }else if(!regu.test(_this.data.gradeValue)||_this.data.gradeValue<0||_this.data.gradeValue>130){
       wx.showToast({ title: '请输入正确的分数', icon: 'none' })
     }else{
-      // 将数据录入user 导出电话号  运行“报名”函数
+      // 将数据录入user 导出电话号  运行“晒分”函数
       getApp().methods.register(e, _this.data.suffix, _this.data.CRMEFSID, _this.data.CRMRemark, phone => {
         _this.setData({ phone })
         wx.cloud.database().collection('user')
@@ -184,6 +182,8 @@ Page({
                         city:_this.data.cityValue,
                         county:_this.data.countyValue,
                         subject:_this.data.subjectValue,
+                        post:_this.data.postValue,
+                        grade:_this.data.gradeValue,
                       },
                     }).then(res=>{
                       _this.seach_result() // 执行查询
@@ -200,6 +200,8 @@ Page({
                         city:_this.data.cityValue,
                         county:_this.data.countyValue,
                         subject:_this.data.subjectValue,
+                        post:_this.data.postValue,
+                        grade:_this.data.gradeValue,
                       }
                     }).then(res=>{
                       _this.seach_result() // 执行查询

@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     
+    "pages/photo-processing-2021-spgzl/index",
     "pages/score-2021-tgjs/index",
     "pages/score-2021-tgjs/result/index",
     "pages/photo-processing-2021-sycl/index",
