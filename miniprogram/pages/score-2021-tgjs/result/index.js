@@ -54,7 +54,7 @@ Page({
     }).then(res => {
       console.log("云函数调用",res)
       _this.setData({
-        result:_this.data.result.concat(res.result.Detail.list)
+        result:_this.data.result.concat(res.result.Data.list.list)
       })
       wx.hideLoading()
     })

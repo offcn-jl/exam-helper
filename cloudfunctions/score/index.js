@@ -3,11 +3,12 @@ const cloud = require('wx-server-sdk')
 
 cloud.init({
   // env: cloud.DYNAMIC_CURRENT_ENV
-  env:"test-trti4"//当前环境ID
+  // env:"test-trti4"//当前环境ID
+  // env:"release-opb6d"//当前环境ID
+  env:cloud.DYNAMIC_CURRENT_ENV
 })
 // 云函数入口函数
 exports.main =  async (event, context) => {
-  // 数量应该不能超出100个，故暂时不设置每次调用10条
   const db = cloud.database()
   let len = event.len//获取页面传递的event内的len值
   // let list = await db.collection('score-2021-tgjs')
@@ -29,7 +30,7 @@ exports.main =  async (event, context) => {
   }).skip(len).limit(10).end()
   
   //如果查询出错， 返回错误
-  if (list.errMsg !== "cloud.callFunction:ok") {
+  if (list.errMsg !== "collection.aggregate:ok") {
     return { Msg: "list查询出错", Detail: list }
   }
 
