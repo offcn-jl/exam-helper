@@ -156,6 +156,7 @@ Page({
       // 将数据录入user 导出电话号  运行“晒分”函数
       getApp().methods.register(e, _this.data.suffix, _this.data.CRMEFSID, _this.data.CRMRemark, phone => {
         _this.setData({ phone })
+        console.log(_this.data.phone)
         wx.cloud.database().collection('user')
         .field({ _openid: true,phone:true })
         .where({ createdTime: wx.cloud.database().command.gte(new Date((new Date()).getTime() - 30 * 24 * 60 * 60 * 1000)) })
@@ -174,8 +175,8 @@ Page({
                   _this.setData({
                     result:res.total
                   })
-                  console.log("注册期间，判断szyf里是否有对应数据",_this.data.result)
-                  if(_this.data.result == ""){ //如果result是空，表示openid没有在score-2021-tgjs里
+                  console.log("注册期间，判断szyf里是否有对应数据2",_this.data.result)
+                  if(_this.data.result == "1"){ //如果result是空，表示openid没有在score-2021-tgjs里
                     db.collection("score-2021-tgjs").add({ //将新用户的手机号录入score-2021-tgjs
                       data:{
                         phone:_this.data.phone, //手机号码
@@ -194,25 +195,37 @@ Page({
                       })
                     })
                   }else{    //如果result有值，或为1，表示score-2021-tgjs里有这个openid
-                    // 对原来数据进行修改
-                    db.collection("score-2021-tgjs").where({_openid:_this.data.openid}) .update({
-                      data: {
-                        city:_this.data.cityValue,
-                        county:_this.data.countyValue,
-                        subject:_this.data.subjectValue,
-                        post:_this.data.postValue,
-                        grade:_this.data.gradeValue,
+                    wx.showModal({
+                      title: '提示',
+                      content: '您已晒过分，仅可查询',
+                      success (res) {
+                        if (res.confirm) {
+                          console.log('用户点击确定')
+                          _this.seach_result() // 执行查询
+                        } else if (res.cancel) {
+                          console.log('用户点击取消')
+                        }
                       }
-                    }).then(res=>{
-                      _this.seach_result() // 执行查询
-                    }).catch(err =>{
-                      console.error(err);
-                      getApp().methods.handleError({
-                        err: err,
-                        title: "出错啦",
-                        content: "创建用户失败"
-                      })
                     })
+                    // 对原来数据进行修改
+                    // db.collection("score-2021-tgjs").where({_openid:_this.data.openid}) .update({
+                    //   data: {
+                    //     city:_this.data.cityValue,
+                    //     county:_this.data.countyValue,
+                    //     subject:_this.data.subjectValue,
+                    //     post:_this.data.postValue,
+                    //     grade:_this.data.gradeValue,
+                    //   }
+                    // }).then(res=>{
+                    //   _this.seach_result() // 执行查询
+                    // }).catch(err =>{
+                    //   console.error(err);
+                    //   getApp().methods.handleError({
+                    //     err: err,
+                    //     title: "出错啦",
+                    //     content: "创建用户失败"
+                    //   })
+                    // })
                   }
                 },
                 fail: res => {
@@ -257,25 +270,37 @@ Page({
           })
         })
       }else{    //如果result有值，或为1，表示score-2021-tgjs里有这个openid
-        // 对原来数据进行修改
-        db.collection("score-2021-tgjs").where({_openid:_this.data.openid}) .update({
-          data: {
-            city:_this.data.cityValue,
-            county:_this.data.countyValue,
-            subject:_this.data.subjectValue,
-            post:_this.data.postValue,
-            grade:_this.data.gradeValue,
+        wx.showModal({
+          title: '提示',
+          content: '您已晒过分，仅可查询',
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+              _this.seach_result() // 执行查询
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
           }
-        }).then(res=>{
-          _this.seach_result() // 执行查询
-        }).catch(err =>{
-          console.error(err);
-          getApp().methods.handleError({
-            err: err,
-            title: "出错啦",
-            content: "创建用户失败"
-          })
         })
+        // 对原来数据进行修改
+        // db.collection("score-2021-tgjs").where({_openid:_this.data.openid}) .update({
+        //   data: {
+        //     city:_this.data.cityValue,
+        //     county:_this.data.countyValue,
+        //     subject:_this.data.subjectValue,
+        //     post:_this.data.postValue,
+        //     grade:_this.data.gradeValue,
+        //   }
+        // }).then(res=>{
+        //   _this.seach_result() // 执行查询
+        // }).catch(err =>{
+        //   console.error(err);
+        //   getApp().methods.handleError({
+        //     err: err,
+        //     title: "出错啦",
+        //     content: "创建用户失败"
+        //   })
+        // })
       }
     }
   },

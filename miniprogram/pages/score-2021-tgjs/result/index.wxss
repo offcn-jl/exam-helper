@@ -470,6 +470,11 @@ page {
   margin-top: 20rpx;
   line-height: 40rpx;
 } */
+.wu{
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 70rpx;
+}
 
 
 

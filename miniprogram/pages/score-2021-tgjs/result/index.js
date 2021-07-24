@@ -69,6 +69,12 @@ Page({
     if (typeof options.subject !== "undefined" && options.subject !== "不限") this.setData({ "query.subject": options.subject })
     if (typeof options.post !== "undefined" && options.post !== "不限") this.setData({ "query.post": options.post })
     this.search();
+    console.log("_this.data.result",this.data.result)
+    if(this.data.result == []){
+      this.setData({
+        "result.city":无
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
