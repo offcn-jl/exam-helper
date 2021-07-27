@@ -151,7 +151,7 @@ Page({
     // 相应招聘岗位名称数据
     if (_this.data.cityValue==""||_this.data.countyValue==""||_this.data.subjectValue==""||_this.data.postValue==""||_this.data.gradeValue=="") {
       wx.showToast({ title: '请选择或填写相应栏目', icon: 'none' })
-    }else if(!regu.test(_this.data.gradeValue)||_this.data.gradeValue<0||_this.data.gradeValue>130){
+    }else if(!regu.test(_this.data.gradeValue)||_this.data.gradeValue<0||_this.data.gradeValue>100){
       wx.showToast({ title: '请输入正确的分数', icon: 'none' })
     }else{
       // 将数据录入user 导出电话号  运行“晒分”函数
