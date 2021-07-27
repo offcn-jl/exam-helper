@@ -2,7 +2,7 @@ const db = wx.cloud.database()
 const cloudid = "score-2021-jz-jls"  //云数据库名，用于云函数调用
 Page({
   data: {
-    title:"2021吉林省特岗教师晒分数系统",// 标题
+    title:"2021年吉林市教师招聘晒分数知分差",// 标题
     banner_bk:"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/score-2021-jz-jls-index.jpg",// 背景图片
     imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/score-2021-jz-jls-share.jpg",// 分享时显示的图片
     CRMEFSID: "78680bf625473c5e0204a8650ca44941", // CRM 活动表单 ID
