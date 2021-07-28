@@ -326,8 +326,9 @@ page {
   font-size: 40rpx;
   font-weight: bold;
   color: #3b444e;
-  line-height: 100rpx;
+  line-height: 60rpx;
   text-align: center;
+  margin: 25rpx auto;
 }
 
 /* .result_name {
