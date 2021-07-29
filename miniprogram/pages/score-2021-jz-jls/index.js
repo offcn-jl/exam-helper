@@ -247,7 +247,7 @@ Page({
     // 再次判断相应招聘岗位名称数据（上面部分因判断会有隐藏的情况）
     if (_this.data.cityValue==""||_this.data.countyValue==""||_this.data.subjectValue==""||this.data.postValue==""||this.data.gradeValue=="") {
       wx.showToast({ title: '请选择或填写相应栏目', icon: 'none' })
-    }else if(!regu.test(this.data.gradeValue) ||_this.data.gradeValue<0||_this.data.gradeValue>130){
+    }else if(!regu.test(this.data.gradeValue) ||_this.data.gradeValue<0||_this.data.gradeValue>100){
       wx.showToast({ title: '请输入正确的分数', icon: 'none' })
     }else{
       if(_this.data.result == ""){ //如果result是空，表示openid没有在score-2021-jz-jls里
