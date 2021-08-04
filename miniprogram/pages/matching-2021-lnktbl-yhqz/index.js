@@ -26,8 +26,12 @@ Page({
   // 搜索
   async seach_result() {
     let url = "result/index?scene=" + this.data.suffix
-    if (this.data.bankValue !== "") url += "&bank=" + this.data.bankValue
-    wx.reLaunch({ url })
+    if (this.data.bankValue == ""){
+      wx.showToast({ title: '难道没有您中意的银行吗~ _ ~', icon: 'none' })
+    }else if (this.data.bankValue !== ""){
+      url += "&bank=" + this.data.bankValue
+      wx.reLaunch({ url })
+    }
     // wx.navigateTo({ url })   //尝试点击返回可以回到当前页面，但被十层页面栈限制
   },
 
