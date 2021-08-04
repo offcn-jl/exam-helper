@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    
+
+    "pages/matching-2021-gwjz-rmyh/index",
+    "pages/matching-2021-gwjz-rmyh/result/index",
     "pages/matching-2021-msxs-jl/index",
     "pages/matching-2021-msxs-jl/result/index",
     "pages/score-2021-jz-jls/index",
