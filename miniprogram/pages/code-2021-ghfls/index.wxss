@@ -1,0 +1,8 @@
+/* pages/code-2021-ghfls/index.wxss */
+.code{
+  background:url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/cBlzJ8.jpg) no-repeat center;
+  display:none;
+  position: filex;
+  
+}
+.code-active{display:block}
