@@ -1,14 +1,4 @@
-<!--pages/code-2021-ghfls/index.wxml-->
-<text>pages/code-2021-ghfls/index.wxml</text>
-
-
-
-
-
+<!-- 背景图 -->
+<image src="{{imageUrl}}" class="banner"></image>
 <!-- 按钮 点击添加客服 -->
-<button bindtap="QRcode">点击添加客服</button>
-<button bindtap="close">关闭二维码</button>
-<!-- 点击添加客服后弹出二维码 -->
-<view class="{{QRcode?'code-active code':'code'}}">
-  <image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/{{suffix}}.jpg"></image>
-</view>
+<button class="btn" bindtap="previewImage">点击免费领取</button>
