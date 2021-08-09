@@ -1,4 +1,4 @@
 <!-- 背景图 -->
-<image src="{{imageUrl}}" class="banner"></image>
+<image src="{{banner_bk}}" class="banner"></image>
 <!-- 按钮 点击添加客服 -->
 <button class="btn" bindtap="previewImage">点击免费领取</button>
