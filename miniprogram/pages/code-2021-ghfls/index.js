@@ -32,17 +32,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.scene)
     // 获取后缀
     if (typeof options.scene !== "undefined") {
       // 判断后缀是否对应（宣传方面只有这几个地市后缀，添加此功能是为了预防突发状况）
-      // 如果后缀不对应(即后缀在表里位置为负数)，显示省级后缀
-      if(this.data.codelist.indexOf(options.scene)<0){
-        options.scene = "cBlzJ8"
+      console.log(this.data.codelist.indexOf(options.scene)>=0)
+      if(this.data.codelist.indexOf(options.scene)>=0){  // 如果有对应数据，直接录入
+        this.setData({
+          suffix: options.scene,
+          "imgalist[0]":"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/"+options.scene+".jpg"
+        })
+      }else if(options.scene=="eGuexa" || options.scene=="fSh0rf" || options.scene=="jYDnre" || options.scene=="jZmtio"){
+        // 白城-如果后缀是以上几个，后缀变为白城地市后缀-hvEtbX
+        options.scene = "hvEtbX",  
+        this.setData({
+          suffix: options.scene,
+          "imgalist[0]":"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/"+options.scene+".jpg"
+        })
+      }else{  //如果以上都不满足，就录入省级二维码
+        options.scene = "cBlzJ8",
+        this.setData({
+          suffix: options.scene,
+          "imgalist[0]":"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/"+options.scene+".jpg"
+        })
       }
-      this.setData({
-        suffix: options.scene,
-        "imgalist[0]":"http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/"+options.scene+".jpg"
-      })
     }
     // 动态设置当前页面的标题
     wx.setNavigationBarTitle({
