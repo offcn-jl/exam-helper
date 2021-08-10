@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-
+    
+    "pages/photo-processing-2020-sydw-bc-tn/index",
     "pages/code-2021-ghfls/index",
     "pages/matching-2021-lnktbl-yhqz/index",
     "pages/matching-2021-lnktbl-yhqz/result/index",
