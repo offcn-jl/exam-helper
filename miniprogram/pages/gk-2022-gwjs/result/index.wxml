@@ -34,10 +34,10 @@
 					<view class="item_line"><label>工作地点</label><text>{{item.item20?item.item20:'-'}}</text></view>
 					<view class="item_line"><label>备注</label><text>{{item.item21?item.item21:'-'}}</text></view>
 					<view class="item_line"><label>部门网站</label><text>{{item.item2?item.item22:'-'}}</text></view>
-					<view class="item_line item_line_fs">
+					<!-- <view class="item_line item_line_fs">
 						<label>进面分数线</label>
 						<text>{{item.item07}}</text>
-					</view>
+					</view> -->
 				</view>
 				<view class="jiantou">
 					<image src="https://tk.zgjsks.com/sa//sydw/kbb/jiantou.png" class='{{showId==index? "" : "active"}}'></image>
