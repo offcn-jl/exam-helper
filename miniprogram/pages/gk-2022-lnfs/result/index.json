@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navigation": "../../event-20201012-ii/components/navigation/navigation"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white"
+}

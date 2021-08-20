@@ -71,9 +71,9 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '2022国考职位检索',
-      path: "/pages/gk-2022-gwjs/index?scene="+this.data.Suffix,
-      imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2022-gwjs-gk-share.jpg'
+      title: '2022国考历年分数线查询',
+      path: "/pages/gk-2022-lnfs/index?scene="+this.data.Suffix,
+      imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/gk-2022-lnfs-share.jpg'
     }
   },
 })
