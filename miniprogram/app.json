@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mock-2021-zsb/index",
     
     "pages/gk-2022-gwjs/index",
     "pages/gk-2022-zyfl/index",

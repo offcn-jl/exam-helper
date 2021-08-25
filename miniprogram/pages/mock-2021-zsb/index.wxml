@@ -1,0 +1,134 @@
+<!-- 背景页 -->
+<view class="back" style="background: url({{pic}}bg.jpg ) no-repeat top;background-size: 750rpx 1334rpx;">
+	<!-- logo -->
+	<image mode="widthFix" src="{{pic}}logo.png" class="logo"></image>
+	<!-- 标题 -->
+	<image mode="widthFix" src="{{pic}}topic.png" class="title"></image>
+	<!-- 点击进入 -->
+	<view wx:if="{{page==-1}}" class="container">
+		<!-- 新用户提醒注册 -->
+		<button wx:if="{{!phone}}" class="search_btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">
+			<image mode="widthFix" src="{{pic}}start.png" class="title"></image>
+		</button>
+		<!-- 老用户点击进去 -->
+		<button wx:else class="search_btn" bindtap="getUserProfile">
+			<image mode="widthFix" src="{{pic}}start.png" class="title"></image>
+		</button>
+		<!-- 后缀 -->
+		<view class="suffix">{{suffix}}</view>
+	</view>
+	<!-- 考试成绩 -->
+	<view wx:elif="{{page==-2}}" class="last">
+		<!-- 答案结果 -->
+		<view wx:if="{{!parse}}" style="background: url({{pic}}tit.png) no-repeat top;background-size: 195rpx 52rpx;" class="count">答案结果</view>
+		<view wx:else style="background: url({{pic}}tit.png) no-repeat top;background-size: 195rpx 52rpx;" class="count">答案解析</view>
+		<view class="content score" >
+			<!-- 成绩展示 -->
+			<view wx:if="{{!parse}}">
+				<image mode="widthFix" src="{{pic}}r_tit.png" class="top"></image>
+				<view class="mid">
+					<view>
+						<image mode="widthFix" background-size="cover" src="{{userInfo.avatarUrl}}" class="portrait"></image>
+						<view class="center">
+							<view>姓名：{{userInfo.nickName}}</view>
+							<view>总评类型：<image mode="widthFix" src="{{pic}}rankType_{{grade}}.png" ></image></view>
+						</view>
+						<view class="m_right">
+							<image mode="widthFix" src="{{pic}}{{grade}}.png" ></image>
+						</view>
+					</view>
+				</view>
+				<image mode="widthFix" src="{{pic}}rankTable_{{grade}}.png" style="width:100%"></image>
+				<view class="bot">
+					<view>你的得分超过了<image mode="widthFix" src="{{pic}}rankPercent_{{grade}}.png" class="b_fen"></image>的考生!</view>
+				</view>
+			</view>
+			<!-- 解析题列表 -->
+			<view wx:else>
+				<block wx:for="{{topiclist}}" wx:for-index="index" >
+					<!-- 解析题列表 -->
+					<view class="{{index==parselist?'parselist on':'parselist'}}" >
+						<text class="tit">{{item.problem}}</text>
+						<!-- 选择的答案是红色加x  正确的答案是绿色  如果两个都有 绿色覆盖红色 -->
+						<view data-index="A" bindtap="choice" class="choice {{selects[index]=='A'?'select2':''}} {{topiclist[index].right=='A'?'select1':''}}">
+							<view class="left {{selects[index]=='A'?'select2':''}} {{topiclist[index].right=='A'?'select1':''}}">A</view>
+							<view class="right">{{item.A}}</view>
+						</view>
+						<view data-index="B" bindtap="choice" class="choice {{selects[index]=='B'?'select2':''}} {{topiclist[index].right=='B'?'select1':''}}">
+							<view class="left {{selects[index]=='B'?'select2':''}} {{topiclist[index].right=='B'?'select1':''}}">B</view>
+							<view class="right">{{item.B}}</view>
+						</view>
+						<view data-index="C" bindtap="choice" class="choice {{selects[index]=='C'?'select2':''}} {{topiclist[index].right=='C'?'select1':''}}">
+							<view class="left {{selects[index]=='C'?'select2':''}} {{topiclist[index].right=='C'?'select1':''}}">C</view>
+							<view class="right">{{item.C}}</view>
+						</view>
+						<view data-index="D" bindtap="choice" class="choice {{selects[index]=='D'?'select2':''}} {{topiclist[index].right=='D'?'select1':''}}">
+							<view class="left {{selects[index]=='D'?'select2':''}} {{topiclist[index].right=='D'?'select1':''}}">D</view>
+							<view class="right">{{item.D}}</view>
+						</view>
+						<view class="jiexi">{{item.jiexi}}</view>
+						<view class="di">
+							<image mode="widthFix" src="{{pic}}prev.png" bindtap="parseprev"></image>
+							<image mode="widthFix" src="{{pic}}next.png" bindtap="parsenext"></image>
+						</view>
+					</view>
+				</block>
+			</view>
+		</view>
+		<!-- 答案解析按钮 -->
+		<image wx:if="{{!parse}}" mode="widthFix" src="{{pic}}ckjx.png" class="ckjx" bindtap="ckjx"></image>
+		<!-- 二维码 -->
+		<view class="list">
+			<button  bindtap="previewImage" class="con1" data-src="code1">
+				<image src="{{pic}}code1.png" ></image>
+				<view>吉林中公统招专升本公众号</view>
+			</button>
+			<button  bindtap="previewImage" class="con1" data-src="code2">
+				<image src="{{pic}}code2.png" ></image>
+				<view>吉林专升本备考QQ群</view>
+			</button>
+		</view>
+	</view>
+	<!-- 考试内容页 -->
+	<view wx:else>
+		<block wx:for="{{topiclist}}" wx:for-index="index" >
+			<view class="{{index==page?'con on':'con'}}">
+				<!-- 倒计时 -->
+				<view style="background: url({{pic}}tit.png) no-repeat top;background-size: 195rpx 52rpx;" class="count">
+				{{time}}
+				</view>
+				<!-- 题 -->
+				<view class="{{index==page?'content on':'content'}}" >
+					<text class="tit">{{item.problem}}</text>
+					<view data-index="A" bindtap="choice" class="{{choice=='A'?'choice select':'choice'}}">
+						<view class="left">A</view>
+						<view class="right">{{item.A}}</view>
+					</view>
+					<view data-index="B" bindtap="choice" class="{{choice=='B'?'choice select':'choice'}}">
+						<view class="left">B</view>
+						<view class="right">{{item.B}}</view>
+					</view>
+					<view data-index="C" bindtap="choice" class="{{choice=='C'?'choice select':'choice'}}">
+						<view class="left">C</view>
+						<view class="right">{{item.C}}</view>
+					</view>
+					<view data-index="D" bindtap="choice" class="{{choice=='D'?'choice select':'choice'}}">
+						<view class="left">D</view>
+						<view class="right">{{item.D}}</view>
+					</view>
+				</view>
+				<!-- 进度条 -->
+				<view class="progress">
+					<view>{{progress}}%</view>
+					<!-- 内部长度 -->
+					<view class="blue" style="width:{{progresss}}vw"></view>
+				</view>
+				<!-- 下一题 -->
+				<view wx:if="{{index==topiclist.length-1}}" class="submit" bindtap="submit"></view>
+				<view wx:else class="next" bindtap="next"></view>
+			</view>
+		</block>
+	</view> 
+</view>
+
+
