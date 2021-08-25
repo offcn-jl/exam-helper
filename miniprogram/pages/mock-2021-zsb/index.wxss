@@ -35,7 +35,6 @@ page {
   border: none;
   position: fixed;
   bottom: 20vw;
-  left: 35vw;
 }
 .search_btn::after{
   border:none;
@@ -176,6 +175,9 @@ page {
 }
 .score .mid .center view{
   font-size: 28rpx;
+  width: 290rpx;
+  overflow: hidden;
+  height: 60rpx;
 }
 .score .mid .center view image{
   display: block;
