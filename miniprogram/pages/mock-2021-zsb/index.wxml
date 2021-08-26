@@ -124,7 +124,7 @@
 					<view class="blue" style="width:{{progresss}}vw"></view>
 				</view>
 				<!-- 下一题 -->
-				<view wx:if="{{index==topiclist.length-1}}" class="submit" bindtap="submit"></view>
+				<view wx:if="{{selects.length-1==topiclist.length-1}}" class="submit" bindtap="submit"></view>
 				<view wx:else class="next" bindtap="next"></view>
 			</view>
 		</block>

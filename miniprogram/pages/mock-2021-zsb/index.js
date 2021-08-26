@@ -275,7 +275,6 @@ Page({
     // 进度条百分百，倒计时不弹窗停止
     this.setData({
       progress: 100,     // 百分比 
-      time:false,        // 倒计时为假值，倒计时停止，不弹窗    
     })
     // 计算分数
     for(var i=0;i<=this.data.selects.length-1;i++){
@@ -305,6 +304,7 @@ Page({
     // 跳转到页面-2
     this.setData({
       page:-2,           // 打开成绩页面
+      time:false,        // 倒计时为假值，倒计时停止，不弹窗    
     })
   },
   // 倒计时
