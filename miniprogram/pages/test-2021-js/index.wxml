@@ -1,0 +1,82 @@
+<!-- 背景页 -->
+<view class="back" style="background: url({{pic}}bj.jpg) repeat-y bottom;background-size: 750rpx">
+	<!-- logo -->
+	<image mode="widthFix" src="{{pic}}logo.png" class="logo"></image>
+	<image wx:if="{{page!=-1}}" mode="widthFix" src="{{pic}}book.png" class="book"></image>
+	<!-- 先导页 -->
+	<view wx:if="{{page==-1}}" class="container" style="background: url({{pic}}container.jpg ) no-repeat top;background-size: 750rpx">
+		<!-- 新用户提醒注册 -->
+		<button wx:if="{{!phone}}" class="search_btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">开始测试</button>
+		<!-- 老用户点击进去 -->
+		<button wx:else class="search_btn" bindtap="open">开始测试</button>
+		<!-- 奖品 -->
+		<view class="prize">测试完成后<view>即可领取</view>【教资+特岗+教招】</view>
+		<view class="prize">50节网课+42份电子版资料哦~</view>
+		<!-- 后缀 -->
+		<view class="suffix">{{suffix}}</view>
+	</view>
+	<!-- 考试成绩 -->
+	<view wx:elif="{{page==-2}}" class="last">
+		<image mode="widthFix" src="{{pic}}last.png" class="top"></image>
+		<!-- 测评结果 -->
+		<view class="score" >
+			<!-- 测评展示 -->
+			<block wx:for="{{teacherlist}}" wx:key="index">
+				<view wx:if="{{teacherlist[index].tyle==form}}" class="tealist">
+					<view class="tyle">{{teacherlist[index].tyle}}</view>
+					<image mode="widthFix" src="{{pic}}teacher{{index}}.png" class="tu"></image>
+					<text>{{teacherlist[index].con}}</text>
+				</view>
+			</block>
+		</view>
+		<!-- 19课堂小程序链接 -->
+		<navigator class="url" path="page/course/details?id=342962&scode={{suffix}}" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" >
+			<text>点击领取【教资+特岗+教招】\n50节网课+42份电子版资料</text>
+			<image mode="widthFix" src="{{pic}}icon1.png"></image>
+		</navigator>
+		<button open-type="share" class="share">
+			<image mode="widthFix" src="{{pic}}icon2.png"></image>
+			<view>分享给好友也来测试一下吧</view>
+		</button>
+	</view>
+	<!-- 考试内容页 -->
+	<view wx:else class="topic">
+		<image mode="widthFix" src="{{pic}}page.png" class="top"></image>
+		<block wx:for="{{topiclist}}" wx:key="index" >
+			<view wx:if="{{index==page}}">
+				<view class="list">
+					<!-- 题 -->
+					<view class="{{index==page?'content on':'content'}}" >
+						<text class="tit">{{item.problem}}</text>
+						<view data-index="A" bindtap="choice" class="{{choice=='A'?'choice select':'choice'}}">
+							<view class="left">A</view>
+							<view class="right">{{item.A}}</view>
+						</view>
+						<view data-index="B" bindtap="choice" class="{{choice=='B'?'choice select':'choice'}}">
+							<view class="left">B</view>
+							<view class="right">{{item.B}}</view>
+						</view>
+					</view>
+					<!-- 进度条 -->
+					<view class="progress">
+						<view>{{progress}}%</view>
+						<!-- 内部长度 -->
+						<view class="blue" style="width:{{progresss}}vw"></view>
+					</view>
+					<!-- 下一题 -->
+					<view wx:if="{{selects.length-1==topiclist.length-1}}" class="next" bindtap="submit">提交测评</view>
+					<view wx:else class="next" bindtap="next">下一题</view>
+				</view>
+			</view>
+		</block>
+	</view> 
+	<!-- 未做答题弹窗 -->
+	<view class="popup" wx:if="{{popup}}">
+		<view>
+			<text>您第{{page+1}}题还没有做, \n请完成第{{page+1}}题哦~</text>
+			<button bindtap="popup">我知道了</button>
+		</view>
+	</view>
+</view>
+
+
