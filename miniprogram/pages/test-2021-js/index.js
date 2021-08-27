@@ -108,7 +108,7 @@ Page({
   buttonStart: function (e) {
     getApp().methods.register(e, this.data.suffix, this.data.CRMEFSID, this.data.CRMRemark, phone => {
       this.setData({ phone })
-      this.getUserProfile()
+      this.open()
     })
   },
   // 开始测试
