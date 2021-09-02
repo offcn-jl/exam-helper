@@ -3,14 +3,13 @@ const CONFIG = require('../bargain');
 Page({
   data: {
     title:"助力-2022国考模拟试卷",// 标题
-    spid:1, // 商品id
+    spid:2, // 商品id
     imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper/zl-2022gk-mnsj/2022gk-mnsj-share.jpg",// 分享时显示的图片
     shareSuccess:false,  // 是否可以领取
     phonelist:["未助力","未助力","未助力"],  // 助力电话列表  
     suffix: "", // 后缀
     phone: "", // 用户手机号码
     zcount:0,  // 好友助力进度（0-3）
-    
   },
   /**
 	 * 生命周期函数--监听页面加载
@@ -22,7 +21,7 @@ Page({
     this.setData({
       phone: options.phone,
       suffix: options.scene,
-      spid:options.spid,
+      // spid:options.spid,
     });
     this.getyqlist()
   },
@@ -43,7 +42,6 @@ Page({
         // 写入data里
         if (result.status == 1) {
           let resList = result.lists[0]
-          console.log(resList.zcount)
           this.setData({
             zcount: resList.zcount,     // 砍价/助力次数和
             endTime: resList.endtime,   // 活动结束时间
@@ -54,12 +52,6 @@ Page({
             })
           }
           this.getxzlist();
-        } else {
-          wx.showToast({
-            title: result.msg,
-            icon: 'none',
-            duration: 1000
-          })
         }
       }
     });

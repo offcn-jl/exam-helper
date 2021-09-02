@@ -5,7 +5,7 @@ Page({
         CRMRemark: "活动编码:HD202109011712,活动表单ID:98241", // CRM 注释 小程序-国考模拟卷测评助力
         
         title:"助力-2022国考模拟试卷",// 标题
-        spid:1, // 商品id
+        spid:2, // 商品id
         imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper/zl-2022gk-mnsj/2022gk-mnsj-share.jpg",// 分享时显示的图片
         suffix: "", // 后缀
         yqphone: "", // 邀请人手机号
@@ -42,7 +42,7 @@ Page({
             url: CONFIG.writexzAPI,
             data: {
               phone: this.data.yqphone,   //发起邀请人手机号
-              xzphone: this.data.phone,     //协助人手机号（本）
+              xzphone: 18843188786,     //协助人手机号（本）
               spid: this.data.spid,
               sstime: Math.round(new Date() / 1000)
             },
@@ -50,14 +50,12 @@ Page({
                 let text = res.data;
                 let result_text = text.substring(1, text.length - 1);
                 let result = JSON.parse(result_text);
+                console.log(result)
                 if(result.status==1){
                     wx.showToast({
                         title: result.msg,
                         icon: 'none',
                         duration: 1000
-                    })
-                    this.setData({
-                        success:true
                     })
                 }else{
                     wx.showToast({
@@ -66,13 +64,16 @@ Page({
                         duration: 1000
                     })
                 }
+                this.setData({
+                    success:true
+                })
             }
         });
     },
     // 点击我也要
     receive(){
         wx.navigateTo({
-            url: "../bargain/index" + this.data.suffix + "&phone=" + this.data.phone+"&spid=" + this.data.spid
+            url: "../bargain/index?scene=" + this.data.suffix + "&phone=" + this.data.phone+"&spid=" + this.data.spid
         });
     }
 });

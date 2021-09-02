@@ -7,7 +7,7 @@ Page({
     title:"助力-2022国考模拟试卷",// 标题
     suffix: "", // 后缀
     phone: "", // 用户手机号码
-    spid:1, // 商品id
+    spid:2, // 商品id
   },
   // 注册
   buttonStart: function (e) {
@@ -25,9 +25,35 @@ Page({
         phone: this.data.phone,
       },
       success: res => {
-        wx.navigateTo({
-          url: "../bargain/index?scene=" + this.data.suffix + "&phone=" + this.data.phone + "&spid=" + this.data.spid
-        })
+        this.writeyqAPI()
+      }
+    });
+  },
+  // 录入邀请表 writeyqAPI
+  writeyqAPI(){
+    wx.request({                                      // 网络请求
+      url: CONFIG.writeyqAPI,                         // 写入邀请列表
+      data: {
+        phone: this.data.phone,                       // 手机号
+        spid: this.data.spid,                         // 获取spid
+        sstime: Math.round(new Date() / 1000),        // 时间
+      },
+      success: res => {
+        let text = res.data;
+        let result_text = text.substring(1, text.length - 1);
+        let result = JSON.parse(result_text);          // json转换为字符串数组
+        console.log(result)
+        if (result.status == 1 || result.status == 2) {
+          wx.navigateTo({
+            url: "../bargain/index?scene=" + this.data.suffix + "&phone=" + this.data.phone + "&spid=" + this.data.spid
+          })
+        } else {
+          wx.showToast({
+            title: result.msg,
+            icon: 'none',
+            duration: 1000
+          })
+        }
       }
     });
   },
