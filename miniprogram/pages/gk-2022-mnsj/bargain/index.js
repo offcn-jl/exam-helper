@@ -140,7 +140,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: "我发现了一件好物，快来帮我砍价免费拿吧",
-      path: '/pages/gk-2022-mnsj/promote/index?role=1&spid='+this.data.spid+'&ypphone=' + this.data.phone + "&scene=" + this.data.suffix,
+      path: '/pages/gk-2022-mnsj/promote/index?role=1&spid='+this.data.spid+'&yqphone=' + this.data.phone + "&scene=" + this.data.suffix,
       imageUrl: this.data.imageUrl,
     }
   },
