@@ -51,19 +51,19 @@
 						<text class="tit">{{item.problem}}</text>
 						<!-- 选择的答案是红色加x  正确的答案是绿色  如果两个都有 绿色覆盖红色 -->
 						<view data-index="A" bindtap="choice" class="choice {{selects[index]=='A'?'select2':''}} {{topiclist[index].right=='A'?'select1':''}}">
-							<view class="left {{selects[index]=='A'?'select2':''}} {{topiclist[index].right=='A'?'select1':''}}">A</view>
+							<view class="left {{selects[index]=='A'?'select2':''}} {{topiclist[index].right=='A'?'select1':''}} {{item.A.length>=16?'h2':''}} {{item.A.length>=31?'h3':''}}">A</view>
 							<view class="right">{{item.A}}</view>
 						</view>
 						<view data-index="B" bindtap="choice" class="choice {{selects[index]=='B'?'select2':''}} {{topiclist[index].right=='B'?'select1':''}}">
-							<view class="left {{selects[index]=='B'?'select2':''}} {{topiclist[index].right=='B'?'select1':''}}">B</view>
+							<view class="left {{selects[index]=='B'?'select2':''}} {{topiclist[index].right=='B'?'select1':''}} {{item.B.length>=16?'h2':''}} {{item.B.length>=31?'h3':''}}">B</view>
 							<view class="right">{{item.B}}</view>
 						</view>
 						<view data-index="C" bindtap="choice" class="choice {{selects[index]=='C'?'select2':''}} {{topiclist[index].right=='C'?'select1':''}}">
-							<view class="left {{selects[index]=='C'?'select2':''}} {{topiclist[index].right=='C'?'select1':''}}">C</view>
+							<view class="left {{selects[index]=='C'?'select2':''}} {{topiclist[index].right=='C'?'select1':''}} {{item.C.length>=16?'h2':''}} {{item.C.length>=31?'h3':''}}">C</view>
 							<view class="right">{{item.C}}</view>
 						</view>
 						<view data-index="D" bindtap="choice" class="choice {{selects[index]=='D'?'select2':''}} {{topiclist[index].right=='D'?'select1':''}}">
-							<view class="left {{selects[index]=='D'?'select2':''}} {{topiclist[index].right=='D'?'select1':''}}">D</view>
+							<view class="left {{selects[index]=='D'?'select2':''}} {{topiclist[index].right=='D'?'select1':''}} {{item.D.length>=16?'h2':''}} {{item.D.length>=31?'h3':''}}">D</view>
 							<view class="right">{{item.D}}</view>
 						</view>
 						<view class="jiexi">{{item.jiexi}}</view>
@@ -77,6 +77,19 @@
 		</view>
 		<!-- 答案解析按钮 -->
 		<image wx:if="{{!parse}}" mode="widthFix" src="{{pic}}ckjx.png" class="ckjx" bindtap="ckjx"></image>
+		<!-- 19课堂小程序链接 -->
+		<navigator class="url" path="pages/book/index?scene={{suffix}}*409" target="miniProgram" open-type="navigate" app-id="wx5e256375813b119f" >
+			<view>点击领取【公考常识3000题】</view>
+			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/icon1.png"></image>
+		</navigator>
+		<navigator class="url" path="page/course/details?id=71223&scode={{suffix}}" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" >
+			<text>点击领取 80节视频网课\n（行测文理、申论、易错点梳理）</text>
+			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/icon1.png"></image>
+		</navigator>
+		<button open-type="share" class="share">
+			<image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/icon2.png"></image>
+			<view>分享给好友也来测试一下吧</view>
+		</button>
 	</view>
 	<!-- 考试内容页 -->
 	<view wx:else>

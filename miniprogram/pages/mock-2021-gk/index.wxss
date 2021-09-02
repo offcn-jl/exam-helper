@@ -4,6 +4,10 @@ page {
   padding-bottom: 10rpx;
   position: relative;
 }
+button::after{
+  border: none;
+  outline: none;
+}
 .back{
   width:100vw;
   min-height:1334rpx;
@@ -221,12 +225,14 @@ page {
   margin: 0 auto;
 }
 /* 答案解析按钮 */
-.last .ckjx{
+.last{
+  margin-bottom: 100rpx;
+}
+ .ckjx{
   display: block;
   width: 272rpx;
   height: 72rpx;
   margin:30rpx auto;
-  margin-bottom: 100rpx;
 }
 /* 解析题列表 */
 .parselist{
@@ -269,4 +275,52 @@ page {
 }
 .content .left.select1{  
   background:#27c318;
+}
+/* 底部链接及分享 */
+.last .url{
+  width: 590rpx;
+  height: 112rpx;
+  background: linear-gradient(to bottom,#7cccfa,#1fafff);
+  border: 2px solid #ffebce;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 40rpx;
+}
+.last .url text{
+  display: block;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  float: left;
+  width: 60vw;
+  margin: 15rpx 10rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+.last .url image{
+  width: 70rpx;
+  height: 58rpx;
+  margin-top: 30rpx;
+}
+.last .share{
+  width: 590rpx;
+  height: 112rpx;
+  background: linear-gradient(to bottom,#7cccfa,#1fafff);
+  border-radius: 40rpx;
+  border: 2px solid #ffebce;
+  margin: 20rpx auto;
+}
+.last .share image{
+  width: 82rpx;
+  height: 82rpx;
+  margin-top: 15rpx;
+  float: left;
+}
+.last .share view,.last .url view{
+  float: left;
+  color: #fff;
+  margin-left: 20rpx;
+  line-height: 106rpx;
+  font-weight: bold;
+  font-size: 34rpx;
 }
