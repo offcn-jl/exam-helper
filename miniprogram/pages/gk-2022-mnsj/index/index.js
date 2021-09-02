@@ -64,7 +64,9 @@ Page({
     // 获取后缀
     if (typeof options.scene !== "undefined") {
       this.setData({
-        suffix: options.scene
+        suffix: options.scene,
+        phone: options.phone,
+        spid: options.spid
       })
     }
     // 判断是否是单页模式 toto 这里要结合登陆使用

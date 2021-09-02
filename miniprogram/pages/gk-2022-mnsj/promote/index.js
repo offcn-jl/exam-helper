@@ -73,7 +73,7 @@ Page({
     // 点击我也要
     receive(){
         wx.navigateTo({
-            url: "../bargain/index?scene=" + this.data.suffix + "&phone=" + this.data.phone+"&spid=" + this.data.spid
+            url: "../index/index?scene=" + this.data.suffix + "&phone=" + this.data.phone+"&spid=" + this.data.spid
         });
     }
 });
