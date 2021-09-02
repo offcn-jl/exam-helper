@@ -42,7 +42,7 @@ Page({
             url: CONFIG.writexzAPI,
             data: {
               phone: this.data.yqphone,   //发起邀请人手机号
-              xzphone: 18843188786,     //协助人手机号（本）
+              xzphone: this.data.phone,     //协助人手机号（本）
               spid: this.data.spid,
               sstime: Math.round(new Date() / 1000)
             },
