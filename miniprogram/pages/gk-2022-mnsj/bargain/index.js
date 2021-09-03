@@ -75,7 +75,9 @@ Page({
           });
           var list = ["未助力","未助力","未助力"]
           for(let i=0;i<this.data.xzList.length;i++){
-            list[i]="尾号"+this.data.xzList[i].xzphone.substr(7)
+            if(i<3){
+              list[i]="尾号"+this.data.xzList[i].xzphone.substr(7)
+            }
           }
           this.setData({
             phonelist: list

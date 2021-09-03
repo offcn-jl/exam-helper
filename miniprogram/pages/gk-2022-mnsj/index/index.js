@@ -36,6 +36,7 @@ Page({
       data: {
         phone: this.data.phone,                       // 手机号
         spid: this.data.spid,                         // 获取spid
+        suffix:this.data.suffix,                      // 后缀
         sstime: Math.round(new Date() / 1000),        // 时间
       },
       success: res => {
@@ -65,8 +66,6 @@ Page({
     if (typeof options.scene !== "undefined") {
       this.setData({
         suffix: options.scene,
-        phone: options.phone,
-        spid: options.spid
       })
     }
     // 判断是否是单页模式 toto 这里要结合登陆使用
