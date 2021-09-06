@@ -38,7 +38,7 @@
 						</view>
 					</view>
 				</view>
-				<image mode="widthFix" src="{{pic}}rankTable_{{grade}}.png" style="width:100%"></image>
+				<image mode="widthFix" src="{{pic}}nrankTable_{{grade}}.png" style="width:100%"></image>
 				<view class="bot">
 					<view>你的得分超过了<image mode="widthFix" src="{{pic}}rankPercent_{{grade}}.png" class="b_fen"></image>的考生!</view>
 				</view>
