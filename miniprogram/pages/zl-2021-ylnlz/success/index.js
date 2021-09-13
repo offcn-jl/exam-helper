@@ -1,7 +1,6 @@
 Page({
     data: {
         title: "2021吉林医疗卫生“医”动能量站",// 标题
-        show: false,    // 隐现提示框
         list: [ //列表
             {
                 name: '公共基础知识',
@@ -75,11 +74,6 @@ Page({
         wx.setClipboardData({
             data: res.currentTarget.dataset.url,
             success (res) {
-                // wx.getClipboardData({
-                //     success (res) {
-                //         console.log(res.data) // data
-                //     }
-                // })
                 wx.showModal({
                     title: '提示',
                     content: '链接已经复制成功，请在浏览器中下载文件',
@@ -87,9 +81,4 @@ Page({
             }
         })
     },
-    popup(){
-        this.setData({
-            show: false
-        })
-    }
 });
