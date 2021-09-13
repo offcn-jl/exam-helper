@@ -1,0 +1,109 @@
+page {
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/zl-2021-ylnlz/bargain1.jpg) no-repeat top #4b47fc;
+  width: 100%;
+  background-size: 100% 1442rpx;
+}
+
+.meavatul {
+  display: block;
+  width: 325rpx;
+  height: 325rpx;
+  margin: 38rpx auto 10rpx;
+  border: 5rpx solid #b1b0ff;
+  border-radius: 50%;
+  margin-top: 200rpx;
+}
+
+.zl_people {
+  text-align: center;
+  font-size: 41rpx;
+  color: #0a03ed;
+  line-height: 75rpx;
+  font-weight: bold;
+  margin-top: 530rpx;
+}
+
+.zl_people text {
+  color: #ffdc00;
+  font-weight: 700;
+  margin: 0 10rpx;
+}
+
+.yq_btn {
+  margin: 0 auto;
+  margin-top: 30rpx;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/zl-2021-ylnlz/btn.png) no-repeat 50%;
+  width: 337rpx;
+  height: 89rpx;
+  background-size: 100% 100%;
+  color: #fff;
+  font-weight: bold;
+  line-height: 75rpx;
+  text-shadow: 2px 2px 2px #e65f7f;
+}
+
+.zl_list {
+  border: 4rpx solid #fff;
+  width: 550rpx;
+  margin: 30rpx auto 50rpx;
+  border-radius: 10rpx;
+  padding-bottom: 50rpx;
+  background: #0500ac;
+}
+
+.zl_num {
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #fff;
+  width: 400rpx;
+  margin: 30rpx auto;
+
+}
+
+.zl_list_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0 25rpx;
+}
+.zhuli{
+  overflow: hidden;
+}
+.zl_img {
+  display: block;
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 20rpx;
+  border-radius: 100rpx;
+}
+
+.zl_txt {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contacButton {
+  padding: 0;
+  background: none;
+  text-align: left;
+}
+
+.contacButton:after {
+  border: none;
+}
+
+.last{
+  text-align: center;
+  color: #fff;
+}
