@@ -11,12 +11,12 @@
         <button bindtap="onShareAppMessage" class="contacButton" hidden="{{shareSuccess}}" openType="share">
             <view class="yq_btn">好友充能 合力出击</view>
         </button>
-        <navigator class="contacButton" hidden="{{!shareSuccess}}" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id=346773">
+        <!-- <navigator class="contacButton" hidden="{{!shareSuccess}}" target="miniProgram" open-type="navigate" app-id="wxca86930ec3e80717" path="page/course/details?id=346773">
             <view class="yq_btn">助力完成 领取资料</view>
-        </navigator>
-        <!-- <button bindtap="zlSuccess" class="contacButton" hidden="{{!shareSuccess}}">
+        </navigator> -->
+        <button bindtap="zlSuccess" class="contacButton" hidden="{{!shareSuccess}}">
             <view class="yq_btn">助力完成 领取资料</view>
-        </button>  -->
+        </button> 
         <view class="last" hidden="{{shareSuccess}}">（充能成功即可下载资料）</view>
     </view>
 </view>

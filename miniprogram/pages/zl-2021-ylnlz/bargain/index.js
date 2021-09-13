@@ -93,7 +93,7 @@ Page({
       }
     });
   },
-  // '我也想要'点击进入
+  // '领取资料'点击进入
   zlSuccess(){
     wx.navigateTo({
       url: "../success/index"
