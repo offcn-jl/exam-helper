@@ -2,5 +2,5 @@
 <image src="{{banner_bk}}" class="banner">
 </image>
 <!-- 按钮 点击添加客服 -->
-<button wx:if="{{!phone}}" class="btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">点击免费领取1</button>
+<button wx:if="{{!phone}}" class="btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">注册</button>
 <button wx:else class="btn" bindtap="previewImage">点击免费领取</button>
