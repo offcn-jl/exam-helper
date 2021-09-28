@@ -2,8 +2,8 @@
 
 Page({
   data: {
-    CRMEFSID: "b9c197f02b8d2c4b07a9ae041255f5bf ", // CRM 活动表单 ID
-    CRMRemark: "活动编码:HD202107200915,活动表单ID:94055", // CRM 注释 小程序-2022人行职位查询
+    CRMEFSID: "41a1f8d2894053015f99d6b8f071d945 ", // CRM 活动表单 ID
+    CRMRemark: "活动编码:HD202101130793,活动表单ID:70603", // CRM 注释 网站专题页-2022年人民银行职位查询
 
     yearList: ["2021","2020","2019"], // 年份
     cityList: ["北京","天津","上海","重庆","河北","山西","内蒙古","辽宁","吉林","黑龙江","江苏","浙江","安徽","福建","江西","山东","河南","湖北","湖南","广东","广西","海南","四川","贵州","云南","西藏","陕西","甘肃","青海","宁夏","新疆"], // 省份
@@ -130,7 +130,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '2021人民银行招聘岗位查询',
+      title: '2022人民银行招聘岗位查询',
       imageUrl: 'http://jl.offcn.com/zg/ty/images/exam-helper/event/2021rmyh/share.jpg'
     }
   },
@@ -140,7 +140,7 @@ Page({
    */
   onShareTimeline: function () {
     return {
-      title: '2021人民银行招聘岗位查询'
+      title: '2022人民银行招聘岗位查询'
     }
   }
 })

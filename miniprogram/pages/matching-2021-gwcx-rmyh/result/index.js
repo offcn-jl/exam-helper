@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    title:"2021人民银行招聘岗位查询",// 标题
+    title:"2022人民银行招聘岗位查询",// 标题
     imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper/event/2021rmyh/share.jpg",// 分享时显示的图片
     superiorLink:"/pages/matching-2021-gwcx-rmyh/index", //上级链接
     actid:"22272", //zg99id
