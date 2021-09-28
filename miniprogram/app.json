@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/code-2022-skbkzlz/index",
+    "pages/matching-2021-gwcx-rmyh/index",
+    "pages/matching-2021-gwcx-rmyh/result/index",
     "pages/zl-2021-ylnlz/index/index",
+    "pages/code-2022-skbkzlz/index",
     "pages/zl-2021-ylnlz/bargain/index",
     "pages/zl-2021-ylnlz/promote/index",
     "pages/zl-2021-ylnlz/success/index",
