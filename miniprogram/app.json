@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/matching-2021-gwcx-yjh/index",
+    "pages/matching-2021-gwcx-yjh/result/index",
+    "pages/summary-2021-yhwst/index",
     "pages/matching-2021-gwcx-rmyh/index",
     "pages/matching-2021-gwcx-rmyh/result/index",
     "pages/zl-2021-ylnlz/index/index",
