@@ -12,9 +12,22 @@ page{
 }
 .content{
   position: relative;
-  width: 90vw;
+  width: 50vw;
   margin: 0 auto;
-  margin-top: 800rpx;
+  margin-top: 432rpx;
+  float: right;
+}
+.content .click{
+  width: 335rpx;
+  height: 66rpx;
+  background: url("http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-yhwst-alert.png");
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 34rpx;
+  text-indent: 70rpx;
+  color: #320000;
+  margin-bottom: 20rpx;
 }
 .content .btn{
   position: absolute;

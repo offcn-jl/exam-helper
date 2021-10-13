@@ -6,14 +6,15 @@ Page({
    */
   data: {
     title:"央行万事通",// 标题
-    banner_bk:"http://jl.offcn.com/zg/ty/images/exam-helper/pic/2022-code-skbkzlz-index.jpg?1",// 背景图片
-    imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper/pic/2022-code-skbkzlz-share.jpg",// 分享时显示的图片
+    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-yhwst-bj.jpg",// 背景图片
+    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-yhwst-share.jpg",// 分享时显示的图片
 
     CRMEFSID: "09c2f406db856be69911d1dbdf7d3bc8", // CRM 活动表单 ID
     CRMRemark: "活动编码:HD202110080245,活动表单ID:101198", // CRM 注释  网站专题页-2022人民银行报名专题
 
     suffix:'', //后缀
     pupop: false, //控制弹窗隐现
+    wechat:'jlyhoffcn001', // 微信号
     imgalist:[
       "http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-yhwst-code.png"//二维码
     ],
@@ -34,13 +35,13 @@ Page({
     }) 
   },
   // 复制
-  copy(){
+  copy(e){
     wx.setClipboardData({
-      data: 'jlyhoffcn001',
+      data: this.data.wechat,
       success (res) {
         wx.getClipboardData({
           success (res) {
-            console.log(res.data) // data
+            console.log(res.data) 
           }
         })
       }
