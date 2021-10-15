@@ -4,7 +4,7 @@ Page({
   data: {
     title:"2022人民银行岗位竞争比",// 标题
     imageUrl:"http://jl.offcn.com/zg/ty/images/exam-helper/event/2021-lnfs-zsb-share.jpg",// 分享时显示的图片
-    superiorLink:"/pages/matching-2021-gwjz-rmyh/index", //上级链接
+    superiorLink:"/pages/matching-2021-lnfs-zsb/index", //上级链接
     actid:"42155", //zg99id
 
     suffix: "", // 后缀
