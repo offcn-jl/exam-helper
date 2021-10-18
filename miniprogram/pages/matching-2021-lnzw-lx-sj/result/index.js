@@ -41,7 +41,6 @@ Page({
 
   //查询
   search(){
-    console.log(this.data.query)
     let _this = this //作用域 
     wx.showLoading({ title: '查询中...', mask: true })
     wx.request({
@@ -51,7 +50,6 @@ Page({
         wx.hideLoading() // 隐藏 loading
         try {
           let list = JSON.parse(res.data.substring(1, res.data.length - 1))//去头尾（）,转为json对象
-          console.log("list:",list)
           if (list.status !== 1) {//如果status不等于1，弹出错误提示
             wx.showToast({ title: list.msg, icon: 'none' })
             return  

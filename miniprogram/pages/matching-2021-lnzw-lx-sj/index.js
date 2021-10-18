@@ -48,7 +48,6 @@ Page({
     if (this.data.item06Value !== "") url += "&item06=" + this.data.item06Value
     if (this.data.majorValue !== "") url += "&major=" + this.data.majorValue
     wx.reLaunch({ url })
-      wx.reLaunch({ url })
     // wx.navigateTo({ url })   //尝试点击返回可以回到当前页面，但被十层页面栈限制
   },
 
@@ -106,7 +105,6 @@ Page({
       success(res) {
         try {
           let list = JSON.parse(res.data.substring(1, res.data.length - 1)); //去头尾（）,转为json对象
-          console.log(list)
           if (list.status !== 1) {//如果status不等于1，弹出错误提示
             wx.showToast({ title: list.msg, icon: 'none' })
             return  
