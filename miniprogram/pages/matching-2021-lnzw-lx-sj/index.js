@@ -4,7 +4,7 @@ Page({
     banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-index.jpg?2",// 背景图片
     imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-share.jpg?2",// 分享时显示的图片
     CRMEFSID: "28b24813fef915c1333ed585f7e3ec2c", // CRM 活动表单 ID
-    CRMRemark: "活动编码:HD202110150927,活动表单ID:102499", // CRM 注释  小程序-2021吉林省直+长春市直职位筛选
+    CRMRemark: "活动编码:HD202110150927,活动表单ID:102499", // CRM 注释  小程序-2021长春市市直遴选职位筛选
 
     item00List: ["2020"], // 年份  "2021",
     item06List: ["研究生","本科","大专"],// 学历
