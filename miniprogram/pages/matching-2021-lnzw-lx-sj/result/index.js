@@ -2,14 +2,15 @@ const app = getApp()
 
 Page({
   data: {
-    title:"2021吉林省直+长春市直遴选历年职位筛选",// 标题
-    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-share.jpg",// 分享时显示的图片
+    title:"2021长春市直遴选历年职位筛选",// 标题
+    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-share.jpg?2",// 分享时显示的图片
     superiorLink:"/pages/matching-2021-lnzw-lx-sj/index", //上级链接
     actid:"43390", //zg99id
 
     suffix: "", // 后缀
     showId: 0, // 当前显示的元素的 ID
     query: { // 查询条件
+      item01:'长春市直',
       limits: 10,
       order:0,
       sstime: new Date().valueOf(),
@@ -79,7 +80,7 @@ Page({
     // 获取后缀
     if (typeof options.scene !== "undefined") this.setData({ suffix: options.scene })
     // 配置查询条件
-    if (typeof options.item01 !== "undefined" && options.item01 !== "不限") this.setData({ "query.item01": options.item01 })
+    // if (typeof options.item01 !== "undefined" && options.item01 !== "不限") this.setData({ "query.item01": options.item01 })
     if (typeof options.item00 !== "undefined" && options.item00 !== "不限") this.setData({ "query.item00": options.item00 })
     if (typeof options.item06 !== "undefined" && options.item06 !== "不限") this.setData({ "query.item06": options.item06 })
     if (typeof options.major !== "undefined" && options.major !== "不限") this.setData({ "query.item07": options.major })

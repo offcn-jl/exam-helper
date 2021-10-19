@@ -1,17 +1,15 @@
 Page({
   data: {
-    title:"2021吉林省直+长春市直遴选历年职位筛选",// 标题
-    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-index.jpg",// 背景图片
-    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-share.jpg",// 分享时显示的图片
+    title:"2021长春市直遴选历年职位筛选",// 标题
+    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-index.jpg?2",// 背景图片
+    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-sj-share.jpg?2",// 分享时显示的图片
     CRMEFSID: "28b24813fef915c1333ed585f7e3ec2c", // CRM 活动表单 ID
     CRMRemark: "活动编码:HD202110150927,活动表单ID:102499", // CRM 注释  小程序-2021吉林省直+长春市直职位筛选
 
-    item01List: ["吉林省直","长春市直"], // 公告类型
     item00List: ["2020"], // 年份  "2021",
     item06List: ["研究生","本科","大专"],// 学历
     majorList: [], // 专业
     actid:"43390",  // zg99id (查询的是辅助表2)
-    item01Value:'', // 公告类型
     item00Value:'', // 年份
     item06Value: '',// 学历
     majorValue: '', //专业
@@ -23,9 +21,6 @@ Page({
   // 监听筛选条件切换
   m_select_touch(e) {
     switch (e.detail.type) {
-      case "item01": // 公告类型
-        this.setData({ item01Value: this.data.item01List[e.detail.index] })
-        break
       case "item00": // 年份
         this.setData({ item00Value: this.data.item00List[e.detail.index] })
         break
@@ -43,7 +38,6 @@ Page({
   // 搜索
   async seach_result() {
     let url = "result/index?scene=" + this.data.suffix
-    if (this.data.item01Value !== "") url += "&item01=" + this.data.item01Value
     if (this.data.item00Value !== "") url += "&item00=" + this.data.item00Value
     if (this.data.item06Value !== "") url += "&item06=" + this.data.item06Value
     if (this.data.majorValue !== "") url += "&major=" + this.data.majorValue
