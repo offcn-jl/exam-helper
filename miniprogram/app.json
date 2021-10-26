@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+
+    "pages/sk-2022-zyfl/index",
+    "pages/sk-2022-zyfl/result/index",
     "pages/matching-2021-zwpp-jlzy/index",
     "pages/matching-2021-zwpp-jlzy/result/index",
     "pages/matching-2021-lnzw-lx-jlsz/index",
@@ -27,8 +30,11 @@
     "pages/mock-2021-zsb/index",
     "pages/test-2021-js/index",
     "pages/gk-2022-zyfl/index",
+    "pages/gk-2022-zyfl/result/index",
     "pages/gk-2022-gwjs/index",
+    "pages/gk-2022-gwjs/result/index",
     "pages/gk-2022-lnfs/index",
+    "pages/gk-2022-lnfs/result/index",
     "pages/photo-processing-2020-sydw-bc-tn/index", 
     "pages/code-2021-ghfls/index",
     "pages/matching-2021-lnktbl-yhqz/index",
