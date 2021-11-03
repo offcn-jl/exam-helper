@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    title:"2021吉林省直遴选历年职位筛选",// 标题
+    title:"2021吉林省市州级以上机关遴选公务员职位检索系统",// 标题
     imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-jlsz-share.jpg",// 分享时显示的图片
     superiorLink:"/pages/matching-2021-lnzw-lx-sj/index", //上级链接
     actid:"43390", //zg99id

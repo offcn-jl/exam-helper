@@ -1,5 +1,5 @@
 page {
-  background: #a40000;
+  background: #4b0001;
   /* background: #bf1a21; */
   padding-bottom: 10rpx;
   position: relative;
@@ -14,8 +14,8 @@ page {
 .container {
   /* margin-top: -20rpx; */
   position: absolute;
-  top: 860rpx;
-  right: 18rpx;
+  top: 650rpx;
+  right: 40rpx;
 }
 
 .select_wrap {
@@ -26,7 +26,7 @@ page {
   position: relative;
   margin-bottom: 60rpx;
   overflow: hidden;
-  background: #b17746;
+  /* background: #b17746; */
 }
 
 .offer_item {

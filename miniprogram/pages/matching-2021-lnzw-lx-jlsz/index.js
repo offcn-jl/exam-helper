@@ -1,13 +1,13 @@
 Page({
   data: {
-    title:"2021吉林省直遴选历年职位筛选",// 标题
-    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-jlsz-index.jpg",// 背景图片
-    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-jlsz-share.jpg",// 分享时显示的图片
+    title:"2021吉林省市州级以上机关遴选公务员职位检索系统",// 标题
+    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-jlsz-index.jpg?1",// 背景图片
+    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-lnzw-lx-jlsz-share.jpg?1",// 分享时显示的图片
     CRMEFSID: "a2594e948f2f76e2b68d5263e7931b41", // CRM 活动表单 ID
     CRMRemark: "活动编码:HD202110190974,活动表单ID:102927", // CRM 注释  小程序-2021吉林省直遴选历年职位匹配系统
 
-    item00List: ["2020"], // 年份  "2021",
-    item06List: ["研究生","本科"], // 学历 ,"大专"
+    item00List: ["2021","2020"], // 年份  
+    item06List: ["研究生","本科","大专"], // 学历 
     majorList: [],   // 专业
     actid:"43390",   // zg99id (查询的是辅助表2)
     item00Value: '', // 年份
