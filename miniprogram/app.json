@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
 
+    "pages/sk-2022-lnfs/index",
+    "pages/sk-2022-lnfs/result/index",
     "pages/sk-2022-zyfl/index",
     "pages/sk-2022-zyfl/result/index",
     "pages/matching-2021-zwpp-jlzy/index",

@@ -5,7 +5,7 @@ Page({
     imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-zyfl-share.jpg",// 分享时显示的图片
     CRMEFSID: "56a0de1b86f6a7f301d0c62f7f1597f1", // CRM 活动表单 ID
     CRMRemark: "活动编码:HD202110251261,活动表单ID:103585", // CRM 注释  小程序-2022省考五大系统汇总
-    actid:"41667", //zg99id  2021吉林白山市事业单位招聘入面查询系统
+    actid:"41667", //zg99id  2021吉林白山市省考招聘入面查询系统
 
     zylbList: [],//专业类别
     zylbValue: '', //专业类别
@@ -45,11 +45,11 @@ Page({
       _this.setData({ tipsToSubscribeMessaged: true })
       wx.showModal({
         title: '提示',
-        content: '您是否需要订阅“事业单位”考试公告？订阅成功后您可以在公告发布时免费获得推送提示～',
+        content: '您是否需要订阅“省考”考试公告？订阅成功后您可以在公告发布时免费获得推送提示～',
         confirmText: "免费订阅",
         success(res) {
           if (res.confirm) {
-            getApp().methods.subscribeSingleExam(_this.data.suffix, "事业单位", undefined, () => {
+            getApp().methods.subscribeSingleExam(_this.data.suffix, "省考", undefined, () => {
               _this.seach_result() // 订阅成功后执行查询
             })
           } else if (res.cancel) {
@@ -95,7 +95,7 @@ Page({
           }
           // 录入专业类别名称里的单位，不用提前清空，因为只进行一次获取
           for(var i=0; i<list.lists.length; i++ ){
-            _this.setData({
+            _this.setData({ 
               zylbList:  _this.data.zylbList.concat(list.lists[i].major2)
             });
           };
