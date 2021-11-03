@@ -10,7 +10,6 @@ Page({
     suffix: "", // 后缀
     showId: 0, // 当前显示的元素的 ID
     query: { // 查询条件
-      item01:'吉林省直',
       limits: 10,
       order:0,
       sstime: new Date().valueOf(),
@@ -80,8 +79,6 @@ Page({
     // 获取后缀
     if (typeof options.scene !== "undefined") this.setData({ suffix: options.scene })
     // 配置查询条件
-    // if (typeof options.item01 !== "undefined" && options.item01 !== "不限") this.setData({ "query.item01": options.item01 })
-    if (typeof options.item00 !== "undefined" && options.item00 !== "不限") this.setData({ "query.item00": options.item00 })
     if (typeof options.item06 !== "undefined" && options.item06 !== "不限") this.setData({ "query.item06": options.item06 })
     if (typeof options.major !== "undefined" && options.major !== "不限") this.setData({ "query.item07": options.major })
 

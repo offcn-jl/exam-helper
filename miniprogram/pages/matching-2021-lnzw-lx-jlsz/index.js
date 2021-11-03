@@ -6,11 +6,9 @@ Page({
     CRMEFSID: "a2594e948f2f76e2b68d5263e7931b41", // CRM 活动表单 ID
     CRMRemark: "活动编码:HD202110190974,活动表单ID:102927", // CRM 注释  小程序-2021吉林省直遴选历年职位匹配系统
 
-    item00List: ["2021","2020"], // 年份  
     item06List: ["研究生","本科","大专"], // 学历 
     majorList: [],   // 专业
     actid:"43390",   // zg99id (查询的是辅助表2)
-    item00Value: '', // 年份
     item06Value: '', // 学历
     majorValue: '',  // 专业
 
@@ -21,9 +19,6 @@ Page({
   // 监听筛选条件切换
   m_select_touch(e) {
     switch (e.detail.type) {
-      case "item00": // 年份
-        this.setData({ item00Value: this.data.item00List[e.detail.index] })
-        break
       case "item06": // 学历
         this.setData({ item06Value: this.data.item06List[e.detail.index] })
         break
@@ -38,7 +33,6 @@ Page({
   // 搜索
   async seach_result() {
     let url = "result/index?scene=" + this.data.suffix
-    if (this.data.item00Value !== "") url += "&item00=" + this.data.item00Value
     if (this.data.item06Value !== "") url += "&item06=" + this.data.item06Value
     if (this.data.majorValue !== "") url += "&major=" + this.data.majorValue
     wx.reLaunch({ url })
