@@ -10,6 +10,7 @@ Page({
     suffix: "", // 后缀
     showId: 0, // 当前显示的元素的 ID
     query: { // 查询条件
+      item00: '2021',
       limits: 10,
       order:0,
       sstime: new Date().valueOf(),
