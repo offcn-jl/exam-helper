@@ -6,7 +6,8 @@
 <view class="title">查询结果</view>
 
 <view class="my_tip">
-	<text>非精准匹配，尽量覆盖您可能可报的职位\n如对能否报名有疑虑，请务必致电咨询招考单位！</text>
+	<text>整合近年考试前后问题汇总，输入关键词，选择相关的问题
+	点击查询，即可得到你想知道的答案，顺利解决备考疑问</text>
 </view>
 
 <view class="result_num">
@@ -14,7 +15,7 @@
 	<text class="result_nux">共 {{zcounts}} 条结果</text>
 	<!-- fixme -->
 	<navigator url="../index?scene={{suffix}}">
-		<button class="change_btn">修改条件</button>
+		<button class="change_btn">修改问题</button>
 	</navigator>
 </view>
 
