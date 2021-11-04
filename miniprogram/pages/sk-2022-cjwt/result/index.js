@@ -81,7 +81,7 @@ Page({
     // 获取后缀
     if (typeof options.scene !== "undefined") this.setData({ suffix: options.scene })
     // 配置查询条件
-    if (typeof options.ques !== "undefined" && options.ques !== "不限") this.setData({ "query.major2": options.ques })
+    if (typeof options.ques !== "undefined" && options.ques !== "不限") this.setData({ "query.ques": options.ques })
     this.search();
   },
   /**
