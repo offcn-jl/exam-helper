@@ -1,14 +1,14 @@
 Page({
   data: {
-    title:"专业分类-2022吉林省公务员考试专业分类查询系统",// 标题
-    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-zyfl-index.jpg",// 背景图片
-    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-zyfl-share.jpg",// 分享时显示的图片
+    title:"2022吉林省公务员考试常见问题查询",// 标题
+    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-cjwt-index.jpg",// 背景图片
+    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-cjwt-share.jpg",// 分享时显示的图片
     CRMEFSID: "56a0de1b86f6a7f301d0c62f7f1597f1", // CRM 活动表单 ID
     CRMRemark: "活动编码:HD202110251261,活动表单ID:103585", // CRM 注释  小程序-2022省考五大系统汇总
-    actid:"41667", //zg99id  小程序-2022专业分类查询系统	
+    actid:"43917", //zg99id  小程序-2022吉林省公务员考试常见问题查询
 
-    zylbList: [],//专业类别
-    zylbValue: '', //专业类别
+    quesList: [],//专业类别
+    quesValue: '', //专业类别
 
     suffix: "", // 后缀
     phone: "", // 用户手机号码
@@ -18,14 +18,14 @@ Page({
   // 监听筛选条件切换
   m_selectSearch_touch(e) {
     this.setData({
-      zylbValue: e.detail.text
+      quesValue: e.detail.text
     })
   },
 
   // 搜索
   async seach_result() {
     let url = "result/index?scene=" + this.data.suffix
-    if (this.data.zylbValue !== "") url += "&zylb=" + this.data.zylbValue
+    if (this.data.quesValue !== "") url += "&ques=" + this.data.quesValue
     console.log(url)
     wx.reLaunch({ url })
   },
@@ -96,7 +96,7 @@ Page({
           // 录入专业类别名称里的单位，不用提前清空，因为只进行一次获取
           for(var i=0; i<list.lists.length; i++ ){
             _this.setData({ 
-              zylbList:  _this.data.zylbList.concat(list.lists[i].major2)
+              quesList:  _this.data.quesList.concat(list.lists[i].ques)
             });
           };
         } catch (err) {//捕获错误并报错
