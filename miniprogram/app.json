@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
 
+    "pages/sk-2022-hz/index",
     "pages/sk-2022-cjwt/index",
     "pages/sk-2022-cjwt/result/index",
     "pages/sk-2022-zwjs/index",
