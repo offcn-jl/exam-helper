@@ -1,217 +1,136 @@
-// pages/search/search.js
-const app = getApp()
-const db = wx.cloud.database()
 Page({
   data: {
-    showIcon: true,
-    yearList: [{
-      "id": "1_1",
-      "text": "2022"
-    },{
-      "id": "1_2",
-      "text": "2021"
-    },{
-      "id": "1_3",
-      "text": "2020"
-    }, {
-      "id": "1_4",
-        "text": "2019"
-    }],
-    xueliList: [{
-      "id": "3_1",
-      "text": "研究生"
-    }, {
-      "id": "3_2",
-      "text": "本科"
-    }, {
-      "id": "3_3",
-      "text": "专科"
-    }],
-    zzmmList: [
-      {
-        "id": "4_1",
-        "text": "中共党员"
-      },
-      {
-        "id": "4_2",
-        "text": "预备党员"
-      },
-      {
-        "id": "4_9",
-        "text": "群众"
-      }],
-    yearvalue: '',
-    addressvalue: '',
-    xuelivalue: '',
-    zzmmvalue: '',
-    majorvalue: '',
-    changeindex: false,
-    hdlx: '职位查询',
+    title:"2022省考历年分数线查询",// 标题
+    banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-lnfs-index.jpg",// 背景图片
+    imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-lnfs-share.jpg",// 分享时显示的图片
+    CRMEFSID: "56a0de1b86f6a7f301d0c62f7f1597f1", // CRM 活动表单 ID
+    CRMRemark: "活动编码:HD202110251261,活动表单ID:103585", // CRM 注释  小程序-2022省考五大系统汇总
 
-    isLogin: false, // 是否登陆
-    Suffix: "", // 后缀
-    SinglePageMode: false, // 单页模式打开
+    // 职位要求
+    cityList: ["省直","长春","吉林市","延边","四平","通化","白城","辽源","松原","白山"], // 地市
+    bmxzList: ["公务员法机关","参照公务员法管理的事业单位"], // 部门性质
+    // 个人条件
+    yearList: ["2022","2021","2020","2019"],  // 年份
+    xueliList1: ['本科学历','专科学历','高中（中专）学历'],       // 学历
+    xueliList: ['大学本科以上学历+统招大学本科以上学历','大专以上学历+统招大专以上学历','高中（中专）以上学历+高中（中专）以上学历或我省技师院校高级工和预备技师（技师）班毕业且具有高级工及其以上职业资格证书的毕业生'],       // 学历
+    zzmmList1: ['不限','共青团员','中共党员'],   // 政治面貌
+    zzmmList: ['不限','中共党员或共青团员+不限','中共党员或共青团员+中共党员+不限'],   // 政治面貌
+
+    cityvalue: '',  // 地市
+    bmxzvalue: '',  // 部门性质
+    bmmcvalue: '',  // 部门名称
+    zwmcvalue: '',  // 职位名称
+    yearvalue: '',  // 年份
+    xuelivalue: '', // 学历
+    zzmmvalue: '',  // 政治面貌
+    zylbvalue: '',  // 专业类别
+
+    switch:false,  // true 职位要求  false 个人条件
+
+    suffix: "", // 后缀
+    phone: "", // 用户手机号码
+    tipsToSubscribeMessaged: true, // 是否提示过进行消息订阅
   },
-
-  // 监听筛选条件切换
-  changez(e) {
-    this.setData({
-      changeindex: !e.detail.isIndexs
-    })
-  },
-
   // 监听筛选条件切换
   m_select_touch(e) {
-    let that = this;
-    let selectIndex = e.detail.selIndex;
-    let stype = e.detail.stype;
-    if (stype == "1") {
-      let value1 = that.data.yearList[selectIndex];
-      that.setData({
-        yearvalue: value1.text
-      })
-    }
-    else if (stype == "2") {
-      let value2 = that.data.addressList[selectIndex];
-      that.setData({
-        addressvalue: value2.text
-      })
-    }
-    else if (stype == "3") {
-      let value3 = that.data.xueliList[selectIndex];
-      that.setData({
-        xuelivalue: value3.text
-      })
-    }
-    else if (stype == "4") {
-      let value4 = that.data.zzmmList[selectIndex];
-      that.setData({
-        zzmmvalue: value4.text
-      })
+    switch (e.detail.type) {
+      // 职位要求
+      case "city": // 地市
+        this.setData({ cityValue: this.data.cityList[e.detail.index] })
+        break
+      case "bmxz": // 部门性质
+        this.setData({ bmxzValue: this.data.bmxzList[e.detail.index] })
+        break
+      // 个人条件
+      case "year": // 年份
+        this.setData({ yearValue: this.data.yearList[e.detail.index] })
+        break
+      case "xueli": // 学历
+        this.setData({ xueliValue: this.data.xueliList[e.detail.index] })
+        break
+      case "zzmm": // 政治面貌
+        this.setData({ zzmmValue: this.data.zzmmList[e.detail.index] })
+        break
     }
   },
-
-  // ???
-  m_selectSearch_touch(e) {
-    let that = this;
-    let selectText = e.detail.selText;
-    that.setData({
-      majorvalue: selectText
+  // 输入框
+  bmmc(e){ // 部门名称
+    this.setData({
+      bmmcvalue: e.detail.value
     })
   },
-
-  // 登陆
-  buttonStart: function (e) {
-    // 判断是否授权使用手机号
-    if (e.detail.errMsg !== 'getPhoneNumber:ok') {
-      app.methods.handleError({
-        err: e.detail.errMsg,
-        title: "出错啦",
-        content: "需要您使用手机号码进行登陆后才可进行领取～"
-      })
-      return
-    }
-
-    // 弹出 Loading
-    wx.showLoading({
-      title: '登陆中...',
-      mask: true
+  zwmc(e){ // 职位名称
+    this.setData({
+      zwmcvalue: e.detail.value
     })
-
-    // 提交数据
-    wx.cloud.callFunction({
-      name: 'sk-2022',
-      data: {
-        Environment: app.globalData.configs.environment,
-        Suffix: this.data.Suffix,
-        cloudID: wx.cloud.CloudID(e.detail.cloudID)
-      },
-      success: res => {
-        if (res.errMsg === "cloud.callFunction:ok" && res.result.code === 0) {
-          // 执行查询
-          this.seach_result()
-          // 保存登陆状态
-          this.setData({
-            isLogin: true
-          })
-        } else {
-          app.methods.handleError({
-            err: res.result.error,
-            title: "出错啦",
-            content: res.result.error
-          })
-        }
-        wx.hideLoading() // 隐藏 loading
-      },
-      fail: err => {
-        app.methods.handleError({
-          err: err,
-          title: "出错啦",
-          content: "调用云函数出错"
-        })
-        wx.hideLoading() // 隐藏 loading
-      }
+  },
+  zylb(e){ // 专业类别
+    this.setData({
+      zylbvalue: e.detail.value
+    })
+  },
+  // 切换
+  switch1(){  // 职位要求
+    this.setData({
+      switch: true
+    })
+  },
+  switch2(){  // 个人条件
+    this.setData({
+      switch: false
     })
   },
 
   // 搜索
-  async seach_result() {
-    if (this.data.yearvalue == "") {
-      wx.showToast({
-        title: '先选择年份',
-        icon: 'none'
-      })
-      return;
-    }
-    // 出公告删掉此处
-    if (this.data.yearvalue == "2022") {
-      wx.showToast({
-        title: '2022年省考尚未出公告',
-        icon: 'none'
-      })
-      return;
-    }
-    if (this.data.xuelivalue == "") {
-      wx.showToast({
-        title: '先选择学历',
-        icon: 'none'
-      })
-      return;
-    }
-    if (this.data.zzmmvalue == "") {
-      wx.showToast({
-        title: '先选择政治面貌',
-        icon: 'none'
-      })
-      return;
-    }
-    wx.showLoading({ title: '查询中' })
-    const clound_result = await wx.cloud.callFunction({
-      name: 'event-20201014-ii-search',
-      data: {
-        data_year: this.data.yearvalue,
-        data_address: '吉林',
-        data_xueli: this.data.xuelivalue,
-        data_zzmm: this.data.zzmmvalue,
-        data_major: this.data.majorvalue
-      }
+  async seach_result1() {
+    let url = "result/index?scene=" + this.data.suffix
+    url += "&city=" + this.data.cityvalue
+    url += "&bmxz=" + this.data.bmxzvalue
+    url += "&bmmc=" + this.data.bmmcvalue
+    url += "&zwmc=" + this.data.zwmcvalue
+    wx.reLaunch({ url })
+    // wx.navigateTo({ url })   //尝试点击返回可以回到当前页面，但被十层页面栈限制
+  },
+  async seach_result2() {
+    let url = "result/index?scene=" + this.data.suffix
+    url += "&year=" + this.data.yearvalue
+    url += "&city=" + this.data.cityvalue
+    url += "&xueli=" + this.data.xuelivalue
+    url += "&zzmm=" + this.data.zzmmvalue
+    url += "&zylb=" + this.data.zylbvalue
+    wx.reLaunch({ url })
+    // wx.navigateTo({ url })   //尝试点击返回可以回到当前页面，但被十层页面栈限制
+  },
+
+  // 注册（录入crm数据）
+  buttonStart: function (e) {
+    getApp().methods.register(e, this.data.suffix, this.data.CRMEFSID, this.data.CRMRemark, phone => {
+      this.setData({ phone })
+      wx.showModal({ title: '提示', content: '注册成功，请您点击“点击查询”按钮进行查询～', showCancel: false, confirmText: "我知道啦" })
     })
-    console.log(clound_result)
-    if (clound_result.result.data == '') {
-      wx.setStorageSync('PositionList2020JL', []);
-      wx.hideLoading()
-      wx.showToast({
-        title: '无匹配职位，请重新填写条件后查询',
-        icon: 'none',
-        duration: 2000
+  },
+
+  // 提示订阅消息推送(OFFCN考试助手暂无使用功能)
+  tipsToSubscribeMessage() {
+    let _this = this
+    if (!_this.data.tipsToSubscribeMessaged) {
+      _this.setData({ tipsToSubscribeMessaged: true })
+      wx.showModal({
+        title: '提示',
+        content: '您是否需要订阅“事业单位”考试公告？订阅成功后您可以在公告发布时免费获得推送提示～',
+        confirmText: "免费订阅",
+        success(res) {
+          if (res.confirm) {
+            getApp().methods.subscribeSingleExam(_this.data.suffix, "事业单位", undefined, () => {
+              _this.seach_result() // 订阅成功后执行查询
+            })
+          } else if (res.cancel) {
+            _this.seach_result() // 执行查询
+          }
+        }
       })
-      return;
     } else {
-      wx.hideLoading()
-      wx.setStorageSync('PositionList2020JL', clound_result.result);
-      wx.reLaunch({
-        url: '/pages/sk-2022-lnfs/result/index?scene=' + this.data.Suffix
-      })
+      _this.seach_result() // 执行查询
     }
   },
 
@@ -222,86 +141,52 @@ Page({
     // 获取后缀
     if (typeof options.scene !== "undefined") {
       this.setData({
-        Suffix: options.scene
+        suffix: options.scene
       })
     }
-    // 判断是否是单页模式
-    if (wx.getLaunchOptionsSync().scene === 1154) {
-      this.setData({
-        SinglePageMode: true
-      })
-    }
-    // 判断是否从详情页返回
-    if (typeof options.login !== "undefined") {
-      this.setData({
-        isLogin: true
-      })
+    // 判断是否是单页模式 toto 这里要结合登陆使用
+    if (wx.getLaunchOptionsSync().scene !== 1154) {
+      getApp().methods.login(this.data.CRMEFSID, this.data.suffix, this.data.CRMRemark, phone => this.setData({ phone })) // 登陆
     }
   },
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-  onReady: function () {
-
-  },
+  onReady: function () {},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-  onHide: function () {
-
-  },
+  onHide: function () {},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-  onUnload: function () {
-
-  },
+  onUnload: function () {},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-  onPullDownRefresh: function () {
-
-  },
+  onPullDownRefresh: function () {},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-  onReachBottom: function () {
-
-  },
-
-  onPageScroll: function (t) {
-    if (t.scrollTop >= 180) {
-      wx.setNavigationBarColor({
-        frontColor: '#000000',
-        backgroundColor: '#ffffff'
-      })
-    } else {
-      wx.setNavigationBarColor({
-        frontColor: '#ffffff',
-        backgroundColor: '#ffffff'
-      })
-    }
-  },
+  onReachBottom: function () {},
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
     return {
-      title: '2022省考历年分数线查询',
-      imageUrl: 'http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-lnfs-share.jpg'
+      title: this.data.title,
+      imageUrl: this.data.imageUrl,
     }
   },
 
@@ -310,7 +195,7 @@ Page({
    */
   onShareTimeline: function () {
     return {
-      title: '2022省考历年分数线查询'
+      title: this.data.title,
     }
   }
 })
