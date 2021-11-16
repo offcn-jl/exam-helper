@@ -1,50 +1,80 @@
-<navigation id='Navigation' title="查询结果" showIcon='{{false}}' wordcolor="#fff" show-title="{{true}}" bgcolor="{{bgcolor}}" animation="{{fadeAni}}"></navigation>
+<navigation id='navigation' title="查询结果" hide-icon="{{true}}"></navigation>
 
-<image src="https://sahd.offcn.com/gkxcx/result_bk.jpg" class="banner_bk"></image>
+
+<!-- <image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/photo-processing/2021-lnfs-zsb-result.jpg" class="banner_bk"></image> -->
+<image mode="widthFix" src="" class="banner_bk"></image>
+
+
+<view class="title">查询结果</view>
 
 <view class="my_tip">
-	<text>非精准匹配，尽量覆盖您可能可报的职位\n如对能否报名有疑虑，请务必致电咨询报考单位！</text>
+	<text>非精准比例，尽量根据您选择的专业进行数据查询\n如对查询结果有疑虑，请务必致电咨询招考单位！</text>
 </view>
+
 <view class="result_num">
-	<text class="result_nux">共{{result.length}}条结果</text>
-	<navigator url="../index?login=1&scene={{Suffix}}">
+	<!-- fixme -->
+	<text class="result_nux">共 {{zcounts}} 条结果</text>
+	<!-- fixme -->
+	<navigator url="../index?scene={{suffix}}">
 		<button class="change_btn">修改条件</button>
 	</navigator>
 </view>
+
 <view class="resultWrap">
 	<block wx:for="{{result}}" wx:key="index">
-		<view class="result_item" bindtap="more" data-index="{{index}}">
-			<text class="result_code">{{item.item06}}</text>
-			<text class="result_name">{{item.item05}}</text>
-			<!-- <text class="result_name">进面分数线：{{item.item07}}</text> -->
-			<text class="result_detail">{{item.item03}}>{{item.item04}}>{{item.item05}}</text>
+		<view class="result_item">
+			<!-- <button class="add_btn">年份：{{item.nf}}</button> -->
+			<!-- <text class="result_code">{{item.areaname}}</text> -->
+			<view class="result_detail"><label>职位名称:</label><text>{{item.zhiwei_name}}</text></view>
+			<view class="result_detail"><label>所属单位:</label><text>{{item.danwei_name}}</text></view>
+			<!-- <view class="result_detail"><label>所属单位:</label><text>{{item.danwei_name}}</text></view> -->
+
 			<view class="item_group">
-				<view class="item_line"><label>机构层级</label><text>{{item.item08?item.item08:'无'}}</text></view>
-				<view class="item_line"><label>考试类别</label><text>{{item.item09?item.item09:'无'}}</text></view>
-				<view class="item_line"><label>招考人数</label><text>{{item.item10?item.item10:'无'}}</text></view>
-				<view class="item_group_wrap {{showId==index?'active':''}}">
-					<view class="item_line"><label>专业要求</label><text>{{item.item11?item.item11:'无'}}</text></view>
-					<view class="item_line"><label>学历要求</label><text>{{item.item12?item.item12:'无'}}</text></view>
-					<view class="item_line"><label>学位要求</label><text>{{item.item13?item.item13:'无'}}</text></view>
-					<view class="item_line"><label>政治面貌</label><text>{{item.item14?item.item14:'无'}}</text></view>
-					<view class="item_line"><label>基层工作最低年限</label><text>{{item.item15?item.item15:'无'}}</text></view>
-					<view class="item_line"><label>服务基层项目工作经历</label><text>{{item.item16?item.item16:'无'}}</text></view>
-					<view class="item_line"><label>是否在面试阶段组织专业能力测试</label><text>{{item.item17?item.item17:'无'}}</text></view>
-					<view class="item_line"><label>面试人员比例</label><text>{{item.item18?item.item18:'无'}}</text></view>
-					<view class="item_line"><label>工作地点</label><text>{{item.item19?item.item19:'-'}}</text></view>
-					<view class="item_line"><label>所属城市</label><text>{{item.item19?item.item20:'-'}}</text></view>
-					<view class="item_line"><label>备注</label><text>{{item.item21?item.item21:'-'}}</text></view>
-					<view class="item_line"><label>部门网站</label><text>{{item.item2?item.item22:'-'}}</text></view>
-					<!-- <view class="item_line item_line_fs">
-						<label>进面分数线</label>
-						<text>{{item.item07}}</text>
-					</view> -->
+				<!-- 可收放数据代码 -->
+				<view class="item-group-wrap {{showId == index ? 'active' : ''}}">
+					<view class="item-list">
+						<view class="top">单位信息</view>
+						<view class="item_line"><label>部门名称:</label><text>{{item.danwei_name}}</text></view>
+						<view class="item_line"><label>部门代码:</label><text>{{item.danwei_code}}</text></view>
+						<view class="item_line"><label>部门性质:</label><text>{{item.xitong}}</text></view>
+					</view>
+
+					<view class="item-list">
+						<view class="top">职位信息</view>
+						<view class="item_line"><label>职位名称:</label><text>{{item.zhiwei_name}}</text></view>
+						<view class="item_line"><label>职位代码:</label><text>{{item.zhiwei_code}}</text></view>
+						<view class="item_line"><label>招考人数:</label><text>{{item.zkrs}}</text></view>
+						<view class="item_line"><label>招考对象:</label><text>{{item.isyj}}</text></view>
+						<view class="item_line"><label>最低服务年限要求:</label><text>{{item.zdfwnx}}</text></view>
+					</view>
+
+					<view class="item-list">
+						<view class="top">报考条件</view>
+						<view class="item_line"><label>学历要求:</label><text>{{item.xueli}}</text></view>
+						<view class="item_line"><label>学位要求:</label><text>{{item.xwyq}}</text></view>
+						<view class="item_line"><label>是否允许以学位证所列专业报考:</label><text>{{item.sfyxyxwzbk}}</text></view>
+						<view class="item_line"><label>专业要求:</label><text>{{item.zhuanye}}</text></view>
+						<view class="item_line"><label>性别要求:</label><text>{{item.sex}}</text></view>
+						<view class="item_line"><label>政治面貌:</label><text>{{item.zzmm}}</text></view>
+						<view class="item_line"><label>基层工作经历要求:</label><text>{{item.gzjl}}</text></view>
+						<view class="item_line"><label>其他资格条件要求:</label><text>{{item.qtzgtj}}</text></view>
+					</view>
+
+					<view class="item-list">
+						<view class="top">其他信息</view>
+						<view class="item_line"><label>科目类别:</label><text>{{item.kskm}}</text></view>
+						<view class="item_line"><label>体能测试或专业考试要求:</label><text>{{item.isks}}</text></view>
+						<view class="item_line"><label>体检标准:</label><text>{{item.tjbz}}</text></view>
+						<view class="item_line"><label>备注:</label><text>{{item.note}}</text></view>
+						<view class="item_line"><label>咨询电话:</label><text>{{item.phone}}</text></view>
+					</view>
+
 				</view>
-				<view class="jiantou">
-					<image src="https://tk.zgjsks.com/sa//sydw/kbb/jiantou.png" class='{{showId==index? "" : "active"}}'></image>
+				<!-- 上下显示箭头 -->
+				<view class="jiantou" bindtap="lnfsx" data-id="{{item.id}}"  data-index="{{index}}">
+					<image src="http://jl.offcn.com/zt/ty/2021images/exam-helper/jiantou.png?4" class='{{showId==index? "" : "active"}}'></image>
 				</view>
 			</view>
-			<button class="add_btn">{{item.item01}}年</button>
 		</view>
 	</block>
 </view>
