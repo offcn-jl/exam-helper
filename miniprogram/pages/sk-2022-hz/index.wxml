@@ -12,8 +12,8 @@
     <image src="http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/22sk_hz2.png"></image>
     <view>专业分类查询系统</view>
   </navigator>
-  <!-- <navigator target="miniProgram" open-type="navigate" app-id="wxb04ce8efcd61db65" path="/pages/photo-processing/detail/index?id=93&scene={{suffix}}" version="release"> -->
-  <navigator bindtap="btn">
+  <navigator target="miniProgram" open-type="navigate" app-id="wxb04ce8efcd61db65" path="/pages/photo-processing/detail/index?id=77&scode={{suffix}}" version="release">
+  <!-- <navigator bindtap="btn"> -->
     <image src="http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/22sk_hz3.png"></image>
     <view>报名照片处理系统</view>
   </navigator>
