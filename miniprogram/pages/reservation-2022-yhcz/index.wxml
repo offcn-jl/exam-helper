@@ -1,0 +1,45 @@
+<!-- banner -->
+<view class="main1">
+  <view>2022银行春季校招考试</view>
+  <image src="http://jl.offcn.com/zt/ty/2021images/exam-helper/22yhcz-tit.png" class="tit" mode="widthFix"></image>
+</view>
+<view class="main2">
+  <view class="m2_top">
+    <view>1、2022银行春季校招公告一般什么时候出来？在哪儿查看？</view>
+    <text>银行校园招聘一年会分两次进行，秋季招聘在2021年9月-12月，春季招聘会在2022年2月-6月，春季招聘规模大、人数多，对于想要进入银行工作的应届毕业生来说，无疑是就业求职的新选择，具体以各大银行官方网站及官微公告为准！
+    ①在各大银行官方网站及官微上查看招聘信息；
+    ②可关注中公金融人银行招聘网站我们会及时更新招聘公告；
+    ③在线预约，公告发布后，我们会立即用短信通知您，让你的备考先人一步！</text>
+  </view>
+  <view class="m2_bot">
+    <view>2、2022银行春季校招具体流程是怎样安排的？</view>
+    <image src="http://jl.offcn.com/zt/ty/2021images/exam-helper/22yhcz-main2-lc.png" ></image>
+  </view>
+</view>
+<view class="main3">
+  <view class="m3_tit">符合什么样的条件才能报名？</view>
+  <view class="list">
+    <view class="list_tit">NO. 1 应届</view>
+    <text>应往届可报？银行秋招以2022年应届生为主，但从去年开始国有六大行部分岗位及地区招收往届，相信在今年的环境下，往届生也会有一定的扩招。</text>
+  </view>
+  <view class="list">
+    <view class="list_tit">NO. 2 学历</view>
+    <text>专科可报？一般为全日制本科及以上学历，部分银行及岗位会根据情况降低要求，放宽至全日制专科等其他标准。不同银行不同分行要求不同。</text>
+  </view>
+  <view class="list">
+    <view class="list_tit">NO. 3 专业</view>
+    <text>不限专业？主招经济金融类、会计、管理、营销、法律、外语类以及计算机等专业，像信息技术与通信工程、建筑等其他专业也可报名。部分银</text>
+  </view>
+  <view class="list">
+    <view class="list_tit">NO. 4 英语</view>
+    <text>不限英语四六级？大多数银行会有英语要求，本科为英语四级，研究生为英语六级，部分银行不明确要求英语级别。</text>
+  </view>
+  <view class="list">
+    <view class="list_tit">NO. 5 其他</view>
+    <text>报考某地分行必须是当地户口吗？如户籍限制、政治面貌限制、普通话限制等，应仔细阅读公告。</text>
+  </view>
+</view>
+<view class="popup">
+  <button wx:if="{{!phone}}" class="btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">一键预约</button>
+  <button wx:else class="btn" bindtap="btn">一键预约</button>
+</view>
