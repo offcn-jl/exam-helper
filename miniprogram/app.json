@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
 
+    "pages/position-2022-yhcz/index",
+    "pages/position-2022-yhcz/result/index",
     "pages/reservation-2022-yhcz/index",
     "pages/sk-2022-hz/index",
     "pages/sk-2022-cjwt/index",
