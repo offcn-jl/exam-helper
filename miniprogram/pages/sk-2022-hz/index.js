@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:"省考五大系统工具汇总",// 标题
+    title:"2022吉林省考报名辅助工具汇总",// 标题
     banner_bk:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-hz-index.jpg",// 背景图片
     imageUrl:"http://jl.offcn.com/zt/ty/2021images/exam-helper/2022sk/sk-2022-hz-share.jpg",// 分享时显示的图片
     CRMEFSID: "56a0de1b86f6a7f301d0c62f7f1597f1", // CRM 活动表单 ID
