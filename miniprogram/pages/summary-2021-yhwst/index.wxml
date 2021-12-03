@@ -1,0 +1,19 @@
+<!-- 背景图 -->
+<image src="{{banner_bk}}" class="banner"></image>
+<view class="content">
+  <navigator class="click" url="/pages/matching-2021-gwcx-rmyh/index?scene={{suffix}}">职位查询</navigator>
+  <navigator class="click" target="miniProgram" open-type="navigate" app-id="wx5e256375813b119f" path="/pages/book/index?scene={{suffix}}*463">备考资料</navigator>
+  <navigator class="click" url="/pages/matching-2021-gwcx-rmyh/index?scene={{suffix}}">竞价比查询</navigator>
+  <view class="click" bindtap="consult">在线客服</view>
+  <button wx:if="{{!phone}}" class="btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart"></button>
+</view>
+<!-- 扫码弹窗 -->
+<view class="pupop" wx:if="{{pupop}}">
+  <view class="con"> 
+    <image mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/guan.png" class="close" bindtap="close"></image>
+    <image mode="widthFix" src="{{imgalist[0]}}" class="code" bindtap="keep"></image>
+    <view class="btn" bindtap="keep">点击识别二维码</view>
+    <view class="wechat">微信号：{{wechat}}</view>
+    <view class="btn" bindtap="copy">点击复制微信号</view>
+  </view>
+</view>

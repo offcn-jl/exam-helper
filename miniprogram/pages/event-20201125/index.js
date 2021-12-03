@@ -34,15 +34,25 @@ Page({
         CRMName: "小程序-教师招聘资料补给站",
       },
       {
+        CRMSID: "f303e42e8b992f1caaa86fe748041473",
+        CRMID: "HD202010231720",
+        CRMName: "小程序-特岗教师资料补给站",
+      },
+      {
         CRMSID: "64560196077b6dc4d66f8a190f8f2061",
         CRMID: "HD202010231719",
         CRMName: "小程序-医疗招聘资料补给站",
       },
       {
-        CRMSID: "f303e42e8b992f1caaa86fe748041473",
-        CRMID: "HD202010231720",
-        CRMName: "小程序-特岗教师资料补给站",
-      }
+        CRMSID: "daacdc3ef47d025c054a180688db0d84",
+        CRMID: "HD202012070165",
+        CRMName: "小程序-2021教资笔试资料补给站",
+      },
+      {
+        CRMSID: "759df6460024fe1c821e22701ac73a25",
+        CRMID: "HD202012070175",
+        CRMName: "小程序-2020教资面试资料补给站",
+      },
     ] // 项目配置
   },
 
@@ -223,6 +233,18 @@ Page({
         Title: "医疗卫生笔试备考1200题",
         Code: "ylws",
         List: Array.from({length:175}, (v,k) => k)
+      }
+    } else if (id === 6) {
+      detail = {
+        Title: "教师资格笔试白皮书",
+        Code: "jzbs",
+        List: Array.from({length:21}, (v,k) => k)
+      }
+    } else if (id === 7) {
+      detail = {
+        Title: "教师资格面试备考攻略",
+        Code: "jzms",
+        List: Array.from({length:41}, (v,k) => k)
       }
     } else {
       // ID 出错

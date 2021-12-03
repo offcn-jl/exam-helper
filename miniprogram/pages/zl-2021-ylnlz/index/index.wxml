@@ -1,0 +1,12 @@
+<image mode="widthFix" src="{{banner_bk}}" class="banner_bk"></image>
+
+<view class="con">
+    <image alt="" class="zl_fm" src="http://jl.offcn.com/zg/ty/images/exam-helper/zl-2021-ylnlz/index2.png"></image>
+    <view class="fmsq_btn">
+        <button wx:if="{{phone == ''}}" class="search_btn" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">点击领取资料</button>
+        <button wx:else class="search_btn" bindtap="getUserProfile">点击领取资料</button>
+    </view>
+</view>
+
+<!-- 后缀 -->
+<view class="suffix">{{suffix}}</view>

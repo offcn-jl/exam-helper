@@ -1,0 +1,48 @@
+page {
+  /* background: #fff; */
+  background: #d59802;
+  padding-bottom: 10rpx;
+}
+
+.banner_bk {
+  width: 100vw;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+} 
+.title{
+  display: block;
+  width: 666rpx;
+  margin: 0 auto;
+  margin-top: 300rpx;
+}
+
+.select_wrap {
+  width: 666rpx;
+  background: #fff;
+  margin: 0 auto;
+  padding-top: 60rpx;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.offer_item {
+  width: 550rpx;
+  height: 90rpx;
+  margin: 0 auto 40rpx;
+}
+
+.search_btn {
+  background: #FF9800;
+  color: #fff;
+  font-size: 36rpx;
+  margin-bottom: 40rpx;
+}
+
+.suffix {
+  color: #fff;
+}

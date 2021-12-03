@@ -1,0 +1,50 @@
+/* pages/code-2021-ghfls/index.wxss */
+page{
+  background: #290101;
+}
+.banner{
+  width: 100vw;
+  height: 1448rpx;
+}
+.btn{
+  position: fixed;
+  bottom: 5vh;
+  left: 20vw;
+  width: 60vw;
+  background: #fee600;
+  color:#d41618;
+  font-weight: bold;
+}
+.code{
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+}
+.code-active{display:block}
+/* （初步设置没有对应二维码的后缀放置长春小管家二维码） */
+.code .img{
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021code/lX5VoC.jpg) no-repeat center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 36.3vh;
+  width:400rpx;
+  height:400rpx;
+}
+.code .img image{
+  width: 100%;
+}
+.remind{
+  display: block;
+  color: #FFF;
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 60rpx;
+  margin: 10px auto;
+  letter-spacing: 2rpx;
+}

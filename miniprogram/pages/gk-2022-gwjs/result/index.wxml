@@ -1,0 +1,49 @@
+<navigation id='Navigation' title="查询结果" showIcon='{{false}}' wordcolor="#fff" show-title="{{true}}" bgcolor="{{bgcolor}}" animation="{{fadeAni}}"></navigation>
+
+<image src="https://sahd.offcn.com/gkxcx/result_bk.jpg" class="banner_bk"></image>
+
+<view class="my_tip">
+	<text>非精准匹配，尽量覆盖您可能可报的职位\n如对能否报名有疑虑，请务必致电咨询报考单位！</text>
+</view>
+<view class="result_num">
+	<text class="result_nux">共{{result.length}}条结果</text>
+	<navigator url="../index?login=1&scene={{Suffix}}">
+		<button class="change_btn">修改条件</button>
+	</navigator>
+</view>
+<view class="resultWrap">
+	<block wx:for="{{result}}" wx:key="index">
+		<view class="result_item" bindtap="more" data-index="{{index}}">
+			<text class="result_code">{{item.item06}}</text>
+			<text class="result_name">{{item.item05}}</text>
+			<text class="result_detail">{{item.item03}}>{{item.item04}}>{{item.item05}}</text>
+			<view class="item_group">
+				<view class="item_line"><label>机构层级</label><text>{{item.item08?item.item08:'无'}}</text></view>
+				<view class="item_line"><label>考试类别</label><text>{{item.item09?item.item09:'无'}}</text></view>
+				<view class="item_line"><label>招考人数</label><text>{{item.item10?item.item10:'无'}}</text></view>
+				<view class="item_group_wrap {{showId==index?'active':''}}">
+					<view class="item_line"><label>专业要求</label><text>{{item.item11?item.item11:'无'}}</text></view>
+					<view class="item_line"><label>学历要求</label><text>{{item.item12?item.item12:'无'}}</text></view>
+					<view class="item_line"><label>学位要求</label><text>{{item.item13?item.item13:'无'}}</text></view>
+					<view class="item_line"><label>政治面貌</label><text>{{item.item14?item.item14:'无'}}</text></view>
+					<view class="item_line"><label>基层工作最低年限</label><text>{{item.item15?item.item15:'无'}}</text></view>
+					<view class="item_line"><label>服务基层项目工作经历</label><text>{{item.item16?item.item16:'无'}}</text></view>
+					<view class="item_line"><label>是否在面试阶段组织专业能力测试</label><text>{{item.item17?item.item17:'无'}}</text></view>
+					<view class="item_line"><label>面试人员比例</label><text>{{item.item18?item.item18:'无'}}</text></view>
+					<view class="item_line"><label>工作地点</label><text>{{item.item19?item.item19:'-'}}</text></view>
+					<view class="item_line"><label>工作地点</label><text>{{item.item20?item.item20:'-'}}</text></view>
+					<view class="item_line"><label>备注</label><text>{{item.item21?item.item21:'-'}}</text></view>
+					<view class="item_line"><label>部门网站</label><text>{{item.item2?item.item22:'-'}}</text></view>
+					<!-- <view class="item_line item_line_fs">
+						<label>进面分数线</label>
+						<text>{{item.item07}}</text>
+					</view> -->
+				</view>
+				<view class="jiantou">
+					<image src="https://tk.zgjsks.com/sa//sydw/kbb/jiantou.png" class='{{showId==index? "" : "active"}}'></image>
+				</view>
+			</view>
+			<button class="add_btn">{{item.item01}}年</button>
+		</view>
+	</block>
+</view>

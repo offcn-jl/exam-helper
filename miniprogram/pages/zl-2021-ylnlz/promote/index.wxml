@@ -1,0 +1,8 @@
+<view>
+    <image alt="" class="zl_fm" src="http://jl.offcn.com/zg/ty/images/exam-helper/zl-2021-ylnlz/index2.png"></image>
+    <view class="fmsq_btn">
+        <button wx:if="{{phone == ''}}" class="zg_start" open-type="getPhoneNumber" bindgetphonenumber="buttonStart">点击为TA助力</button>
+        <button wx:elif="{{!success}}" class="zg_start" bindtap="showq">点击为TA助力</button>
+        <button wx:elif="{{success}}" class="zg_start" bindtap="receive">我也要领取</button>
+    </view>
+</view>

@@ -1,0 +1,59 @@
+<navigation id='navigation' title="查询结果" hide-icon="{{true}}"></navigation>
+
+<!-- http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2020/jr/header.result.1112.jpg -->
+<image mode="widthFix" src="" class="banner_bk"></image>
+
+<view class="title">查询结果</view>
+
+<view class="my_tip">
+	<text>以下信息均来源于历年银行秋招考生回忆，仅供参考\n最后考试题型及分布均已实际情况为主</text>
+</view>
+
+<view class="result_num">
+	<!-- fixme -->
+	<text class="result_nux">{{query}}</text>
+	<!-- fixme -->
+	<navigator url="../index?scene={{suffix}}">
+		<button class="change_btn">修改条件</button>
+	</navigator>
+</view>
+<view class="resultWrap">
+	<view class="{{query==='中国银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/zg1.png" style="height:831rpx"></image>
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/zg2.png" style="height:959rpx"></image>
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/zg3.png" style="height:722rpx"></image>
+	</view>
+	<view class="{{query==='农业银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/ny.png" style="height:906rpx"></image>
+	</view>
+	<view class="{{query==='工商银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/gs.png" style="height:843rpx"></image>
+	</view>
+	<view class="{{query==='建设银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/js.png" style="height:903rpx"></image>
+	</view>
+	<view class="{{query==='交通银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/jt.png" style="height:774rpx"></image>
+	</view>
+	<view class="{{query==='广发银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/gf.png" style="height:666rpx"></image>
+	</view>
+	<view class="{{query==='浦发银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/pf.png" style="height:641rpx"></image>
+	</view>
+	<view class="{{query==='民生银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/ms.png" style="height:1041rpx"></image>
+	</view>
+	<view class="{{query==='中信银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/zx.png" style="height:680rpx"></image>
+	</view>
+	<view class="{{query==='平安银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/pa.png" style="height:494rpx"></image>
+	</view>
+	<view class="{{query==='招商银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/zs.png" style="height:599rpx"></image>
+	</view>
+	<view class="{{query==='光大银行'?'img on':'img'}}">
+		<image src="http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/2021-lnktbl-yhqz/gd.png" style="height:752rpx"></image>
+	</view>
+</view>

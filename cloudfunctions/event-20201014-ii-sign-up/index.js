@@ -35,7 +35,7 @@ exports.main = async (event, context) => {
     // 自动格式化 body 为 json
     json: true,
     body: {
-      "CRMSID": "f5ea1aafc5a586ebed7ab9102fd82427", // HD202010141571 小程序-2021国考新职位检索系统
+      "CRMSID": "b0582a6836fc7b04ea322fb5f078e375", // HD202101110771 小程序-21国面晒分系统
       "Suffix": event.Suffix,
       "Phone": event.cloudID.data.phoneNumber,
       "Remark": "职位检索小程序"

@@ -1,0 +1,1 @@
+<photo-processing2 bgImage="{{bgImage}}" Suffix="{{Suffix}}" CRMSID="{{CRMSID}}" Width="{{Width/2}}" Height="{{Height/2}}" SaveQuality="{{SaveQuality}}" DisableZoom="{{DisableZoom}}" Beauty="{{Beauty}}" BackgroundColor="{{BackgroundColor}}" MaxTimes="{{MaxTimes}}"></photo-processing2>

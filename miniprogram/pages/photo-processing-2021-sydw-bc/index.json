@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "中公教育照片处理系统",
+  "disableScroll": false,
+  "usingComponents": {
+    "photo-processing2": "../../components/photo-processing2"
+  }
+}

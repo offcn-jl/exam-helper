@@ -1,0 +1,103 @@
+/* pages/code-2021-ghfls/index.wxss */
+page{
+  background: #290101;
+}
+.banner{
+  width: 100vw;
+  height: 1500rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.content{
+  position: relative;
+  width: 50vw;
+  margin: 0 auto;
+  margin-top: 432rpx;
+  float: right;
+}
+.content .click{
+  width: 335rpx;
+  height: 66rpx;
+  background: url("http://jl.offcn.com/zt/ty/2021images/exam-helper/2021-yhwst-alert.png");
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 34rpx;
+  text-indent: 70rpx;
+  color: #320000;
+  margin-bottom: 20rpx;
+}
+.content .btn{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 500rpx;
+  opacity: 0;
+}
+/* 扫码弹窗 */
+.pupop{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.pupop .con{
+  width: 75vw;
+  padding: 5vw;
+  padding-bottom: 0;
+  border-radius: 20rpx;
+  /* background: #fff; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pupop .con .close{
+  display: block;
+  float: right;
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translate(-50%,50%);
+}
+.pupop .con .code{
+  width: 350rpx;
+  height: 350rpx;
+  display: block;
+  margin: 20rpx auto;
+  border: 2px solid #e0dede;
+}
+.pupop .con text{
+  display: block;
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+}
+.pupop .con .wechat{
+  font-size: 35rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+.pupop .con .btn{
+  width: 80%;
+  height: 80rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: rgb(16, 71, 189);
+  letter-spacing: 4rpx;
+  margin: 0 auto;
+  color: #fff;
+  background: #e41310;
+  margin-bottom: 40rpx;
+}

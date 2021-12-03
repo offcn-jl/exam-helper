@@ -1,0 +1,326 @@
+page {
+  /* background: #fff; */
+  background: #b0e4fc;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+button::after{
+  border: none;
+  outline: none;
+}
+.back{
+  width:100vw;
+  min-height:1334rpx;
+  overflow: hidden;
+}
+/* logo */
+.logo{
+  width: 40vw;
+  display: block;
+  margin: 0 auto;
+  margin-top: 70rpx;
+}
+/* 标题 */
+.title{
+  display: block;
+  margin: 5vh auto;
+  margin-bottom:3vh ;
+}
+/* 点击进去 */
+.container{
+  margin: 0 auto;
+  position: absolute;
+  bottom: 16vh;
+  left: 32vw;
+}
+.search_btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  position: fixed;
+  bottom: 20vw;
+}
+.search_btn::after{
+  border:none;
+}
+.search_btn image{
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+}
+.suffix {
+  color: #fff;
+}
+.con{
+  display: none;
+  margin-bottom: 100rpx;
+}
+.con.on{
+  display: block;
+}
+/* 倒计时 */
+.count{
+  display: block;
+  margin: 0 auto;
+  width: 195rpx;
+  height: 52rpx;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  line-height: 56rpx;
+}
+/* 考试内容页 */
+.content{
+  width: 80vw;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  padding: 5vw;
+  border-radius: 20rpx;
+  /* 使倒计时在上方显示 */
+  margin-top: -38rpx;   
+}
+.content view{
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+.content .tit{
+  font-weight: bold;
+  line-height: 60rpx;
+}
+.content .choice{
+  width: 100%;
+  /* height: 60rpx; */
+  background: #f0faff;
+  margin-top: 20rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.content .choice .left{
+  display: block;
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  background:#18adff;
+  text-align: center;
+  color: #fff;
+}
+.content .choice .h2{margin-top: 30rpx;}
+.content .choice .h3{margin-top: 65rpx;}
+.content .choice .right{
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+  width: 510rpx;
+}
+.content .select .left{
+  background:#fea130;
+}
+.content .select{
+  background:#fff5e8;
+}
+/* 进度条 */
+.progress{
+  display: block;
+  margin: 30rpx auto;
+  margin-top: 60rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/mock-2021-zsb/line_bg.png) no-repeat top;
+  width: 602rpx;
+  height: 60rpx;
+  background-size: 602rpx 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #18adff;
+  position: relative;
+}
+.progress .blue{
+  background:#37b8ff;
+  height: 50rpx;
+  position: absolute;
+  top: 5rpx;
+  left: 5rpx;
+  border-radius: 25rpx;
+}
+/* 下一题  提交答案 */
+.next{
+  width: 272rpx;
+  height: 72rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/mock-2021-zsb/next.png) no-repeat top;
+  background-size: 272rpx 72rpx;
+  margin:0 auto;
+}
+.submit{
+  width: 272rpx;
+  height: 72rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/mock-2021-zsb/submit.png) no-repeat top;
+  background-size: 272rpx 72rpx;
+  margin:0 auto;
+}
+/* 成绩页 */
+.score{display: block;}
+.score .top{
+  margin: 0 auto;
+  display: block;
+  margin-top: 20rpx;
+  width: 100%;
+}
+.score .mid{
+  overflow: hidden;
+  margin-top: 30rpx;
+}
+.score .mid .portrait{
+  width: 15vw;
+  height: 15vw;
+  display:block;
+  float: left;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.score .mid .center{
+  display: block;
+  float: left;
+  margin-left: 12rpx;
+}
+.score .mid .center view{
+  font-size: 28rpx;
+  width: 290rpx;
+  overflow: hidden;
+  height: 60rpx;
+}
+.score .mid .center view image{
+  display: block;
+  float: right;
+  width: 20vw;
+  margin-top: 20rpx;
+}
+.score .m_right{
+  display: block;
+  float: right;
+  width: 165rpx;
+  height: 180rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/mock-2021-zsb/rank_bg.png) no-repeat top; 
+  background-size: 165rpx 128rpx;
+}
+.score .m_right image{
+  width: 68rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+.score .bot{
+  overflow: hidden;
+}
+.score .bot .b_fen{
+  display: inline-block;
+  width: 108rpx;
+  height: 41rpx;
+  margin-top: 40rpx;
+}
+.score .bot view{
+  display: table;
+  margin: 0 auto;
+}
+/* 答案解析按钮 */
+.last{
+  margin-bottom: 100rpx;
+}
+ .ckjx{
+  display: block;
+  width: 272rpx;
+  height: 72rpx;
+  margin:30rpx auto;
+}
+/* 解析题列表 */
+.parselist{
+  width: 80vw;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  display: none;
+  overflow: hidden;
+}
+.parselist.on{
+  display: block;
+}
+.parselist .jiexi{
+  display: block;
+  margin: 30rpx auto;
+}
+.di{
+  display: block;
+  margin: 30rpx auto;
+  width: 80vw;
+}
+.di image{
+  width: 46%;
+  margin: 0 2%;
+  display: block;
+  float: left;
+}
+/* 错误 */
+.content .select2{
+  background:#ffdbdb url(http://jl.offcn.com/zg/ty/images/exam-helper-mini-program/position/2021/mock-2021-zsb/error.png) no-repeat 95% 50%;
+  background-size: 22rpx 22rpx;
+}
+.content .left.select2{
+  background:#ff3838
+}
+/* 正确 */
+.content .select1{  
+  background:#88ff7c;
+}
+.content .left.select1{  
+  background:#27c318;
+}
+/* 底部链接及分享 */
+.last .url{
+  width: 590rpx;
+  height: 112rpx;
+  background: linear-gradient(to bottom,#7cccfa,#1fafff);
+  border: 2px solid #ffebce;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 40rpx;
+}
+.last .url text{
+  display: block;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  float: left;
+  width: 60vw;
+  margin: 15rpx 10rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+.last .url image{
+  width: 70rpx;
+  height: 58rpx;
+  margin-top: 30rpx;
+}
+.last .share{
+  width: 590rpx;
+  height: 112rpx;
+  background: linear-gradient(to bottom,#7cccfa,#1fafff);
+  border-radius: 40rpx;
+  border: 2px solid #ffebce;
+  margin: 20rpx auto;
+}
+.last .share image{
+  width: 82rpx;
+  height: 82rpx;
+  margin-top: 15rpx;
+  float: left;
+}
+.last .share view,.last .url view{
+  float: left;
+  color: #fff;
+  margin-left: 20rpx;
+  line-height: 106rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+}

@@ -1,0 +1,288 @@
+page {
+  /* background: #fff; */
+  background: #eeddd0;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+button::after{
+  border:none;
+}
+.back{
+  width:100vw;
+  /* min-height:1334rpx; */
+  height: 1600rpx;
+  overflow: hidden;
+}
+/* logo */
+.logo{
+  width: 40vw;
+  display: block;
+  margin: 0 auto;
+  margin-top: 70rpx;
+}
+.book{
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  width: 691rpx;
+  height: 261rpx;
+}
+/* 标题 */
+.title{
+  display: block;
+  margin: 7vh auto;
+  margin-bottom:3vh ;
+}
+/* 先导页 */
+.container{
+  width:100vw;
+  min-height: 1334rpx;
+  overflow: hidden;
+}
+.container .search_btn {
+  outline: none;
+  border: none;
+  width: 318rpx;
+  height: 79rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/click.png) no-repeat center;
+  background-size: 318rpx 79rpx;
+  margin: 0 auto;
+  margin-top: 1050rpx;
+  line-height: 79rpx;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  margin-bottom: 40rpx;
+}
+.container .prize{
+  font-size: 36rpx;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+.container .prize view{
+  display: inline;
+  color: #b34329;
+}
+.container .suffix {
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+/* 题目 */
+.topic .top{
+  display: block;
+  margin: 60rpx auto;
+}
+.topic .list{
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/border.png) no-repeat top;
+  background-size: 571rpx 457rpx;
+  width: 571rpx;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.topic .content{
+  width: 480rpx;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 120rpx;
+}
+.topic .content view{
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+.topic .content .tit{
+  font-weight: bold;
+  margin-top: 30rpx;
+  display: block;
+  height: 84rpx;
+}
+.topic .content .choice{
+  width: 100%;
+  height: 60rpx;
+  background: #f1e3d9;
+  margin-top: 35rpx;
+  border-radius: 30rpx;
+}
+.topic .content .choice .left{
+  display: block;
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background:#d0b312;
+  text-align: center;
+  color: #fff;
+}
+.topic .content .choice .right{
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+}
+.topic .content .select .left{
+  background:#bf4220;
+}
+.topic .content .select{
+  background:#fc8160;
+  color:#fff;
+}
+/* 进度条 */
+.topic .progress{
+  display: block;
+  margin: 30rpx auto;
+  margin-top: 100rpx;
+  background: #fff29b;
+  width: 100%;
+  border-radius: 30rpx;
+  height: 60rpx;
+  background-size: 602rpx 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #bf4220;
+  position: relative;
+}
+/* 下一题  提交答案 */
+.topic .next{
+  outline: none;
+  border: none;
+  width: 318rpx;
+  height: 79rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/click.png) no-repeat center;
+  background-size: 318rpx 79rpx;
+  margin: 0 auto;
+  line-height: 79rpx;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  text-align: center;
+}
+/* 未做答题弹窗 */
+.popup{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+}
+.popup view{
+  width: 527rpx;
+  height: 611rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/popup.png) no-repeat center;
+  background-size: 527rpx 611rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+.popup view text{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 354rpx;
+  display: block;
+  font-size: 44rpx;
+  line-height: 60rpx;
+}
+.popup view button{
+  outline: none;
+  border: none;
+  width: 360rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: #bf4220;
+  color: #f6d25a;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+}
+/* 成绩页 */
+.last .top{
+  display: block;
+  margin: 60rpx auto;
+}
+.last .score{
+  width: 100vw;
+  height: 562rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/result.png) no-repeat top center;
+  background-size: 604rpx 562rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* 教师类型列表 */
+.last .score .tealist{
+  position: relative;
+}
+.last .score .tealist .tyle{
+  font-weight: bold;
+  font-size: 35rpx;
+  display: block;
+  margin: 57rpx 158rpx;
+  width: 250rpx;
+  text-align: center;
+}
+.last .score .tealist .tu{
+  position: absolute;
+  top: 192rpx;
+  right: -12rpx;
+  width: 35vw;
+  z-index: 1;
+}
+.last .score .tealist text{
+  position: relative;
+  z-index:2;
+  margin-top: 30rpx;
+  margin-left: 111rpx;
+  display: block;
+  width: 457rpx;
+  font-size: 24rpx;
+}
+/* 底部链接及分享 */
+.last .url{
+  width: 590rpx;
+  height: 112rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/btn.png) no-repeat top center;
+  background-size: 590rpx 112rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+.last .url text{
+  display: block;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  float: left;
+  width: 60vw;
+  margin: 15rpx 10rpx;
+  margin-left: 30rpx;
+}
+.last .url image{
+  width: 70rpx;
+  height: 58rpx;
+  margin-top: 30rpx;
+}
+.last .share{
+  width: 590rpx;
+  height: 112rpx;
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/2021-jscs/btn.png) no-repeat top center;
+  background-size: 590rpx 112rpx;
+  margin: 20rpx auto;
+}
+.last .share image{
+  width: 82rpx;
+  height: 82rpx;
+  margin-top: 15rpx;
+  float: left;
+}
+.last .share view{
+  float: left;
+  color: #fff;
+  margin-left: 20rpx;
+  line-height: 112rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+}

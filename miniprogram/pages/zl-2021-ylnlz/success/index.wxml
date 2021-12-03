@@ -1,0 +1,10 @@
+<!-- 助力成功页面 -->
+<!-- <image  mode="widthFix" src="http://jl.offcn.com/zg/ty/images/exam-helper/zl-2021-ylnlz/index1.jpg"></image> -->
+<view class="con">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="pic" data-url="{{item.url}}" bindtap="setClipboard">
+      <view class="{{item.name.length<=6?'':'t2'}}">{{item.name}}</view>
+    </view>
+  </block>
+</view>
+
