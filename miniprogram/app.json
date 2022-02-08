@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
 
+    "pages/simulated-enrollment-2022-sk/index",
     "pages/position-2022-yhcz/index",
     "pages/position-2022-yhcz/result/index",
     "pages/reservation-2022-yhcz/index",

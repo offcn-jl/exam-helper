@@ -1,0 +1,11 @@
+@import "../simulated-enrollment-2020-sk/index.wxss";
+
+.index {
+  background: url(http://jl.offcn.com/zg/ty/images/exam-helper/simulated-enrollment/2022-sk-202202081606.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.index-start {
+  background-color: #ffe711 !important;
+  color: #000 !important;
+}
